@@ -7,7 +7,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="dark">
 <title>Polymarket &amp; Airdrop Monitor (paper only)</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=__ASSET__">
 </head>
 <body>
 <div class="shell">
@@ -25,9 +25,12 @@
     </div>
   </div>
   <div class="top-meta">
+    <span id="cycleChanges" class="cycle-changes">changes this cycle: 0</span>
+    <span id="countdown" class="countdown">next update in —s</span>
     <span id="badge" class="pill wait">LOADING</span>
     <div id="clock" class="clock" aria-label="Malaysia time">--:--:-- MYT</div>
   </div>
+  <div class="cycle" aria-hidden="true"><span id="cycleBar" class="cycle-fill w0" data-w="0"></span></div>
 </header>
 
 <p class="banner">
@@ -35,10 +38,14 @@
   Paper only · no orders · no keys
 </p>
 
+<div class="ticks">
+  <span class="ticks-kicker">Recent ticks</span>
+  <div id="tickList" class="tick-list"><span class="tick muted">No price changes yet this session.</span></div>
+</div>
+
 <div class="statusline">
   <span>Prices <b id="updated">—</b></span>
   <span>Markets list <b id="eventsUpdated">—</b></span>
-  <span id="next"></span>
 </div>
 <div id="error" class="error" hidden></div>
 
@@ -160,7 +167,8 @@
 
 <section class="panel">
   <h2>Paper ledger</h2>
-  <p class="muted small">Hypothetical fills from the monitor's own ledger. Data as of <b id="paperAsOf">—</b>.</p>
+  <p class="snap" id="paperSnap">snapshot · updated —</p>
+  <p class="muted small">Hypothetical fills from the monitor's own ledger. Ledger as of <b id="paperAsOf">—</b>.</p>
   <div class="cards" id="paperCards"></div>
   <div class="spark-box">
     <div class="spark-label">Equity</div>
@@ -175,7 +183,8 @@
 <section class="panel">
   <h2>Airdrop watch</h2>
   <p class="warn small">These are tokenless projects that might airdrop one day. Nothing here is confirmed and nothing has been claimed. Never connect a wallet to a claim page from a link someone sends you; only trust the project's own announcement.</p>
-  <p class="muted small">Data as of <b id="airAsOf">—</b> · source: DefiLlama tokenless list.</p>
+  <p class="snap" id="airSnap">snapshot · updated —</p>
+  <p class="muted small">Watchlist as of <b id="airAsOf">—</b> · source: DefiLlama tokenless list.</p>
   <div id="airdrops" class="airlist"></div>
 </section>
 
@@ -186,7 +195,7 @@
     <li>Fee = shares × feeRate × price × (1 − price). Crypto 0.07, Sports 0.05, Finance/Politics 0.04, Geopolitics 0 (<a href="https://docs.polymarket.com/trading/fees" rel="noopener noreferrer" target="_blank">Polymarket fee docs</a>).</li>
     <li>An edge is only flagged at ≥ 300 bps after fees, and it is re-checked after slippage (10 shares, +50 bps per leg).</li>
     <li>Baskets only count when every outcome has a price. Incomplete ones are skipped.</li>
-    <li>Prices refresh every 60 s; the market list every 5 min. Refreshing pauses when this tab is hidden and backs off after errors.</li>
+    <li>Prices refresh every 10 s; the market list every 5 min. Refreshing pauses when this tab is hidden and backs off after errors.</li>
     <li>Kill switch: when the desk's STOP file is set, this page shows PAUSED and stops fetching.</li>
     <li>Expect almost no tradable edges. This is a watcher, not a money-maker.</li>
   </ul>
@@ -195,6 +204,6 @@
 <footer class="muted small">Built <span id="builtAt">—</span> · Public sources: gamma-api.polymarket.com, clob.polymarket.com, DefiLlama.</footer>
 </div>
 <script src="edges.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=__ASSET__"></script>
 </body>
 </html>

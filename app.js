@@ -5,14 +5,16 @@
   "use strict";
   var GAMMA = "https://gamma-api.polymarket.com/events";
   var BOOKS = "https://clob.polymarket.com/books";
-  var PRICE_MS = 60000, EVENTS_MS = 300000, STATIC_MS = 600000, MAX_BACKOFF_MS = 600000;
+  var PRICE_MS = 10000, EVENTS_MS = 300000, STATIC_MS = 600000, MAX_BACKOFF_MS = 600000;
   var MYT = "Asia/Kuala_Lumpur";
   var SVG = "http://www.w3.org/2000/svg";
   var GAUGE_C = 2 * Math.PI * 46;
 
   var st = { events: null, eventsAt: 0, booksAt: 0, books: null, rows: [], tab: "binary_complement",
              sortKey: "edge_bps", sortDir: -1, fails: 0, timer: null, paused: false,
-             staticAt: 0, busy: false, counts: null };
+             staticAt: 0, busy: false, counts: null, shown: {}, asks: {}, ticks: [],
+             widths: {}, cycleChanges: 0, nextAt: 0, cycleMs: PRICE_MS, refreshing: false,
+             builtMs: null, builtLabel: "" };
 
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
@@ -80,7 +82,13 @@
       getJSON("airdrops.json" + v).catch(function () { return null; })
     ]).then(function (r) {
       st.staticAt = Date.now();
-      if (r[0]) { st.paused = !!r[0].paused; $("builtAt").textContent = r[0].built_at_myt || "—"; }
+      if (r[0]) {
+        st.paused = !!r[0].paused;
+        $("builtAt").textContent = r[0].built_at_myt || "—";
+        st.builtLabel = r[0].built_at_myt || "—";
+        st.builtMs = parseMYT(r[0].built_at_myt);
+        renderSnaps();
+      }
       if (r[1]) renderPaper(r[1]);
       if (r[2]) renderAirdrops(r[2]);
     });
@@ -89,9 +97,13 @@
   function refresh() {
     if (st.busy) return Promise.resolve();
     st.busy = true;
+    st.refreshing = true;
+    st.cycleChanges = 0;
+    setWidthClass($("cycleBar"), 100, false);
+    paintCountdown();
     var p = Date.now() - st.staticAt > STATIC_MS ? loadStatic() : Promise.resolve();
     return p.then(function () {
-      if (st.paused) { badge(); return; }
+      if (st.paused) { badge(); $("cycleChanges").textContent = "changes this cycle: 0"; return; }
       var needEvents = !st.events || Date.now() - st.eventsAt > EVENTS_MS;
       return (needEvents ? fetchEvents().then(function (ev) { if (ev.length) { st.events = ev; st.eventsAt = Date.now(); } }) : Promise.resolve())
         .then(function () {
@@ -113,6 +125,7 @@
       st.fails++;
       var err = $("error"); err.hidden = false;
       err.textContent = "Refresh failed (" + (e && e.message ? e.message : "network") + "). Retrying with back-off; last good data stays on screen.";
+      $("cycleChanges").textContent = "changes this cycle: 0";
     }).then(function () { st.busy = false; badge(); schedule(); });
   }
 
@@ -120,8 +133,12 @@
   function schedule() {
     clearTimeout(st.timer);
     var d = st.paused ? STATIC_MS : delay();
+    st.cycleMs = d;
+    st.nextAt = Date.now() + d;
+    st.refreshing = false;
+    setWidthClass($("cycleBar"), 0, true);
     st.timer = setTimeout(function () { if (document.hidden) { schedule(); return; } refresh(); }, d);
-    $("next").textContent = (st.paused ? "checking kill switch again in " : "next refresh in ~") + Math.round(d / 1000) + " s";
+    paintCountdown();
   }
   function badge() {
     var b = $("badge");
@@ -138,6 +155,113 @@
     var node = $("clock");
     node.textContent = fmtClock(now.getTime()) + " MYT";
     node.title = fmtMYT(now.getTime());
+    paintCountdown();
+    renderSnaps();
+  }
+  function parseMYT(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/.exec(String(s || ""));
+    if (!m) return null;
+    return Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4] - 8, +m[5], +(m[6] || 0));
+  }
+  function agePhrase(ms) {
+    var sec = Math.max(0, Math.floor((Date.now() - ms) / 1000));
+    if (sec < 60) return sec + "s ago";
+    var min = Math.floor(sec / 60);
+    if (min < 60) return min + "m ago";
+    var hr = Math.floor(min / 60);
+    if (hr < 48) return hr + "h ago";
+    return Math.floor(hr / 24) + "d ago";
+  }
+  function renderSnaps() {
+    if (!$("paperSnap")) return;
+    var label = st.builtLabel || "—";
+    var age = st.builtMs != null ? " (" + agePhrase(st.builtMs) + ")" : "";
+    var text = "snapshot · updated " + label + age;
+    $("paperSnap").textContent = text;
+    $("airSnap").textContent = text;
+  }
+  function setWidthClass(node, pct, instant) {
+    if (!node) return;
+    var n = Math.max(0, Math.min(100, Math.round(pct)));
+    var prev = node.getAttribute("data-w");
+    if (prev === String(n) && !instant) return;
+    if (instant) node.classList.add("notrans");
+    if (prev !== null) node.classList.remove("w" + prev);
+    node.classList.add("w" + n);
+    node.setAttribute("data-w", String(n));
+    if (instant) { void node.offsetWidth; node.classList.remove("notrans"); }
+  }
+  function paintCountdown() {
+    var node = $("countdown");
+    if (!node) return;
+    if (st.refreshing) { node.textContent = "updating…"; return; }
+    if (!st.nextAt) { node.textContent = "next update in —s"; return; }
+    var left = Math.max(0, Math.ceil((st.nextAt - Date.now()) / 1000));
+    node.textContent = "next update in " + left + "s";
+    var dur = st.cycleMs || PRICE_MS;
+    var gone = dur - (st.nextAt - Date.now());
+    setWidthClass($("cycleBar"), Math.max(0, Math.min(100, gone / dur * 100)), false);
+  }
+  function flash(node, dir) {
+    node.classList.remove("flash-up", "flash-down");
+    void node.offsetWidth;
+    node.classList.add(dir > 0 ? "flash-up" : "flash-down");
+  }
+  function note(key, node, text, num) {
+    var prev = st.shown[key];
+    st.shown[key] = { text: text, num: num };
+    if (node) node.textContent = text;
+    if (!prev || prev.text === text) return;
+    if (prev.text === "—" || text === "—") return;
+    if (typeof prev.num === "number" && typeof num === "number" && isFinite(prev.num) && isFinite(num) && prev.num !== num) {
+      if (node) flash(node, num > prev.num ? 1 : -1);
+    }
+    st.cycleChanges++;
+  }
+  function rowKey(r) {
+    return r.kind + "|" + (r.event_slug || "") + "|" + (r.market_slug || "") + "|" + (r.question || "");
+  }
+  function shortName(text) {
+    var s = String(text || "Market").replace(/\s+/g, " ").trim();
+    return s.length > 32 ? s.slice(0, 31) + "…" : s;
+  }
+  function legName(r, i) {
+    var base = shortName(r.kind === "negrisk_basket" ? (r.event_title || r.question) : (r.question || r.event_title));
+    if (r.kind === "binary_complement") return base + (i === 0 ? " Yes" : " No");
+    return base + " L" + (i + 1);
+  }
+  function px3(n) { return Math.round(n * 1000) / 1000; }
+  function renderTicks() {
+    var box = $("tickList");
+    if (!box) return;
+    box.textContent = "";
+    if (!st.ticks.length) {
+      box.appendChild(el("span", "tick muted", "No price changes yet this session."));
+      return;
+    }
+    st.ticks.forEach(function (t) {
+      var chip = el("span", "tick " + (t.newP > t.oldP ? "up" : "down"));
+      chip.appendChild(el("b", null, t.name));
+      chip.appendChild(document.createTextNode(" " + t.oldP.toFixed(3) + " → " + t.newP.toFixed(3) + "  " + fmtClock(t.at)));
+      box.appendChild(chip);
+    });
+  }
+  function collectTicks() {
+    var fresh = [], seenTok = {};
+    (st.rows || []).forEach(function (r) {
+      (r.leg_tokens || []).forEach(function (tok, i) {
+        if (!tok || seenTok[tok] || !st.books) return;
+        seenTok[tok] = 1;
+        var levels = bookLevels(st.books[tok], "asks");
+        if (!levels.length) return;
+        var ask = px3(levels[0].price);
+        var prev = st.asks[tok];
+        if (typeof prev === "number" && prev !== ask) fresh.push({ name: legName(r, i), oldP: prev, newP: ask, at: Date.now() });
+        st.asks[tok] = ask;
+      });
+    });
+    if (fresh.length) st.ticks = fresh.concat(st.ticks).slice(0, 10);
+    renderTicks();
   }
 
   function bestEdge() {
@@ -165,23 +289,25 @@
 
   function render() {
     var c = st.counts || {};
-    $("cEvents").textContent = c.events != null ? c.events : "—";
-    $("cMarkets").textContent = c.markets != null ? c.markets : "—";
-    $("cBinary").textContent = c.binary != null ? c.binary : "—";
-    $("cBaskets").textContent = c.baskets != null ? c.baskets : "—";
-    $("cSkipped").textContent = c.skipped != null ? c.skipped : "—";
-    $("cPass").textContent = c.pass != null ? c.pass : "—";
-    $("cStill").textContent = c.still != null ? c.still : "—";
+    note("kpiEvents", $("cEvents"), c.events != null ? String(c.events) : "—", c.events);
+    note("kpiMarkets", $("cMarkets"), c.markets != null ? String(c.markets) : "—", c.markets);
+    note("kpiBinary", $("cBinary"), c.binary != null ? String(c.binary) : "—", c.binary);
+    note("kpiBaskets", $("cBaskets"), c.baskets != null ? String(c.baskets) : "—", c.baskets);
+    note("kpiSkipped", $("cSkipped"), c.skipped != null ? String(c.skipped) : "—", c.skipped);
+    note("kpiPass", $("cPass"), c.pass != null ? String(c.pass) : "—", c.pass);
+    note("kpiStill", $("cStill"), c.still != null ? String(c.still) : "—", c.still);
     tone($("cPass"), c.pass || 0);
     tone($("kpiPass"), c.pass || 0);
     var best = bestEdge();
-    $("cBest").textContent = best === null ? "—" : bps(best);
+    note("kpiBest", $("cBest"), best === null ? "—" : bps(best), best);
     tone($("cBest"), best || 0);
     tone($("kpiBest"), best || 0);
     badge();
+    collectTicks();
     renderGauge();
     renderDepth();
     renderTable();
+    $("cycleChanges").textContent = "changes this cycle: " + st.cycleChanges;
   }
 
   function renderGauge() {
@@ -197,7 +323,7 @@
     var pct = pos / scanned * 100;
     var shown = Math.max(0, Math.min(100, pct));
     var rounded = Math.round(shown * 10) / 10;
-    $("gaugePct").textContent = (rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(1)) + "%";
+    note("gauge", $("gaugePct"), (rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(1)) + "%", shown);
     $("gaugeMeta").textContent = pos + " of " + scanned + " scanned markets have a positive net edge (baskets count each outcome).";
     arc.setAttribute("stroke-dasharray", String(GAUGE_C));
     arc.setAttribute("stroke-dashoffset", String(GAUGE_C * (1 - shown / 100)));
@@ -254,33 +380,40 @@
     out.sort(function (a, b) { return side === "asks" ? a.price - b.price : b.price - a.price; });
     return out;
   }
-  function bar(pct, kind) {
-    var svg = document.createElementNS(SVG, "svg");
-    svg.setAttribute("class", "bar");
-    svg.setAttribute("viewBox", "0 0 100 8");
-    svg.setAttribute("preserveAspectRatio", "none");
-    var track = document.createElementNS(SVG, "rect");
-    track.setAttribute("class", "bar-track");
-    track.setAttribute("width", "100"); track.setAttribute("height", "8"); track.setAttribute("rx", "4");
-    var fill = document.createElementNS(SVG, "rect");
-    fill.setAttribute("class", kind === "bid" ? "bar-bid" : "bar-ask");
-    fill.setAttribute("width", String(Math.max(1.5, Math.min(100, pct))));
-    fill.setAttribute("height", "8"); fill.setAttribute("rx", "4");
-    svg.appendChild(track); svg.appendChild(fill);
-    return svg;
+  function bar(pct, kind, key) {
+    var n = Math.max(0, Math.min(100, Math.round(pct)));
+    var prev = st.widths[key];
+    var start = prev == null ? n : prev;
+    var fill = el("span", "bar-fill " + (kind === "bid" ? "bid" : "ask") + " w" + start);
+    var wrap = el("div", "bar");
+    wrap.appendChild(fill);
+    st.widths[key] = n;
+    if (prev != null && prev !== n) {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          fill.classList.remove("w" + start);
+          fill.classList.add("w" + n);
+        });
+      });
+    }
+    return wrap;
   }
-  function ladder(levels, kind) {
+  function ladder(levels, kind, keyPrefix) {
     var box = el("div");
     box.appendChild(el("div", "side-label", kind === "bid" ? "BIDS" : "ASKS"));
     if (!levels.length) { box.appendChild(el("p", "muted small", "none")); return box; }
     var max = 0;
     levels.forEach(function (lv) { if (lv.size > max) max = lv.size; });
     var list = el("div", "ladder");
-    levels.forEach(function (lv) {
+    levels.forEach(function (lv, i) {
       var row = el("div", "lvl " + kind);
-      row.appendChild(el("span", "px", lv.price.toFixed(3)));
-      row.appendChild(bar(max ? lv.size / max * 100 : 0, kind));
-      row.appendChild(el("span", "sz", qty(lv.size)));
+      var px = el("span", "px");
+      note(keyPrefix + "|" + kind + "|" + i + "|px", px, lv.price.toFixed(3), lv.price);
+      row.appendChild(px);
+      row.appendChild(bar(max ? lv.size / max * 100 : 0, kind, keyPrefix + "|" + kind + "|" + i));
+      var sz = el("span", "sz");
+      note(keyPrefix + "|" + kind + "|" + i + "|sz", sz, qty(lv.size), lv.size);
+      row.appendChild(sz);
       list.appendChild(row);
     });
     box.appendChild(list);
@@ -296,7 +429,9 @@
       return;
     }
     name.textContent = row.question || row.event_title || "Top edge";
-    pills.appendChild(el("span", netClass(row.edge_bps), bps(row.edge_bps) + " bps"));
+    var edgePill = el("span", netClass(row.edge_bps));
+    note(rowKey(row) + "|depthbps", edgePill, bps(row.edge_bps) + " bps", row.edge_bps);
+    pills.appendChild(edgePill);
     pills.appendChild(el("span", catClass(categoryLabel(row)), categoryLabel(row)));
     pills.appendChild(el("span", "pill side " + (row.kind === "negrisk_basket" ? "basket" : "yn"), row.kind === "negrisk_basket" ? "BASKET" : "YES+NO"));
     var tokens = row.leg_tokens || [];
@@ -313,10 +448,13 @@
       shown.forEach(function (lg) { if (lg.best.size > max) max = lg.best.size; });
       var list = el("div", "ladder");
       shown.forEach(function (lg) {
+        var tok = tokens[lg.i];
         var line = el("div", "lvl ask leg");
         line.appendChild(el("span", "px", "L" + (lg.i + 1)));
-        line.appendChild(bar(max ? lg.best.size / max * 100 : 0, "ask"));
-        line.appendChild(el("span", "sz", lg.best.price.toFixed(3) + " · " + qty(lg.best.size)));
+        line.appendChild(bar(max ? lg.best.size / max * 100 : 0, "ask", tok + "|leg"));
+        var sz = el("span", "sz");
+        note(tok + "|legtxt", sz, lg.best.price.toFixed(3) + " · " + qty(lg.best.size), lg.best.price);
+        line.appendChild(sz);
         list.appendChild(line);
       });
       body.appendChild(list);
@@ -328,8 +466,8 @@
       var card = el("div", "book");
       card.appendChild(el("h3", null, row.kind === "binary_complement" ? (i === 0 ? "Yes" : "No") : "Leg " + (i + 1)));
       if (!book) { card.appendChild(el("p", "muted small", "No book")); grid.appendChild(card); return; }
-      card.appendChild(ladder(bookLevels(book, "asks").slice(0, 5), "ask"));
-      card.appendChild(ladder(bookLevels(book, "bids").slice(0, 5), "bid"));
+      card.appendChild(ladder(bookLevels(book, "asks").slice(0, 5), "ask", tok + "|ask"));
+      card.appendChild(ladder(bookLevels(book, "bids").slice(0, 5), "bid", tok + "|bid"));
       grid.appendChild(card);
     });
     body.appendChild(grid);
@@ -358,15 +496,27 @@
       td.appendChild(pills);
       tr.appendChild(td);
       var net = el("td", "num");
-      net.appendChild(el("span", netClass(r.edge_bps), bps(r.edge_bps)));
+      var netPill = el("span", netClass(r.edge_bps));
+      note(rowKey(r) + "|edge", netPill, bps(r.edge_bps), r.edge_bps);
+      net.appendChild(netPill);
       tr.appendChild(net);
       var rateTxt = r.kind === "negrisk_basket" ? (new Set(r.fee_rates).size === 1 ? String(r.fee_rates[0]) : "mixed") : String(r.fee_rate);
-      tr.appendChild(el("td", "num", rateTxt));
-      tr.appendChild(el("td", "num", r.sum_ask.toFixed(3)));
-      tr.appendChild(el("td", "num " + cls(r.edge_bps_pre_fee), bps(r.edge_bps_pre_fee)));
+      var rateTd = el("td", "num");
+      note(rowKey(r) + "|fee", rateTd, rateTxt, r.fee_rates[0]);
+      tr.appendChild(rateTd);
+      var costTd = el("td", "num");
+      note(rowKey(r) + "|cost", costTd, r.sum_ask.toFixed(3), r.sum_ask);
+      tr.appendChild(costTd);
+      var preTd = el("td", "num " + cls(r.edge_bps_pre_fee));
+      note(rowKey(r) + "|pre", preTd, bps(r.edge_bps_pre_fee), r.edge_bps_pre_fee);
+      tr.appendChild(preTd);
       var slipTxt = r.edge_bps_after_slip === null ? "thin book" : bps(r.edge_bps_after_slip);
-      tr.appendChild(el("td", "num " + cls(r.edge_bps_after_slip), slipTxt));
-      tr.appendChild(el("td", "num", money(r.volume24hr)));
+      var slipTd = el("td", "num " + cls(r.edge_bps_after_slip));
+      note(rowKey(r) + "|slip", slipTd, slipTxt, r.edge_bps_after_slip);
+      tr.appendChild(slipTd);
+      var volTd = el("td", "num");
+      note(rowKey(r) + "|vol", volTd, money(r.volume24hr), r.volume24hr);
+      tr.appendChild(volTd);
       ["", "Net edge", "Fee rate", "Cost (asks)", "Before fees", "After slippage", "24h vol"].forEach(function (label, i) {
         if (label) tr.children[i].setAttribute("data-label", label);
       });
