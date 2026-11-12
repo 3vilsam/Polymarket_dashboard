@@ -7,7 +7,7 @@
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="dark">
 <title>Polymarket &amp; Airdrop Monitor (paper only)</title>
-<link rel="stylesheet" href="style.css?v=8caa9a6">
+<link rel="stylesheet" href="style.css?v=__ASSET__">
 </head>
 <body>
 <div class="shell">
@@ -47,6 +47,7 @@
   <span>Prices <b id="updated">—</b></span>
   <span>Markets list <b id="eventsUpdated">—</b></span>
 </div>
+<div id="mirrorNote" class="note" hidden></div>
 <div id="error" class="error" hidden></div>
 
 <section class="kpis" aria-label="Summary">
@@ -195,7 +196,7 @@
     <li>Fee = shares × feeRate × price × (1 − price). Crypto 0.07, Sports 0.05, Finance/Politics 0.04, Geopolitics 0 (<a href="https://docs.polymarket.com/trading/fees" rel="noopener noreferrer" target="_blank">Polymarket fee docs</a>).</li>
     <li>An edge is only flagged at ≥ 300 bps after fees, and it is re-checked after slippage (10 shares, +50 bps per leg).</li>
     <li>Baskets only count when every outcome has a price. Incomplete ones are skipped.</li>
-    <li>Prices refresh every 10 s; the market list every 5 min. Refreshing pauses when this tab is hidden and backs off after errors.</li>
+    <li>Prices refresh every 10 s directly from Polymarket, with a 6 s timeout. If that host does not answer, the page reads data/live.json (a public mirror built by GitHub Actions about every 5 min) and polls it every 60 s, retrying the direct host every 5 min. The market list refreshes every 5 min on a direct connection. Refreshing pauses when this tab is hidden and backs off after errors.</li>
     <li>Kill switch: when the desk's STOP file is set, this page shows PAUSED and stops fetching.</li>
     <li>Expect almost no tradable edges. This is a watcher, not a money-maker.</li>
   </ul>
@@ -204,6 +205,6 @@
 <footer class="muted small">Built <span id="builtAt">—</span> · Public sources: gamma-api.polymarket.com, clob.polymarket.com, DefiLlama.</footer>
 </div>
 <script src="edges.js"></script>
-<script src="app.js?v=8caa9a6"></script>
+<script src="app.js?v=__ASSET__"></script>
 </body>
 </html>

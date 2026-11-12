@@ -6,6 +6,7 @@
   var GAMMA = "https://gamma-api.polymarket.com/events";
   var BOOKS = "https://clob.polymarket.com/books";
   var PRICE_MS = 10000, EVENTS_MS = 300000, STATIC_MS = 600000, MAX_BACKOFF_MS = 600000;
+  var MIRROR_MS = 60000, DIRECT_RETRY_MS = 300000, DIRECT_TIMEOUT_MS = 6000;
   var MYT = "Asia/Kuala_Lumpur";
   var SVG = "http://www.w3.org/2000/svg";
   var GAUGE_C = 2 * Math.PI * 46;
@@ -14,7 +15,7 @@
              sortKey: "edge_bps", sortDir: -1, fails: 0, timer: null, paused: false,
              staticAt: 0, busy: false, counts: null, shown: {}, asks: {}, ticks: [],
              widths: {}, cycleChanges: 0, nextAt: 0, cycleMs: PRICE_MS, refreshing: false,
-             builtMs: null, builtLabel: "" };
+             builtMs: null, builtLabel: "", mode: "", mirrorAt: 0, lastDirectTry: 0, fetchedAt: 0 };
 
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
@@ -41,12 +42,29 @@
     return fetch(url, { method: "GET", credentials: "omit", cache: "no-store", referrerPolicy: "no-referrer" })
       .then(function (r) { if (!r.ok) throw new Error(url.split("?")[0] + " HTTP " + r.status); return r.json(); });
   }
+  function polymarketJSON(url, options) {
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, DIRECT_TIMEOUT_MS);
+    var opts = options || {};
+    opts.signal = ctrl.signal;
+    opts.credentials = "omit";
+    opts.cache = "no-store";
+    opts.referrerPolicy = "no-referrer";
+    return fetch(url, opts).then(function (r) {
+      clearTimeout(timer);
+      if (!r.ok) throw new Error(url.split("?")[0] + " HTTP " + r.status);
+      return r.json();
+    }, function (e) {
+      clearTimeout(timer);
+      throw (e && e.name === "AbortError") ? new Error("timed out") : e;
+    });
+  }
 
   function fetchEvents() {
     var out = [], page = 0;
     function next() {
       var url = GAMMA + "?active=true&closed=false&limit=100&offset=" + page * 100 + "&order=volume24hr&ascending=false";
-      return getJSON(url).then(function (batch) {
+      return polymarketJSON(url).then(function (batch) {
         if (!Array.isArray(batch) || !batch.length) return out;
         out = out.concat(batch); page++;
         if (batch.length < 100 || page >= 3) return out;
@@ -64,10 +82,8 @@
     for (var i = 0; i < uniq.length; i += 100) chunks.push(uniq.slice(i, i + 100));
     return chunks.reduce(function (p, chunk) {
       return p.then(function () {
-        return fetch(BOOKS, { method: "POST", credentials: "omit", cache: "no-store", referrerPolicy: "no-referrer",
-          headers: { "Content-Type": "application/json" },
+        return polymarketJSON(BOOKS, { method: "POST", headers: { "Content-Type": "application/json" },
           body: JSON.stringify(chunk.map(function (t) { return { token_id: t }; })) })
-          .then(function (r) { if (!r.ok) throw new Error("CLOB books HTTP " + r.status); return r.json(); })
           .then(function (res) { (res || []).forEach(function (b) { if (b && b.asset_id) books[String(b.asset_id)] = b; }); })
           .then(function () { return new Promise(function (r) { setTimeout(r, 150); }); });
       });
@@ -94,6 +110,82 @@
     });
   }
 
+  function hideMirrorNote() {
+    var n = $("mirrorNote");
+    if (n) n.hidden = true;
+  }
+  function showMirrorNote(data) {
+    var n = $("mirrorNote");
+    if (!n) return;
+    $("error").hidden = true;
+    n.hidden = false;
+    var when = (data && (data.generated_at_myt || data.generated_at_utc)) || "the last Actions run";
+    n.textContent = "Polymarket did not answer in time. Showing the same-origin mirror from " + when + ".";
+  }
+  function shouldTryDirect() {
+    if (st.mode !== "mirror") return true;
+    return Date.now() - (st.lastDirectTry || 0) >= DIRECT_RETRY_MS;
+  }
+  function applyDirect(events, eventsAt, books, res, jobs) {
+    st.events = events;
+    st.eventsAt = eventsAt;
+    st.rows = res.rows;
+    st.books = books;
+    st.booksAt = Date.now();
+    st.fetchedAt = st.booksAt;
+    st.fails = 0;
+    st.mode = "direct";
+    st.mirrorAt = 0;
+    st.counts = { events: events.length, markets: PM.countMarkets(events),
+      binary: res.rows.filter(function (r) { return r.kind === "binary_complement"; }).length,
+      baskets: res.rows.filter(function (r) { return r.kind === "negrisk_basket"; }).length,
+      skipped: jobs.skippedCap + res.skippedBooks, pass: res.nPass,
+      still: res.rows.filter(function (r) { return r.passes_300bps && r.still_ge_300; }).length };
+    $("error").hidden = true;
+    hideMirrorNote();
+    render();
+  }
+  function directScan() {
+    var events = st.events, eventsAt = st.eventsAt;
+    var needEvents = !events || Date.now() - eventsAt > EVENTS_MS;
+    return (needEvents ? fetchEvents().then(function (ev) {
+      if (ev && ev.length) { events = ev; eventsAt = Date.now(); }
+    }) : Promise.resolve()).then(function () {
+      if (!events) throw new Error("no events from Gamma");
+      var jobs = PM.collectJobs(events);
+      return fetchBooks(jobs.tokens).then(function (books) {
+        return { events: events, eventsAt: eventsAt, books: books, res: PM.evaluate(jobs, books), jobs: jobs };
+      });
+    }).then(function (pack) {
+      applyDirect(pack.events, pack.eventsAt, pack.books, pack.res, pack.jobs);
+    });
+  }
+  function mirrorWhen(data) {
+    var t = data && Date.parse(data.generated_at_utc);
+    if (t && !isNaN(t)) return t;
+    return parseMYT(data && data.generated_at_myt);
+  }
+  function applyMirror(data) {
+    if (!data || !Array.isArray(data.edges)) throw new Error("mirror has no edges");
+    var when = mirrorWhen(data);
+    if (when == null || isNaN(when)) throw new Error("mirror has no timestamp");
+    var c = data.counts || {};
+    st.rows = data.edges;
+    st.books = data.books && typeof data.books === "object" ? data.books : {};
+    st.counts = { events: c.events, markets: c.markets, binary: c.binary, baskets: c.baskets, skipped: c.skipped, pass: c.pass, still: c.still };
+    st.booksAt = when;
+    st.eventsAt = when;
+    st.mirrorAt = when;
+    st.fetchedAt = Date.now();
+    st.fails = 0;
+    st.mode = "mirror";
+    $("error").hidden = true;
+    showMirrorNote(data);
+    render();
+  }
+  function loadMirror() {
+    return getJSON("data/live.json?t=" + Date.now()).then(applyMirror);
+  }
   function refresh() {
     if (st.busy) return Promise.resolve();
     st.busy = true;
@@ -104,32 +196,26 @@
     var p = Date.now() - st.staticAt > STATIC_MS ? loadStatic() : Promise.resolve();
     return p.then(function () {
       if (st.paused) { badge(); $("cycleChanges").textContent = "changes this cycle: 0"; return; }
-      var needEvents = !st.events || Date.now() - st.eventsAt > EVENTS_MS;
-      return (needEvents ? fetchEvents().then(function (ev) { if (ev.length) { st.events = ev; st.eventsAt = Date.now(); } }) : Promise.resolve())
-        .then(function () {
-          if (!st.events) throw new Error("no events from Gamma");
-          var jobs = PM.collectJobs(st.events);
-          return fetchBooks(jobs.tokens).then(function (books) {
-            var res = PM.evaluate(jobs, books);
-            st.rows = res.rows; st.books = books; st.booksAt = Date.now(); st.fails = 0;
-            st.counts = { events: st.events.length, markets: PM.countMarkets(st.events),
-              binary: res.rows.filter(function (r) { return r.kind === "binary_complement"; }).length,
-              baskets: res.rows.filter(function (r) { return r.kind === "negrisk_basket"; }).length,
-              skipped: jobs.skippedCap + res.skippedBooks, pass: res.nPass,
-              still: res.rows.filter(function (r) { return r.passes_300bps && r.still_ge_300; }).length };
-            $("error").hidden = true;
-            render();
-          });
+      if (shouldTryDirect()) {
+        st.lastDirectTry = Date.now();
+        return directScan().catch(function (directErr) {
+          return loadMirror().catch(function () { throw directErr; });
         });
+      }
+      return loadMirror();
     }).catch(function (e) {
       st.fails++;
+      hideMirrorNote();
       var err = $("error"); err.hidden = false;
-      err.textContent = "Refresh failed (" + (e && e.message ? e.message : "network") + "). Retrying with back-off; last good data stays on screen.";
+      err.textContent = "Refresh failed (" + (e && e.message ? e.message : "network") + "). Mirror unavailable. Retrying with back-off; last good data stays on screen.";
       $("cycleChanges").textContent = "changes this cycle: 0";
     }).then(function () { st.busy = false; badge(); schedule(); });
   }
 
-  function delay() { return st.fails ? Math.min(PRICE_MS * Math.pow(2, st.fails), MAX_BACKOFF_MS) : PRICE_MS; }
+  function delay() {
+    var base = st.mode === "mirror" ? MIRROR_MS : PRICE_MS;
+    return st.fails ? Math.min(base * Math.pow(2, st.fails), MAX_BACKOFF_MS) : base;
+  }
   function schedule() {
     clearTimeout(st.timer);
     var d = st.paused ? STATIC_MS : delay();
@@ -140,10 +226,20 @@
     st.timer = setTimeout(function () { if (document.hidden) { schedule(); return; } refresh(); }, d);
     paintCountdown();
   }
+  function ageShort(ms) {
+    var sec = Math.max(0, Math.floor((Date.now() - ms) / 1000));
+    if (sec < 60) return sec + "s";
+    var min = Math.floor(sec / 60);
+    if (min < 60) return min + "m";
+    var hr = Math.floor(min / 60);
+    if (hr < 48) return hr + "h";
+    return Math.floor(hr / 24) + "d";
+  }
   function badge() {
     var b = $("badge");
     if (st.paused) { b.className = "pill paused"; b.textContent = "PAUSED"; }
-    else if (st.booksAt && Date.now() - st.booksAt < 150000) { b.className = "pill live"; b.textContent = "LIVE"; }
+    else if (st.mode === "mirror" && st.mirrorAt) { b.className = "pill mirror"; b.textContent = "MIRROR · data " + ageShort(st.mirrorAt) + " old"; }
+    else if (st.mode === "direct" && st.booksAt && Date.now() - st.booksAt < 150000) { b.className = "pill live"; b.textContent = "LIVE"; }
     else if (st.booksAt) { b.className = "pill stale"; b.textContent = "STALE"; }
     else { b.className = "pill wait"; b.textContent = "LOADING"; }
     $("updated").textContent = fmtMYT(st.booksAt);
@@ -157,6 +253,7 @@
     node.title = fmtMYT(now.getTime());
     paintCountdown();
     renderSnaps();
+    if (st.mode === "mirror") badge();
   }
   function parseMYT(s) {
     var m = /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2}))?/.exec(String(s || ""));
@@ -658,7 +755,8 @@
       });
     });
     document.addEventListener("visibilitychange", function () {
-      if (!document.hidden && Date.now() - st.booksAt > PRICE_MS && !st.busy) refresh();
+      var gap = st.mode === "mirror" ? MIRROR_MS : PRICE_MS;
+      if (!document.hidden && Date.now() - (st.fetchedAt || 0) > gap && !st.busy) refresh();
     });
     tickClock();
     setInterval(tickClock, 1000);
