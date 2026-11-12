@@ -5,37 +5,138 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://gamma-api.polymarket.com https://clob.polymarket.com; form-action 'none'; base-uri 'none'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="dark">
 <title>Polymarket &amp; Airdrop Monitor (paper only)</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Polymarket &amp; Airdrop Monitor</h1>
-  <div class="sub">Paper only · read-only public data · no keys, no wallets, no orders</div>
-  <div class="statusbar">
-    <span id="badge" class="badge stale">loading</span>
-    <span>Prices: <b id="updated">—</b></span>
-    <span>Markets list: <b id="eventsUpdated">—</b></span>
-    <span id="next" class="muted"></span>
+<div class="shell">
+<header class="topbar">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="24" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M24 8v6M24 34v6M8 24h6M34 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+    </svg>
+    <div>
+      <h1>Polymarket &amp; Airdrop Monitor</h1>
+      <p class="sub">PAPER ONLY · LIVE DATA</p>
+    </div>
   </div>
-  <div id="error" class="error" hidden></div>
+  <div class="top-meta">
+    <span id="badge" class="pill wait">LOADING</span>
+    <div id="clock" class="clock" aria-label="Malaysia time">--:--:-- MYT</div>
+  </div>
 </header>
 
-<main>
-<section class="cards">
-  <div class="card"><div class="n" id="cEvents">—</div><div class="l">events</div></div>
-  <div class="card"><div class="n" id="cMarkets">—</div><div class="l">markets</div></div>
-  <div class="card"><div class="n" id="cBinary">—</div><div class="l">binary checked</div></div>
-  <div class="card"><div class="n" id="cBaskets">—</div><div class="l">baskets checked</div></div>
-  <div class="card"><div class="n" id="cSkipped">—</div><div class="l">skipped</div></div>
-  <div class="card hi"><div class="n" id="cPass">—</div><div class="l">≥300 bps after fees</div></div>
-  <div class="card hi"><div class="n" id="cStill">—</div><div class="l">still ≥300 after slippage</div></div>
+<p class="banner">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+  Paper only · no orders · no keys
+</p>
+
+<div class="statusline">
+  <span>Prices <b id="updated">—</b></span>
+  <span>Markets list <b id="eventsUpdated">—</b></span>
+  <span id="next"></span>
+</div>
+<div id="error" class="error" hidden></div>
+
+<section class="kpis" aria-label="Summary">
+  <article class="kpi neu" id="kpiMarkets">
+    <div class="kpi-label">Markets scanned</div>
+    <div class="kpi-value neu" id="cMarkets">—</div>
+  </article>
+  <article class="kpi neu" id="kpiPass">
+    <div class="kpi-label">Edges ≥ 300 bps</div>
+    <div class="kpi-value neu" id="cPass">—</div>
+  </article>
+  <article class="kpi neu" id="kpiBest">
+    <div class="kpi-label">Best net edge</div>
+    <div class="kpi-value neu" id="cBest">—</div>
+    <div class="kpi-unit">bps, after fees</div>
+  </article>
+  <article class="kpi neu" id="kpiPnl">
+    <div class="kpi-label">Paper P&amp;L</div>
+    <div class="kpi-value neu" id="cPnl">—</div>
+    <div class="kpi-unit">USDC booked</div>
+  </article>
+  <article class="kpi neu" id="kpiTrades">
+    <div class="kpi-label">Paper trades</div>
+    <div class="kpi-value neu" id="cTrades">—</div>
+    <div class="kpi-unit" id="cKept">ledger</div>
+  </article>
+  <article class="kpi neu" id="kpiAir">
+    <div class="kpi-label">Airdrops tracked</div>
+    <div class="kpi-value neu" id="cAir">—</div>
+  </article>
+  <article class="kpi neu" id="kpiRefresh">
+    <div class="kpi-label">Last refresh</div>
+    <div class="kpi-value sm neu" id="cRefresh">—</div>
+    <div class="kpi-unit">MYT</div>
+  </article>
 </section>
 
-<section>
+<section class="tiles" aria-label="Scan detail">
+  <div class="tile">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8v4l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <div><b id="cEvents">—</b><span>events</span></div>
+  </div>
+  <div class="tile">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <div><b id="cBinary">—</b><span>binary checked</span></div>
+  </div>
+  <div class="tile">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l8 4-8 4-8-4 8-4zM4 12l8 4 8-4M4 16l8 4 8-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <div><b id="cBaskets">—</b><span>baskets checked</span></div>
+  </div>
+  <div class="tile">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <div><b id="cSkipped">—</b><span>skipped</span></div>
+  </div>
+  <div class="tile">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    <div><b id="cStill">—</b><span>still ≥300 after slip</span></div>
+  </div>
+</section>
+
+<section class="split">
+  <article class="panel gauge-panel">
+    <h2>Positive net edge</h2>
+    <div class="gauge-wrap">
+      <svg class="gauge" viewBox="0 0 120 120" role="img" aria-labelledby="gaugePct gaugeSub">
+        <defs>
+          <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3ee0ff"/>
+            <stop offset="55%" stop-color="#b06bff"/>
+            <stop offset="100%" stop-color="#ff3d9a"/>
+          </linearGradient>
+        </defs>
+        <circle class="gauge-track" cx="60" cy="60" r="46"></circle>
+        <circle id="gaugeArc" class="gauge-arc" cx="60" cy="60" r="46" stroke-dasharray="289.027" stroke-dashoffset="289.027" transform="rotate(-90 60 60)"></circle>
+      </svg>
+      <div class="gauge-readout">
+        <div class="gauge-pct" id="gaugePct">—</div>
+        <div class="gauge-sub" id="gaugeSub">of markets scanned</div>
+      </div>
+    </div>
+    <p class="muted small" id="gaugeMeta">Share of scanned markets whose checked book has a positive net edge.</p>
+  </article>
+
+  <article class="panel">
+    <h2>Order book</h2>
+    <p class="depth-kicker">Best net edge · public book</p>
+    <h3 class="depth-name" id="depthName">Waiting for books</h3>
+    <div class="depth-pills" id="depthPills"></div>
+    <div id="depthBody" class="depth-body">
+      <p class="muted small">Asks and bids appear after the first CLOB read. Nothing here is an order.</p>
+    </div>
+  </article>
+</section>
+
+<section class="panel">
   <h2>Top edges</h2>
-  <p class="muted small">Edge = what a full set pays (1.00) minus what it costs, in basis points. "After fees" uses the documented taker fee. "After slippage" walks the ask book for 10 shares and adds 50 bps per leg. Only the last column decides anything, and nothing is traded.</p>
+  <p class="muted small">Net edge is what a full set pays (1.00) minus what it costs, after the documented taker fee, in basis points. Slippage walks the ask book for 10 shares and adds 50 bps per leg. Only that check decides a paper keep, and nothing is traded.</p>
   <div class="tabs" role="tablist">
     <button id="tabBinary" class="tab active" type="button">Binary (Yes+No)</button>
     <button id="tabBasket" class="tab" type="button">Baskets (all outcomes)</button>
@@ -44,10 +145,10 @@
     <table id="edges">
       <thead><tr>
         <th data-k="event_title">Market</th>
+        <th data-k="edge_bps" class="num">Net edge ▼</th>
         <th data-k="fee_rate_num" class="num">Fee rate</th>
         <th data-k="sum_ask" class="num">Cost (asks)</th>
         <th data-k="edge_bps_pre_fee" class="num">Before fees</th>
-        <th data-k="edge_bps" class="num">After fees ▼</th>
         <th data-k="edge_bps_after_slip" class="num">After slippage</th>
         <th data-k="volume24hr" class="num">24h vol</th>
       </tr></thead>
@@ -57,36 +158,42 @@
   <p class="muted small" id="edgesNote"></p>
 </section>
 
-<section>
-  <h2>Paper fills (desk ledger snapshot)</h2>
-  <p class="muted small">From the monitor's own paper ledger (hypothetical fills only). Data as of <b id="paperAsOf">—</b>.</p>
+<section class="panel">
+  <h2>Paper ledger</h2>
+  <p class="muted small">Hypothetical fills from the monitor's own ledger. Data as of <b id="paperAsOf">—</b>.</p>
   <div class="cards" id="paperCards"></div>
+  <div class="spark-box">
+    <div class="spark-label">Equity</div>
+    <div id="spark"></div>
+    <p class="muted small" id="sparkNote"></p>
+  </div>
   <div class="tablewrap"><table id="fills"><thead><tr>
     <th>Time (MYT)</th><th>Market</th><th class="num">Scan bps</th><th class="num">After slip bps</th><th class="num">Hypothetical P&amp;L (USDC)</th><th>Kept?</th>
   </tr></thead><tbody></tbody></table></div>
 </section>
 
-<section>
-  <h2>Possible future airdrops (watchlist)</h2>
-  <p class="warn small">These are tokenless projects that <b>might</b> airdrop one day. Nothing here is confirmed and nothing has been claimed. Never connect a wallet to a "claim" page from a link someone sends you; only trust the project's own announcement.</p>
+<section class="panel">
+  <h2>Airdrop watch</h2>
+  <p class="warn small">These are tokenless projects that might airdrop one day. Nothing here is confirmed and nothing has been claimed. Never connect a wallet to a claim page from a link someone sends you; only trust the project's own announcement.</p>
   <p class="muted small">Data as of <b id="airAsOf">—</b> · source: DefiLlama tokenless list.</p>
   <div id="airdrops" class="airlist"></div>
 </section>
 
-<section>
+<section class="panel">
   <h2>Rules</h2>
   <ul class="rules">
     <li>Paper only. No keys, no wallets, no signing, no orders, no claims. This page only reads public data.</li>
     <li>Fee = shares × feeRate × price × (1 − price). Crypto 0.07, Sports 0.05, Finance/Politics 0.04, Geopolitics 0 (<a href="https://docs.polymarket.com/trading/fees" rel="noopener noreferrer" target="_blank">Polymarket fee docs</a>).</li>
-    <li>An edge is only flagged at ≥ 300 bps after fees, and it's re-checked after slippage (10 shares, +50 bps per leg).</li>
+    <li>An edge is only flagged at ≥ 300 bps after fees, and it is re-checked after slippage (10 shares, +50 bps per leg).</li>
     <li>Baskets only count when every outcome has a price. Incomplete ones are skipped.</li>
     <li>Prices refresh every 60 s; the market list every 5 min. Refreshing pauses when this tab is hidden and backs off after errors.</li>
-    <li>Kill switch: when the desk's STOP file is set, this page shows "paused" and stops fetching.</li>
+    <li>Kill switch: when the desk's STOP file is set, this page shows PAUSED and stops fetching.</li>
     <li>Expect almost no tradable edges. This is a watcher, not a money-maker.</li>
   </ul>
 </section>
-</main>
+
 <footer class="muted small">Built <span id="builtAt">—</span> · Public sources: gamma-api.polymarket.com, clob.polymarket.com, DefiLlama.</footer>
+</div>
 <script src="edges.js"></script>
 <script src="app.js"></script>
 </body>
