@@ -3,9 +3,11 @@ name: paper league
 
 on:
   schedule:
-    # GitHub starts this late sometimes (often 5–15 minutes). The engine records a gap
-    # when a tick is more than two intervals behind the previous one.
-    - cron: '*/5 * * * *'
+    # Every 5 minutes, but not at minute 0. GitHub drops or delays schedules that
+    # hit the top of the hour, and on this public repo the Pages cron with the same
+    # */5 pattern has been landing hours apart. The engine records a gap when a tick
+    # is more than two intervals behind the previous one.
+    - cron: '7-57/5 * * * *'
   workflow_dispatch:
 
 permissions:
