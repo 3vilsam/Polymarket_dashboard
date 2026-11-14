@@ -6,7 +6,7 @@ A separate private repo could not be created from this environment (`gh` here is
 
 ## What runs
 
-`.github/workflows/league.yml` cron `*/5 * * * *` plus `workflow_dispatch`. Concurrency group `league` so two ticks do not overlap. Permissions are `contents: write` only. GitHub may start the cron 5–15 minutes late. A tick more than two intervals (10 minutes) after the previous one appends a row to `state/data-gaps.jsonl`. The first tick after the box also appends one row from `2026-11-13T15:21:03.509Z` with reason `box sleep`. Fills are not backfilled. The engine's own virtual-stop replay still runs and is flagged replayed.
+`.github/workflows/league.yml` cron `7-57/5 * * * *` (every 5 minutes, skipping minute 0) plus `workflow_dispatch`. Concurrency group `league` so two ticks do not overlap. Permissions are `contents: write` only. The workflow is active on `main`. GitHub's scheduler on this public repo is best-effort: the Pages workflow uses the same 5-minute idea and its `schedule` runs have been about 4–7 hours apart, not every 5 minutes. A tick more than two intervals (10 minutes) after the previous one appends a row to `state/data-gaps.jsonl`. The first tick after the box also appends one row from `2026-11-13T15:21:03.509Z` with reason `box sleep`. Fills are not backfilled. The engine's own virtual-stop replay still runs and is flagged replayed.
 
 `run_tick.py` copies `state/` into the engine directory, warms `market_cache.json` outside the 60-second snapshot clock (the same idea as `supervise.sh`), runs one `league_v8.py --once`, and copies state back. v7 is used only if v8 still raises a stale-fill guard after that warm.
 
