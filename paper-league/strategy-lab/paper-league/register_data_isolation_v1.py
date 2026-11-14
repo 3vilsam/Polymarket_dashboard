@@ -1,0 +1,33 @@
+#!/usr/bin/env python3
+"""One-shot append-only registration of the data-isolation v1 data-handling rule. No book rules change."""
+import json
+import league as L
+ROOT = L.ROOT
+if (ROOT/'registry/data-isolation-v1.json').exists(): raise SystemExit('Refusing frozen data-isolation v1 overwrite')
+created = L.utc(L.sc.now_ms())
+impl = {p: L.sha(ROOT/p) for p in ['league_v5.py', 'register_data_isolation_v1.py']}
+rule = f'''# data-isolation-v1 (data-handling rule; NOT a risk, sizing or strategy change)
+
+Registered UTC: {created}. Decided by Skippy (desk coordinator) on 12 Nov 2026 after the league repeatedly stalled because Hyperliquid omits 1m candles for minutes with no trades on thin spot pairs (USOL/USDC, UETH/USDC). Takes effect from the first engine tick after registration; never retroactive. The 125 registered books' rules, the v1-v4 manifests and implementation files are unchanged.
+
+## Rule
+1. Each tick, every symbol (BTC, ETH, SOL perps; UBTC, UETH, USOL, HYPE spot) passes or fails its own data check independently: 1m continuity and currency over the frozen 512-bar window, higher-timeframe history, funding prints (perps), L2 reads when scheduled, and a valid mid. Any timeout or error while collecting a symbol fails only that symbol.
+2. A book whose traded symbols include a failed symbol skips the tick: no fills, no entries, no exits, no stop resolution or stop moves, and its own replay cursor is NOT advanced. Symbol sets: v1 research books = BTC/ETH/SOL; BTC hold control = BTC; v2 books = their spec coins; spot books = their pair; v4 books = their coins, plus BTC and ETH for n6-ethbtc-z1h-v1 and all three perps for n7-xsmom72h-v1.
+3. Every skip is appended to data-gaps.jsonl (event data_isolation_skip, with failed symbols, reasons, skipped books and open positions). Open positions in skipped books are listed as stale in heartbeat.json.
+4. Every other book ticks normally through its own frozen v1/v2/v3/v4 code, with the engines' symbol loops restricted to healthy symbols. No candle is fabricated, interpolated or forward-filled.
+5. When a skipped book's symbols pass again, it resumes from its own cursor by replaying only real, contiguity-checked 1m candles. If its cursor is older than the retained 512-bar window, or any replay minute is missing, it stays skipped (reason recorded) and needs review. It never jumps its cursor.
+6. Unchanged global rules: snapshot collection over 60s or crossing a minute boundary fails the whole tick (no stale fills); global reads (perp contexts, allMids) failing fails the whole tick; any failure on the normal (current-cursor) group fails the whole tick closed as before.
+7. Review flag: if a symbol fails the data check in more than 50% of ticks over the trailing 24h (evaluated once at least {30} ticks are in the window), heartbeat.json carries review_flags with alert=true. A flag is a review prompt only; it changes nothing automatically.
+8. warm_cache.py runs with --isolate under the supervisor: a symbol that fails warm-up keeps its previous cache untouched; other symbols still warm. Warm-up still fails if every symbol fails.
+9. DSR trial count is unchanged at 434 (no new books). Promotion bar unchanged. No automatic promotion.
+'''
+path = ROOT/'registry/data-isolation-v1.md'
+with path.open('x') as f: f.write(rule)
+digest = L.sha(path)
+with path.with_suffix('.sha256').open('x') as f: f.write(f'{digest}  {path.name}\n')
+manifest = dict(rule_id='data-isolation-v1', mode='PAPER_ONLY', registered_utc=created, rule_sha256=digest,
+                extension_v4_sha256=L.sha(ROOT/'registry/extension-v4.json'), implementation_sha256=impl,
+                total_league_books=125, total_known_trials=434, retroactive=False)
+with (ROOT/'registry/data-isolation-v1.json').open('x') as f: json.dump(manifest, f, indent=2)
+with (ROOT/'registry/data-isolation-v1.json.sha256').open('x') as f: f.write(L.sha(ROOT/'registry/data-isolation-v1.json')+'  data-isolation-v1.json\n')
+print('Registered data-isolation-v1', digest)

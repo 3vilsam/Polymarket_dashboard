@@ -1,0 +1,481 @@
+{
+  "version": 3,
+  "mode": "PAPER_ONLY",
+  "registered_utc": "2026-11-11T09:15:30.032Z",
+  "original_manifest_sha256": "de7ede5ebf187565a7e6c582412b66660005881e85bd03cfe59133552aedae1a",
+  "extension_v2_sha256": "409738ca51181d616afe106c921b7441d8cbc0624b38c2be30f03fbb4712ce92",
+  "implementation_sha256": {
+    "league_v3.py": "ce690893f699a4233fbbd10a0599f02518f0cf6b7f47e522d745d3384338c4b1",
+    "strategies_v3.py": "0a4f70b6ea54c4a281c0ac9793b7bd5b558a71c1dc1f27ed053818937e22503b",
+    "evaluation_v3.py": "1a4937460915c9b289c4b43db225a934e1d83bdfe23c99209c37ce81dda7768e",
+    "register_v3.py": "dc4ed12e7ae0d328b15de57020cade70b7b47c9e2e6e5ec5ef690912f49faf4a"
+  },
+  "prior_backtest_trials": 309,
+  "prior_league_books": 100,
+  "spot_books": 16,
+  "total_league_books": 116,
+  "total_known_trials": 425,
+  "fee_source": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/fees",
+  "fee_source_retrieved_myt": "2026-11-11",
+  "spot_taker": 0.0007,
+  "spot_maker_documented": 0.0004,
+  "starting_equity": 16.24,
+  "strategies": [
+    {
+      "coins": [
+        "UBTC"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Spot buy-and-hold control; not a tradable strategy",
+      "id": "sp-hold-ubtc-v1",
+      "kind": "spot_hold",
+      "interval": 60000,
+      "hold_ms": 315360000000,
+      "lane": "spot_control",
+      "params": {},
+      "sha256": "89cfeeaf15cf3aa2edfa48773a072523d92ae9ae3c722f74f36d6f0b7cbb83ea"
+    },
+    {
+      "coins": [
+        "UBTC"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-ema15m-ubtc-v1",
+      "kind": "spot_ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "spot_fast",
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "sha256": "33c7ed0425cfdae14b60aa4a54461e21dda0614df0d9f1bbd9949dec65e04b8c"
+    },
+    {
+      "coins": [
+        "UBTC"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-rsi1h-ubtc-v1",
+      "kind": "spot_rsi",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "spot_slow",
+      "params": {
+        "length": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "sha256": "78826903eecddc81e68ca4eafee550f01aafea0190411efcbb446812b4ef0154"
+    },
+    {
+      "coins": [
+        "UBTC"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-donchian5m-ubtc-v1",
+      "kind": "spot_donchian",
+      "interval": 300000,
+      "hold_ms": 14400000,
+      "lane": "spot_fast",
+      "params": {
+        "lookback": 20,
+        "exit_lookback": 10
+      },
+      "sha256": "2b707f1319edb30eb98f67577060cd73afcbb4c144713857d81032e51e817e05"
+    },
+    {
+      "coins": [
+        "UETH"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UETH/USDC",
+      "api_coin": "@151",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Spot buy-and-hold control; not a tradable strategy",
+      "id": "sp-hold-ueth-v1",
+      "kind": "spot_hold",
+      "interval": 60000,
+      "hold_ms": 315360000000,
+      "lane": "spot_control",
+      "params": {},
+      "sha256": "d1e19c22ef1ea587d635cd0335f645ec24e62d1df28e7bc3f828606ff89c82d2"
+    },
+    {
+      "coins": [
+        "UETH"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UETH/USDC",
+      "api_coin": "@151",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-ema15m-ueth-v1",
+      "kind": "spot_ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "spot_fast",
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc"
+    },
+    {
+      "coins": [
+        "UETH"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UETH/USDC",
+      "api_coin": "@151",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-rsi1h-ueth-v1",
+      "kind": "spot_rsi",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "spot_slow",
+      "params": {
+        "length": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "sha256": "3a1b13b496a08808fc50de6b7f78daa325edb41241d60cf0c91058935c92979c"
+    },
+    {
+      "coins": [
+        "UETH"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UETH/USDC",
+      "api_coin": "@151",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-donchian5m-ueth-v1",
+      "kind": "spot_donchian",
+      "interval": 300000,
+      "hold_ms": 14400000,
+      "lane": "spot_fast",
+      "params": {
+        "lookback": 20,
+        "exit_lookback": 10
+      },
+      "sha256": "a83f78326d77848f2d9fa670cf4e745853d200fe3ec2b59633d1daa7d2054f5e"
+    },
+    {
+      "coins": [
+        "USOL"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "USOL/USDC",
+      "api_coin": "@156",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Spot buy-and-hold control; not a tradable strategy",
+      "id": "sp-hold-usol-v1",
+      "kind": "spot_hold",
+      "interval": 60000,
+      "hold_ms": 315360000000,
+      "lane": "spot_control",
+      "params": {},
+      "sha256": "44b9bea590b5b50331ff5c52a4daa490fd124144efe02cbd0ee4116c97addc83"
+    },
+    {
+      "coins": [
+        "USOL"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "USOL/USDC",
+      "api_coin": "@156",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-ema15m-usol-v1",
+      "kind": "spot_ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "spot_fast",
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "sha256": "c4e837f13551a4d5b22300670280d6d7e09397230cba2478ea151725fa26fda2"
+    },
+    {
+      "coins": [
+        "USOL"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "USOL/USDC",
+      "api_coin": "@156",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-rsi1h-usol-v1",
+      "kind": "spot_rsi",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "spot_slow",
+      "params": {
+        "length": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "sha256": "7857d3f0348dbe54e8d81f60999e4fc82fee86d22107b69183a92397ad0ca1db"
+    },
+    {
+      "coins": [
+        "USOL"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "USOL/USDC",
+      "api_coin": "@156",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-donchian5m-usol-v1",
+      "kind": "spot_donchian",
+      "interval": 300000,
+      "hold_ms": 14400000,
+      "lane": "spot_fast",
+      "params": {
+        "lookback": 20,
+        "exit_lookback": 10
+      },
+      "sha256": "7250eaa1556a8a0ff450d4f7ed52ac9db27b08f0514bbaf96da5d51bdea160c2"
+    },
+    {
+      "coins": [
+        "HYPE"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "HYPE/USDC",
+      "api_coin": "@107",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Spot buy-and-hold control; not a tradable strategy",
+      "id": "sp-hold-hype-v1",
+      "kind": "spot_hold",
+      "interval": 60000,
+      "hold_ms": 315360000000,
+      "lane": "spot_control",
+      "params": {},
+      "sha256": "76c0af6833a44609d7895e20b4b5cfd77e0f1a8daac0ff9fd8376ddde7fedcf2"
+    },
+    {
+      "coins": [
+        "HYPE"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "HYPE/USDC",
+      "api_coin": "@107",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-ema15m-hype-v1",
+      "kind": "spot_ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "spot_fast",
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "sha256": "aa3ebeccf78588ace2f6cce2d7150ba701ed49ff4da63eaadc7e4b723c193869"
+    },
+    {
+      "coins": [
+        "HYPE"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "HYPE/USDC",
+      "api_coin": "@107",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-rsi1h-hype-v1",
+      "kind": "spot_rsi",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "spot_slow",
+      "params": {
+        "length": 14,
+        "oversold": 30,
+        "overbought": 70
+      },
+      "sha256": "b49368be0ec6286d263ec55f0c43db189c5f7ce20f76b556a73a3a5385ca26c2"
+    },
+    {
+      "coins": [
+        "HYPE"
+      ],
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "HYPE/USDC",
+      "api_coin": "@107",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "maker_fee_documented": 0.0004,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "Desk-defined spot experiment at owner request; unvalidated",
+      "id": "sp-donchian5m-hype-v1",
+      "kind": "spot_donchian",
+      "interval": 300000,
+      "hold_ms": 14400000,
+      "lane": "spot_fast",
+      "params": {
+        "lookback": 20,
+        "exit_lookback": 10
+      },
+      "sha256": "d9deecc1e4cc1940929ad6a5185a352c04a82d3bfdfa733cc4df86ab476c8d3c"
+    }
+  ]
+}

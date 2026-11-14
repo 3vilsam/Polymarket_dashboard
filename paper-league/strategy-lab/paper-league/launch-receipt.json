@@ -1,0 +1,136 @@
+{
+  "completed_myt": "2026-11-11T13:50:00+08:00",
+  "root": "/workspace/trading-desk/strategy-lab/paper-league",
+  "mode": "PAPER_ONLY",
+  "engine_pid": 233893,
+  "supervisor_pid": 232980,
+  "unit_tests": "46/46 PASS",
+  "supervision_smoke": {
+    "started_myt": "2026-11-11T13:48:16+08:00",
+    "old_engine_pid": 232989,
+    "previous_tick": 2,
+    "benchmark_entry_count": 1,
+    "action": "SIGKILL our own PAPER-only league engine to verify supervised recovery",
+    "result": "PASS",
+    "recovered_myt": "2026-11-11T13:48:57+08:00",
+    "new_engine_pid": 233893,
+    "tick_after_recovery": 3,
+    "same_books_preserved": true,
+    "benchmark_not_duplicated": true,
+    "last_processed_cursor": 1794376080000
+  },
+  "registered": [
+    {
+      "id": "s1-donchian40-ablation-v1",
+      "kind": "donchian",
+      "owner": "Crypto Ablation Lab (historical idea provenance)",
+      "sha256": "568c6ab152072c53e63635453dbcfad9dff3be01d868b32c1b1cbbf4a29af061"
+    },
+    {
+      "id": "s2-bb40-ema200-ablation-v1",
+      "kind": "bb",
+      "owner": "Crypto Ablation Lab (historical idea provenance)",
+      "sha256": "5511718a055a827784854811e00ed9b1221ed65a0e61e900c967d451302aa9ea"
+    },
+    {
+      "id": "s4-ewmac-riskcap-noadd-ablation-v1",
+      "kind": "ewmac",
+      "owner": "Crypto Ablation Lab (historical idea provenance; desk risk overlay)",
+      "sha256": "5233f50ef930e53ba2eefb3c1c19ffb3e60550bfc181831357cc3dd14214d4cc"
+    },
+    {
+      "id": "r1-trend-rsi-pullback-market-lane-v1",
+      "kind": "rsi",
+      "owner": "Market Analyst lane (desk-defined; NOT independently submitted/endorsed)",
+      "sha256": "f9c9737e2a6ab4c7dda403ab0150d361d71df4611ee2f26b085f98ff502e0db5"
+    },
+    {
+      "id": "b0-btc-1x-hold-control-v1",
+      "kind": "benchmark",
+      "owner": "Desk measurement control (not a bot strategy)",
+      "sha256": "4361382726aa71cb0a95fb4372437fa76d50bcaabc60f558f6d93d3dbbe7d5ce"
+    }
+  ],
+  "last_tick": {
+    "status": "ok",
+    "mode": "PAPER_ONLY",
+    "tick": 4,
+    "ts_myt": "2026-11-11T13:49:47+08:00",
+    "ts_utc": "2026-11-11T05:49:47.147Z",
+    "evidence": {
+      "path": "sources/1794376187147.json.gz",
+      "sha256": "4392cf4b0ec9a754d95dd2853c360791783f5f0faba21bcae766554359386607",
+      "received_ms": 1794376196583
+    },
+    "books": {
+      "s1-donchian40-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "s2-bb40-ema200-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "s4-ewmac-riskcap-noadd-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "r1-trend-rsi-pullback-market-lane-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "b0-btc-1x-hold-control-v1": {
+        "equity": 100.09955485,
+        "positions": 1,
+        "closed_trades": 0
+      }
+    }
+  },
+  "first_tick": {
+    "status": "ok",
+    "mode": "PAPER_ONLY",
+    "tick": 1,
+    "ts_myt": "2026-11-11T13:46:02+08:00",
+    "ts_utc": "2026-11-11T05:46:02.751Z",
+    "evidence": {
+      "path": "sources/1794375962751.json.gz",
+      "sha256": "4c30106b1d39aa81ca6490a72788f7a12c700c35d9c152d6925c8e1c15dd25aa",
+      "received_ms": 1794375987888
+    },
+    "books": {
+      "s1-donchian40-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "s2-bb40-ema200-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "s4-ewmac-riskcap-noadd-ablation-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "r1-trend-rsi-pullback-market-lane-v1": {
+        "equity": 100.0,
+        "positions": 0,
+        "closed_trades": 0
+      },
+      "b0-btc-1x-hold-control-v1": {
+        "equity": 99.93503323,
+        "positions": 1,
+        "closed_trades": 0
+      }
+    }
+  },
+  "cron_available": false,
+  "parent_followup": "Attach start.sh then status.sh to existing daily evidence routine; no routine was changed here.",
+  "source_engine_untouched": true,
+  "original_sentinel_pid": 163514
+}

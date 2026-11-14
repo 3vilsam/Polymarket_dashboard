@@ -1,0 +1,968 @@
+{
+  "status": "ok",
+  "mode": "PAPER_ONLY",
+  "engine_version": 6,
+  "tick": 95,
+  "ts_myt": "2026-11-12T14:11:18+08:00",
+  "ts_utc": "2026-11-12T06:11:18.460Z",
+  "book_count": 125,
+  "active_books": 121,
+  "retired_books": [
+    "sp-donchian5m-usol-v1",
+    "sp-ema15m-usol-v1",
+    "sp-hold-usol-v1",
+    "sp-rsi1h-usol-v1"
+  ],
+  "trial_count": 434,
+  "evidence": {
+    "path": "sources/1794463863778.json.gz",
+    "sha256": "bf8f5c1f2046ef4995de11a7d6c523826541a1f78709d16ead64d77c038a1bcc",
+    "received_ms": 1794463878460,
+    "requests": 8,
+    "request_types": {
+      "metaAndAssetCtxs": 1,
+      "candleSnapshot": 6,
+      "allMids": 1
+    },
+    "estimated_weight": 148,
+    "collection_seconds": 14.7086,
+    "failed_symbols": [
+      "UETH"
+    ]
+  },
+  "load": {
+    "wall_seconds": 14.8929,
+    "signal_computations": 27,
+    "spot_signal_computations": 2,
+    "v4_signal_computations": 0,
+    "requests": 8,
+    "request_types": {
+      "metaAndAssetCtxs": 1,
+      "candleSnapshot": 6,
+      "allMids": 1
+    },
+    "estimated_weight": 148,
+    "collection_seconds": 14.7086
+  },
+  "data_isolation": {
+    "rule_id": "data-isolation-v1",
+    "failed_symbols": {
+      "UETH": "ValueError('UETH spot 1m warmup/continuity missing')"
+    },
+    "skipped_books": [
+      "sp-donchian5m-ueth-v1",
+      "sp-ema15m-ueth-v1",
+      "sp-hold-ueth-v1",
+      "sp-rsi1h-ueth-v1"
+    ],
+    "stale_positions": [
+      {
+        "book": "sp-hold-ueth-v1",
+        "trade_id": "SPOT_HOLD",
+        "coin": "UETH",
+        "side": "long",
+        "stop": null,
+        "last_cursor_utc": "2026-11-12T06:08:00.000Z",
+        "market": "spot"
+      }
+    ],
+    "fail_rate_24h": {
+      "BTC": 0.0,
+      "ETH": 0.0,
+      "SOL": 0.0,
+      "UBTC": 0.0,
+      "UETH": 0.1429,
+      "HYPE": 0.0
+    },
+    "window_ticks": 7,
+    "review_flags": []
+  },
+  "retirement_closes": [
+    {
+      "book": "sp-hold-usol-v1",
+      "trade_id": "SPOT_HOLD",
+      "status": "CLOSED",
+      "price": 82.94790710000001,
+      "mark": 82.9645,
+      "mark_observed_utc": "2026-11-12T06:08:55.560Z"
+    }
+  ],
+  "candidates": [],
+  "books": {
+    "s1-donchian40-ablation-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "s2-bb40-ema200-ablation-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "s4-ewmac-riskcap-noadd-ablation-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "r1-trend-rsi-pullback-market-lane-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "b0-btc-1x-hold-control-v1": {
+      "equity": 99.67030875,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "f1-vwap5m-v1": {
+      "equity": 100.28620144,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "f2-asia15m-v1": {
+      "equity": 99.52206089,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "f3-rsi2-5m-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "f4-ema15m-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "f5-squeeze1m-v1": {
+      "equity": 98.84395351,
+      "positions": 0,
+      "closed_trades": 5,
+      "market": "perp",
+      "retired": false
+    },
+    "l1-supertrend1h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "l2-macd4h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "l3-funding1h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "l4-weekly1d-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "c1-random15m-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-btc-p0-v1": {
+      "equity": 100.28610409,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-btc-p1-v1": {
+      "equity": 100.2963473,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-eth-p0-v1": {
+      "equity": 100.28620144,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-eth-p1-v1": {
+      "equity": 100.10024307,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-eth-p2-v1": {
+      "equity": 99.61686119,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-sol-p0-v1": {
+      "equity": 99.52380449,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-sol-p1-v1": {
+      "equity": 99.36031598,
+      "positions": 0,
+      "closed_trades": 3,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-sol-p2-v1": {
+      "equity": 99.52380449,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-btc-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-eth-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-sol-p0-v1": {
+      "equity": 99.52206089,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-sol-p1-v1": {
+      "equity": 99.52206089,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-sol-p2-v1": {
+      "equity": 99.52206089,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-btc-p1-v1": {
+      "equity": 99.95167418,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-eth-p1-v1": {
+      "equity": 99.95166408,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-sol-p1-v1": {
+      "equity": 99.95197351,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-btc-p1-v1": {
+      "equity": 99.52401696,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-eth-p1-v1": {
+      "equity": 99.52044144,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-sol-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-btc-p0-v1": {
+      "equity": 99.40536317,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-btc-p1-v1": {
+      "equity": 99.40536317,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-btc-p2-v1": {
+      "equity": 99.04975662,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-eth-p0-v1": {
+      "equity": 99.43413832,
+      "positions": 0,
+      "closed_trades": 3,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-eth-p1-v1": {
+      "equity": 99.3684345,
+      "positions": 0,
+      "closed_trades": 2,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-sol-p0-v1": {
+      "equity": 99.46316031,
+      "positions": 1,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-sol-p1-v1": {
+      "equity": 99.46316031,
+      "positions": 1,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-squeeze-sol-p2-v1": {
+      "equity": 99.52288633,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-btc-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-eth-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-sol-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-supertrend-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-btc-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-eth-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-sol-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-macd-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-btc-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-eth-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-sol-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-funding-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-btc-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-btc-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-btc-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-eth-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-eth-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-eth-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-sol-p0-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-sol-p1-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-weekly-sol-p2-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-vwap-all-p1-v1": {
+      "equity": 100.13122983,
+      "positions": 0,
+      "closed_trades": 4,
+      "market": "perp",
+      "retired": false
+    },
+    "g-asia-all-p1-v1": {
+      "equity": 99.52206089,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "g-rsi2-all-p1-v1": {
+      "equity": 99.95167418,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "g-ema-all-p1-v1": {
+      "equity": 99.52401696,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "perp",
+      "retired": false
+    },
+    "sp-hold-ubtc-v1": {
+      "equity": 16.21508087,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-ema15m-ubtc-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-rsi1h-ubtc-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-donchian5m-ubtc-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-hold-ueth-v1": {
+      "equity": 16.17088699,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-ema15m-ueth-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-rsi1h-ueth-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-donchian5m-ueth-v1": {
+      "equity": 16.12909502,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-hold-usol-v1": {
+      "equity": 16.22337069,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "spot",
+      "retired": true
+    },
+    "sp-ema15m-usol-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": true
+    },
+    "sp-rsi1h-usol-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": true
+    },
+    "sp-donchian5m-usol-v1": {
+      "equity": 16.12719187,
+      "positions": 0,
+      "closed_trades": 1,
+      "market": "spot",
+      "retired": true
+    },
+    "sp-hold-hype-v1": {
+      "equity": 16.17640901,
+      "positions": 1,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-ema15m-hype-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-rsi1h-hype-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp-donchian5m-hype-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "n1-tsmom-mh1h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n2-shockrev1h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n3-negfund-btc-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n4-utc21-btc-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n5-weekend-btc-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n6-ethbtc-z1h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "n7-xsmom72h-v1": {
+      "equity": 100.0,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "perp",
+      "retired": false
+    },
+    "sp4-utc21-ubtc-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    },
+    "sp4-shockrev1h-ubtc-v1": {
+      "equity": 16.24,
+      "positions": 0,
+      "closed_trades": 0,
+      "market": "spot",
+      "retired": false
+    }
+  }
+}
