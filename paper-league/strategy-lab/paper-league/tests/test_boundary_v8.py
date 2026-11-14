@@ -35,6 +35,24 @@ class Boundary(unittest.TestCase):
         r, skips = V8.run_once(tick, None, 0, hb=lambda *a, **k: None, log=lambda *a, **k: None)
         self.assertIsNone(r); self.assertEqual(skips, 1)
 
+    def test_sixty_second_skip_persists_warmed_cache_and_no_fills(self):
+        hbs = []
+        def tick(): raise ValueError('snapshot collection exceeded 60s; no stale fills')
+        def warm(root):
+            Path(root, 'market_cache.json').write_text('{"m1":{"BTC":[]}}')
+            return dict(warmed=True, fills_written=False)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            r, skips = V8.run_once(tick, root, 0, hb=lambda root, s, **k: hbs.append((s, k)), log=lambda *a, **k: None, warm_fn=warm)
+            self.assertIsNone(r); self.assertEqual(skips, 1)
+            self.assertEqual((root/'market_cache.json').read_text()[:4], '{"m1')
+            self.assertFalse((root/'league_state.json').exists())
+            self.assertFalse((root/'data-gaps.jsonl').exists())
+            names = {p.name for p in root.iterdir()}
+            self.assertEqual(names, {'market_cache.json'})
+        self.assertFalse(hbs[-1][1]['fills_written'])
+        self.assertTrue(hbs[-1][1]['cache_persisted'])
+
     def test_other_errors_still_fail_closed(self):
         def tick(): raise ValueError('USOL spot 1m warmup/continuity missing')
         with self.assertRaises(ValueError):
