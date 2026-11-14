@@ -6,7 +6,7 @@ A separate private repo could not be created from this environment (`gh` here is
 
 ## What runs
 
-`.github/workflows/league.yml` cron `7-57/5 * * * *` (every 5 minutes, skipping minute 0) plus `workflow_dispatch`. Concurrency group `league` so two ticks do not overlap. Permissions are `contents: write` only. The workflow is active on `main`. GitHub's scheduler on this public repo is best-effort: the Pages workflow uses the same 5-minute idea and its `schedule` runs have been about 4–7 hours apart, not every 5 minutes. A tick more than two intervals (10 minutes) after the previous one appends a row to `state/data-gaps.jsonl`. The first tick after the box also appends one row from `2026-11-13T15:21:03.509Z` with reason `box sleep`. Fills are not backfilled. The engine's own virtual-stop replay still runs and is flagged replayed.
+`.github/workflows/league.yml` keeps a backup cron (`7-57/5 * * * *`) and `workflow_dispatch`. GitHub's own cron on this public repo has been hours apart (one league run in the first 6.5 hours, and the Pages `*/5` cron about 4–7 hours apart), so each run on `main` waits until about five minutes after it started and then queues the next run with `gh workflow run`. That needs `actions: write` as well as `contents: write`. The token is the built-in `GITHUB_TOKEN`; it can create a `workflow_dispatch` run, and it is not an API key or an exchange credential. Concurrency group `league` does not cancel the run in progress, so the queued run starts after this one pushes state. A tick more than two intervals (10 minutes) after the previous one appends a row to `state/data-gaps.jsonl`. Fills are not backfilled. The engine's own virtual-stop replay still runs and is flagged replayed.
 
 `run_tick.py` copies `state/` into the engine directory, warms `market_cache.json` outside the 60-second snapshot clock (the same idea as `supervise.sh`), runs one `league_v8.py --once`, and copies state back. v7 is used only if v8 still raises a stale-fill guard after that warm.
 
@@ -18,7 +18,7 @@ v8 treats `snapshot collection exceeded 60s` as a skip and keeps the process up.
 
 ## State and the one writer
 
-Authoritative files are under `paper-league/state/` (books, `league_state.json` including halt latches and the DSR ledger, `heartbeat.json`, `market_cache.json`, `data-gaps.jsonl`, `sources/`). The frozen engine cannot be edited to read that path: its SHA-256 is checked every tick. The scheduler copies state in, ticks, and copies it back. GitHub Actions is the only writer.
+Authoritative files are under `paper-league/state/` (books, `league_state.json` including halt latches and the DSR ledger, `heartbeat.json`, `market_cache.json`, `data-gaps.jsonl`, `sources/`). The frozen engine cannot be edited to read that path: its SHA-256 is checked every tick. The scheduler copies state in, ticks, and copies it back. The chain on `main` is the writer. The box export at tick 392 replaced an earlier GitHub replay (tick 352 from tick 351); that GitHub tick is recorded in `data-gaps.jsonl` as superseded and is not in the ledger. Stop the box engine before it ticks past that export, or the two copies diverge again.
 
 A box copy stays read-only:
 
