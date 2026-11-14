@@ -9,6 +9,12 @@ on:
     # Backup if the self-dispatch chain is cancelled. Not the 5-minute clock.
     - cron: '7-57/5 * * * *'
   workflow_dispatch:
+  # A workflow-file push starts the chain. This environment cannot call the
+  # dispatch API (403). State commits do not match this path, so they do not loop.
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/league.yml
 
 permissions:
   contents: write
