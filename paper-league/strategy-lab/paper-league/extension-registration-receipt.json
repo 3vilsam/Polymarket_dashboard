@@ -1,0 +1,1543 @@
+{
+  "version": 2,
+  "mode": "PAPER_ONLY",
+  "registered_utc": "2026-11-11T06:02:16.937Z",
+  "original_manifest_sha256": "de7ede5ebf187565a7e6c582412b66660005881e85bd03cfe59133552aedae1a",
+  "implementation_sha256": {
+    "league_v2.py": "3c3f73a0bbf73d6c1916110e0800370fef74608b28beb4c9eee1b571699ccad4",
+    "strategies_v2.py": "2334f86247abae7b971fb11a95c064ced26ed6e2e7f905237e56eaf6967d582c",
+    "evaluation_v2.py": "af35bb00eff8b070bf1e3e66257cfb7a747f0015338b51d0bb41c2d3e0f3eac3",
+    "register_v2.py": "de63cbc951a4ae1eda13830e8e4e759c7217b721ede521fe5ce0ba503b023e3f"
+  },
+  "prior_backtest_trials": 309,
+  "total_league_books": 100,
+  "total_known_trials": 409,
+  "strategies": [
+    {
+      "id": "f1-vwap5m-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 1.5
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "323d5941fd3373584b63b9601a481367b8a087e48de5390d8bd760269a56658c"
+    },
+    {
+      "id": "f2-asia15m-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "range_hours": 4
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "4f8d220310240eae197319e5ac8df4575ef45cd00ef12f6c4c3deca001aee0f9"
+    },
+    {
+      "id": "f3-rsi2-5m-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "extreme": 5
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "bd5cec7b7dc088cefbee78a157195a1bbf3640d1a3a25825ef5d83039ac9c03a"
+    },
+    {
+      "id": "f4-ema15m-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "bf67bc5d75f9cc08299e8221cad80287a36d30d34715147cf870ee9ea41a06fd"
+    },
+    {
+      "id": "f5-squeeze1m-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.2
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "f1bac2bd9f5b8edf7a18fe04acb282329687ae29c8b7165e03e3e6a3099c34a1"
+    },
+    {
+      "id": "l1-supertrend1h-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 3.0
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "e950da91f0ac71bf706e43a731435d549e2f6c511714e05452424e5a38783743"
+    },
+    {
+      "id": "l2-macd4h-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26,
+        "signal": 9
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "1025b2f77e2919350ee71493dc2abdc1694b1b94534f23c1f912d561e964605d"
+    },
+    {
+      "id": "l3-funding1h-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 5e-05
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "4d8d5c7c3cdc7cb5cb420e837cbcb300254d7f3f94df9edc8813ed3bfb98732e"
+    },
+    {
+      "id": "l4-weekly1d-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "lookback": 7
+      },
+      "owner": "Desk-defined experimental family",
+      "sha256": "5156a4b0a83ffc4267a77bf03c96e9adf8965fe14db4bc7cb1ad945dfa85136c"
+    },
+    {
+      "id": "c1-random15m-v1",
+      "kind": "random",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "control",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "probability_denominator": 12,
+        "seed": "paper-league-random-v1"
+      },
+      "owner": "Luck control",
+      "sha256": "e263453d3b225c2f8d94c140019431d9f54467968404b7e3b84d7a3dec14ddd9"
+    },
+    {
+      "id": "g-vwap-btc-p0-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "2e534e0720ea6e217fd09a3543312e1b53469dffab7a50d57db024f8366e2097"
+    },
+    {
+      "id": "g-vwap-btc-p1-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 24,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "41c829cf4307855fe33990fbd55230a648f0c9a93c87d4bd5d630fd0952140d8"
+    },
+    {
+      "id": "g-vwap-btc-p2-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "af5a2eee62a246c26e82763adb16f23695eca4205c5439ec049a8c5c765d024c"
+    },
+    {
+      "id": "g-vwap-eth-p0-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "00ce537901e5cd391711de91eb158cc1422588a2f87569f75953434136d176f7"
+    },
+    {
+      "id": "g-vwap-eth-p1-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 24,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "1acbbbc5888b325070ebe49d7513a9039967b74633a3b0c101ec9eeb6731b88d"
+    },
+    {
+      "id": "g-vwap-eth-p2-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0df21e2e57d88677553195eac4567f9089491e2df32ccce6a8f2df076ffae740"
+    },
+    {
+      "id": "g-vwap-sol-p0-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "9a551d12b90b6e8103f7447dda4135ea84c9994bb62bd48527bab01efbdc615b"
+    },
+    {
+      "id": "g-vwap-sol-p1-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 24,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0faa29ab5ab1311a12aa6c100132fee3129e929688261de78b610144a8e53121"
+    },
+    {
+      "id": "g-vwap-sol-p2-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 48,
+        "threshold": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "17eefabe6e47587803fdc7f2f207b48042d6791fb5171cb8a43bde10c0cfac2a"
+    },
+    {
+      "id": "g-asia-btc-p0-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "range_hours": 4
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "d532923101edb8f3ede5c0b35501aa313670a865f92cac704a63e58c4fdeafce"
+    },
+    {
+      "id": "g-asia-btc-p1-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "range_hours": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "61dab185b1558929991f0a9bc503b7138966e1f7c04815775738091b2496d8d1"
+    },
+    {
+      "id": "g-asia-btc-p2-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "range_hours": 3
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "94f1b854c325ba82398f88ebe9e1a64c3522a4d50f837f223296491510e6b4a4"
+    },
+    {
+      "id": "g-asia-eth-p0-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "range_hours": 4
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "5bd58ab1c872274be59f8dd049c63c9090607e06eeb1e94860de8573008dd3fe"
+    },
+    {
+      "id": "g-asia-eth-p1-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "range_hours": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "9d046b973bb543a35393aed04b4d974c7f5c17e61d49078b9e0f435630b482db"
+    },
+    {
+      "id": "g-asia-eth-p2-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "range_hours": 3
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0e89df9e8d811d983ddf58a06db20b99cd068f5359a9872a0ddc5483b5477494"
+    },
+    {
+      "id": "g-asia-sol-p0-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "range_hours": 4
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "ac0a1f9f2cccafc76ecccb004b9f901310ead39bc32ed9abf2e2d0f432e0178b"
+    },
+    {
+      "id": "g-asia-sol-p1-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "range_hours": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "ee7703b5f2a4a43bd955f06749ecb52c85ce2de64800f8320ac648789dec986f"
+    },
+    {
+      "id": "g-asia-sol-p2-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "range_hours": 3
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "b3515e3b6aa58c81737b91b5e56c53be81a8e0b11e2a06ba4054b61c9adfece1"
+    },
+    {
+      "id": "g-rsi2-btc-p0-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "extreme": 5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0f7734c6337d367a7ba418bf7b8b43e3ddd1f72c9c4c56b03cdb4f31e91ad2b2"
+    },
+    {
+      "id": "g-rsi2-btc-p1-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "extreme": 10
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e9fbc982442c946b9f54aaea9e2845a7379de0a114a0dc6f656bcb29c28211f5"
+    },
+    {
+      "id": "g-rsi2-btc-p2-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "extreme": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "be8b29f35fb28ccac730d3d659774820375c6e389a495be50a82d2f1513fd983"
+    },
+    {
+      "id": "g-rsi2-eth-p0-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "extreme": 5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "146711a74ba63835cd4be04d508c90b63c0996d6be4cf52b9c818847149bf494"
+    },
+    {
+      "id": "g-rsi2-eth-p1-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "extreme": 10
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "54cc00f94142897dc827861eb87d01c88a031765d2e3ddd0d22ef7dff00d62ee"
+    },
+    {
+      "id": "g-rsi2-eth-p2-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "extreme": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "961f8ebec0346c63b29d9f70cdb5ac9e92b3b0197d18767a48831cfdda7745ab"
+    },
+    {
+      "id": "g-rsi2-sol-p0-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "extreme": 5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e50f9b3b9479dab7507e22576eb48418e47b5be59cc5579b7435fea72ee59b1f"
+    },
+    {
+      "id": "g-rsi2-sol-p1-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "extreme": 10
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "d450543574eeab752a80b9a159e4c0477f744476d4503be2ca23617b9288dfe5"
+    },
+    {
+      "id": "g-rsi2-sol-p2-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "extreme": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "27ed4c360b83ca26fe2010032f6d9b723785fefa7847254e9737782209e05740"
+    },
+    {
+      "id": "g-ema-btc-p0-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "3e86d279cd95ad6d6c0b83a29c60f8ff8dd275e6e4579a30c2e1b87d7307639e"
+    },
+    {
+      "id": "g-ema-btc-p1-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 5,
+        "slow": 20
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "8ade6617f3d7935b3c213b77a38aa1f5046336ea20870ce1cf22394fcc39682d"
+    },
+    {
+      "id": "g-ema-btc-p2-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "7d1f84b5b2afa38af588c13a929a6adadb9fea6a86f1c34869ddc71b5714e3ba"
+    },
+    {
+      "id": "g-ema-eth-p0-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "c4271d84aac23cf8dc95ca04db5376edcf4733a80266c28682c0b77a44dd5446"
+    },
+    {
+      "id": "g-ema-eth-p1-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 5,
+        "slow": 20
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "330db6e3de5c3da6d122463f11f9ff9456b2bc274a06ef1d2c727ade5c8683aa"
+    },
+    {
+      "id": "g-ema-eth-p2-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "47cc2c2a37b86d059636299cf88babb95da555073aa641ddeaa8121f8aed2d0c"
+    },
+    {
+      "id": "g-ema-sol-p0-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 9,
+        "slow": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "d39a6ea602d2effec71c24ae9495ff63f5132c4fb0c528c5ee7d33e4449bcc5f"
+    },
+    {
+      "id": "g-ema-sol-p1-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 5,
+        "slow": 20
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "1700adfc66f25601c4a706f95a8d3717978ef0af9a68f3b6121d3a453f271efb"
+    },
+    {
+      "id": "g-ema-sol-p2-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "25b53451c85548f268ac8260931bce280af0cd301f690f0768e7e9d3fc467c8b"
+    },
+    {
+      "id": "g-squeeze-btc-p0-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "dc6e8541853b15f58043b9927e7058a1d6e02a913754d16c97e9e2ac425e266d"
+    },
+    {
+      "id": "g-squeeze-btc-p1-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.1
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "3e5d528586ee19e0d9d3081b249f884acaca456805abaa0bf5b81f8292203260"
+    },
+    {
+      "id": "g-squeeze-btc-p2-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "window": 30,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "c272c8b0a0c73e54a2df05ecd8a9aacafd0e909b63ec26d5f0f82a7167f3b7bf"
+    },
+    {
+      "id": "g-squeeze-eth-p0-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "d8968b8121b724d1a5778e959ab894da80d7554736c525fed4c41020293cff55"
+    },
+    {
+      "id": "g-squeeze-eth-p1-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.1
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "3f9d37ffb2069bb1c5f73406cb69835173e20acb990d27f9b9a899ca2be285ae"
+    },
+    {
+      "id": "g-squeeze-eth-p2-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 30,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "d24e43dea9156d5c1da495c2651f73210f21632bbc1bc77eaf71ba624b02964b"
+    },
+    {
+      "id": "g-squeeze-sol-p0-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "2c440120e1e5c13b63244eafec58c2e7fc7177347961b766d97c9059b2e340bc"
+    },
+    {
+      "id": "g-squeeze-sol-p1-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 20,
+        "quantile": 0.1
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "6dcd68950cbe8987ea620de86df172fe43fbf45dad5b5e3fe65f812c640cd41a"
+    },
+    {
+      "id": "g-squeeze-sol-p2-v1",
+      "kind": "squeeze",
+      "interval": 60000,
+      "hold_ms": 1800000,
+      "lane": "fast",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "window": 30,
+        "quantile": 0.2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761"
+    },
+    {
+      "id": "g-supertrend-btc-p0-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "a8a30dbd507da45db67fd33f3c059b95ec55b1dbdb5cfc40b2209b2b38f57301"
+    },
+    {
+      "id": "g-supertrend-btc-p1-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "130ed5bae04430a8665c90452a00ff3980d9ae5b73c9ac75c2ffca93eb67b7bc"
+    },
+    {
+      "id": "g-supertrend-btc-p2-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "atr_n": 14,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e0a1b087ea32c125f5d591804682341215c2992db5a556f2e1a025239e8267ed"
+    },
+    {
+      "id": "g-supertrend-eth-p0-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "1d7561572951206ab4275294a827d7829c5e353fe074da50949c208060dfc787"
+    },
+    {
+      "id": "g-supertrend-eth-p1-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "70a2f6587b22939756aa2b70930fe40a394d955f6b70d0bbb9fe8a6b1aba4c0f"
+    },
+    {
+      "id": "g-supertrend-eth-p2-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "atr_n": 14,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e1462a335e462abb43dbf8c7a25912fa8b76974fb8287e94ab855d9c827bf829"
+    },
+    {
+      "id": "g-supertrend-sol-p0-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "b2073e6a99fb74da5de89491ab619d5c3dbc23f2e5e07b339e6f76f80f9fea2b"
+    },
+    {
+      "id": "g-supertrend-sol-p1-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "atr_n": 10,
+        "multiplier": 2.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "6d8554bbe21f120fcf75a77ecbf1db9e01695840b4672ff2e6c898d233c365f9"
+    },
+    {
+      "id": "g-supertrend-sol-p2-v1",
+      "kind": "supertrend",
+      "interval": 3600000,
+      "hold_ms": 604800000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "atr_n": 14,
+        "multiplier": 3.0
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "187333e8584c775d469200d3f4a8114311c64cb9b4b7347580900e75d2c8e044"
+    },
+    {
+      "id": "g-macd-btc-p0-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "8a773537f50ab81876fde63b25f69e570c4d24061cdf5acd54bc09d356b515bc"
+    },
+    {
+      "id": "g-macd-btc-p1-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 8,
+        "slow": 21,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "4975bda9aad62f75da2f94ff87385c834ec8188e10725cfe7ae3d92938059f84"
+    },
+    {
+      "id": "g-macd-btc-p2-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "fast": 16,
+        "slow": 32,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "01e7c07818c19a677612bc35174a3b6dfaa438f11efe0fb84ff4899d53c53b03"
+    },
+    {
+      "id": "g-macd-eth-p0-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "47e31fb0cfd98c586cacb913ce8a5e3d20c7879faff67047c42da8167ff43769"
+    },
+    {
+      "id": "g-macd-eth-p1-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 8,
+        "slow": 21,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "c89eca06ab0a7381f3026e22630b1648b6350246174a3b49b05a1311250d80f0"
+    },
+    {
+      "id": "g-macd-eth-p2-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "fast": 16,
+        "slow": 32,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "f1d384acad3da992389ab2b18fb84f4d8b8bb3737a06a39ea959b2acd9bf05d9"
+    },
+    {
+      "id": "g-macd-sol-p0-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 12,
+        "slow": 26,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "3ee522dddc8dd6dd1129d876e7ba5311fa0d21ed6d9ecdddda4e94991a7f9793"
+    },
+    {
+      "id": "g-macd-sol-p1-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 8,
+        "slow": 21,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "74824f36e522f26881d6769a06550c95364fd44f63c4311769b913a63c5cc553"
+    },
+    {
+      "id": "g-macd-sol-p2-v1",
+      "kind": "macd",
+      "interval": 14400000,
+      "hold_ms": 1209600000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "fast": 16,
+        "slow": 32,
+        "signal": 9
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "672160df74ddc7e59dc14954cf9d47af95fe5a847f20345bab7ba7ac05093f4a"
+    },
+    {
+      "id": "g-funding-btc-p0-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e7ea9a2fdb2ee81095891c622dc1b94ca9e1dc85950e73cea7cc1487ec9d6a47"
+    },
+    {
+      "id": "g-funding-btc-p1-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 2.5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0a2921710c0fa37798867217c663bb19bb164b29fe448e4ae38590977d9fe3b9"
+    },
+    {
+      "id": "g-funding-btc-p2-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "hours": 24,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "f209549e45b4f5e3ec7f4bfb6c2da3e8a5bdd16bf04c6d2d19fdb884093b392f"
+    },
+    {
+      "id": "g-funding-eth-p0-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0dd101f9fe56786714b364593d2c885fc5ae7e6bb21b8841497ce4f690d2b804"
+    },
+    {
+      "id": "g-funding-eth-p1-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 2.5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "087483ee6530656d89b880b8026fe3c5c525b3423521fd6d3a5e1e92f8098e8c"
+    },
+    {
+      "id": "g-funding-eth-p2-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "hours": 24,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "af9d34e6dc9f9095a4ac4593f9877ce15c4d92f39af09c97721536130f1a4741"
+    },
+    {
+      "id": "g-funding-sol-p0-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "8475caeed2e2b19bc1547906d9a9b2558a1692994ea5eb661a550175628b5755"
+    },
+    {
+      "id": "g-funding-sol-p1-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "hours": 8,
+        "threshold": 2.5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "13d8ca8fbf3e49217917744dc3833ddd97cceff85ff178460667af0a3909f05a"
+    },
+    {
+      "id": "g-funding-sol-p2-v1",
+      "kind": "funding",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "hours": 24,
+        "threshold": 5e-05
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "5ce3209ad8571abb67d64dc5b0de31188bed8d83d0ecf64d137e89f5d3895b12"
+    },
+    {
+      "id": "g-weekly-btc-p0-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "lookback": 7
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "0be8bcc3cc6775f888c67b1bfc7a452aef66cd8cde673218c5fbd0f3f2cbf544"
+    },
+    {
+      "id": "g-weekly-btc-p1-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "lookback": 14
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "02952e785637b58a2615b66eacd8d83afe317e816272f40ebac45b1297262692"
+    },
+    {
+      "id": "g-weekly-btc-p2-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "lookback": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "55bfaffb48bb7c8dba1821986b8bb9a7c8aa148da6f3bd304f76032d2725f4af"
+    },
+    {
+      "id": "g-weekly-eth-p0-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "lookback": 7
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "91a85ca6fedab7900bd2087427b08cc08c653fc1f3c3481cc3c0ae071bdc99ac"
+    },
+    {
+      "id": "g-weekly-eth-p1-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "lookback": 14
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "f6fc6eb7bba2b93b6610f22fd01af55c09d18baa3bd40448aabf50c932de9fbf"
+    },
+    {
+      "id": "g-weekly-eth-p2-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "lookback": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "823a84838bb78b49a40a9bccc5f9e0b59ed8a1a230fa7c8784887f74f037f2da"
+    },
+    {
+      "id": "g-weekly-sol-p0-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "lookback": 7
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "166c25e0afae01d2c675e1819e32be651bf050acc9c82dd416ffb46375e8cecc"
+    },
+    {
+      "id": "g-weekly-sol-p1-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "lookback": 14
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e85056ea6ad501dcb0a82323c3405f88f591d753550b25da96fadc57ea56e08d"
+    },
+    {
+      "id": "g-weekly-sol-p2-v1",
+      "kind": "weekly",
+      "interval": 86400000,
+      "hold_ms": 2419200000,
+      "lane": "slow",
+      "coins": [
+        "SOL"
+      ],
+      "params": {
+        "lookback": 21
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "bd93d7bbd088313eadad733b83c08d8da2458864527ed816b183b87084ba1ffc"
+    },
+    {
+      "id": "g-vwap-all-p1-v1",
+      "kind": "vwap",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "window": 24,
+        "threshold": 1.5
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "71de8b37311de75f20e0c8b0424a4bd7d695ee2086f6324ff816c7c1a2bb0880"
+    },
+    {
+      "id": "g-asia-all-p1-v1",
+      "kind": "asia",
+      "interval": 900000,
+      "hold_ms": 14400000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "range_hours": 2
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "ae8c601956cbc9032f37f351338bf19dedfc9196801e3b06630ed92842835381"
+    },
+    {
+      "id": "g-rsi2-all-p1-v1",
+      "kind": "rsi2",
+      "interval": 300000,
+      "hold_ms": 3600000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "extreme": 10
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "e5ea6c6d50e2fd95ac4cebf7a1dcca8cbe71ef5d6bcc23a1d01b1c1bf22a8621"
+    },
+    {
+      "id": "g-ema-all-p1-v1",
+      "kind": "ema",
+      "interval": 900000,
+      "hold_ms": 43200000,
+      "lane": "fast",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "fast": 5,
+        "slow": 20
+      },
+      "owner": "Prospective fixed grid; correlated trials",
+      "sha256": "348fe95771876a49c4581bae8e5bf3470b6eb59e37706fb6277b1d4407dcaef6"
+    }
+  ]
+}

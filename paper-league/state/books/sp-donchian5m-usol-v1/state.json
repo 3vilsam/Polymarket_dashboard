@@ -1,0 +1,627 @@
+{
+  "version": 1,
+  "created_myt": "2026-11-11T17:16:05+08:00",
+  "starting_equity": 16.24,
+  "cash": 16.12719187100032,
+  "day_date": "2026-11-12",
+  "day_start_equity": 16.12719187100032,
+  "halted": false,
+  "halt_reason": null,
+  "positions": {},
+  "closed_trades": [
+    {
+      "id": "P000001",
+      "coin": "USOL",
+      "entry_ms": 1794403545079,
+      "exit_ms": 1794406800000,
+      "pnl_net": -0.1128081289996786,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
+    }
+  ],
+  "next_seq": 2,
+  "marks": {
+    "UBTC": 73516.5,
+    "UETH": 2046.65,
+    "USOL": 82.9645,
+    "HYPE": 71.4525
+  },
+  "stats": {
+    "trades_closed": 1,
+    "wins": 0,
+    "losses": 1,
+    "net_pnl": -0.1128081289996786,
+    "fees": 0.02260418659968,
+    "funding": 0.0
+  },
+  "last_tick_myt": "2026-11-12T14:08:55+08:00",
+  "id": "sp-donchian5m-usol-v1",
+  "owner": "Desk-defined spot experiment at owner request; unvalidated",
+  "kind": "spot_donchian",
+  "lane": "spot_fast",
+  "events": [
+    {
+      "seq": 1,
+      "event": "registered",
+      "ts_ms": 1794388565487,
+      "ts_utc": "2026-11-11T09:16:05.487Z",
+      "ts_myt": "2026-11-11T17:16:05+08:00",
+      "rules_sha256": "7250eaa1556a8a0ff450d4f7ed52ac9db27b08f0514bbaf96da5d51bdea160c2",
+      "status": "UNPROVEN_PAPER_ONLY",
+      "starting_equity": 16.24,
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "no_liquidation": true,
+      "no_funding": true,
+      "price_source": "spot_pair",
+      "spot_pair": "USOL/USDC",
+      "api_coin": "@156"
+    },
+    {
+      "seq": 2,
+      "event": "signal",
+      "ts_ms": 1794388619638,
+      "ts_utc": "2026-11-11T09:16:59.638Z",
+      "ts_myt": "2026-11-11T17:16:59+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T09:15:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.31,
+        "prior_exit_low": 82.838
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 3,
+      "event": "valuation",
+      "ts_ms": 1794388619638,
+      "ts_utc": "2026-11-11T09:16:59.638Z",
+      "ts_myt": "2026-11-11T17:16:59+08:00",
+      "equity": 16.24,
+      "cash": 16.24,
+      "unrealized": 0.0,
+      "fees": 0.0,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.0
+    },
+    {
+      "seq": 4,
+      "event": "signal",
+      "ts_ms": 1794403172643,
+      "ts_utc": "2026-11-11T13:19:32.643Z",
+      "ts_myt": "2026-11-11T21:19:32+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T13:15:00.000Z",
+      "side": 1,
+      "details": {
+        "prior_high": 84.102,
+        "prior_exit_low": 83.55
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 5,
+      "event": "missed_entry",
+      "ts_ms": 1794403172643,
+      "ts_utc": "2026-11-11T13:19:32.643Z",
+      "ts_myt": "2026-11-11T21:19:32+08:00",
+      "coin": "USOL",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-11T13:15:00.000Z"
+    },
+    {
+      "seq": 6,
+      "event": "valuation",
+      "ts_ms": 1794403172643,
+      "ts_utc": "2026-11-11T13:19:32.643Z",
+      "ts_myt": "2026-11-11T21:19:32+08:00",
+      "equity": 16.24,
+      "cash": 16.24,
+      "unrealized": 0.0,
+      "fees": 0.0,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.0
+    },
+    {
+      "seq": 7,
+      "event": "signal",
+      "ts_ms": 1794403246686,
+      "ts_utc": "2026-11-11T13:20:46.686Z",
+      "ts_myt": "2026-11-11T21:20:46+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T13:20:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 84.12,
+        "prior_exit_low": 83.55
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 8,
+      "event": "signal",
+      "ts_ms": 1794403545079,
+      "ts_utc": "2026-11-11T13:25:45.079Z",
+      "ts_myt": "2026-11-11T21:25:45+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T13:25:00.000Z",
+      "side": 1,
+      "details": {
+        "prior_high": 84.252,
+        "prior_exit_low": 83.59
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 9,
+      "event": "entry",
+      "ts_ms": 1794403545079,
+      "ts_utc": "2026-11-11T13:25:45.079Z",
+      "ts_myt": "2026-11-11T21:25:45+08:00",
+      "trade_id": "P000001",
+      "coin": "USOL",
+      "side": "long",
+      "size": 0.192,
+      "price": 84.3278622,
+      "stop": 83.90622288899999,
+      "fee": 0.011333664679679998,
+      "fill_source": "observed_mid_plus_2bps_floor",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "USOL/USDC"
+    },
+    {
+      "seq": 10,
+      "event": "exit",
+      "ts_ms": 1794406800000,
+      "ts_utc": "2026-11-11T14:20:00.000Z",
+      "ts_myt": "2026-11-11T22:20:00+08:00",
+      "trade_id": "P000001",
+      "coin": "USOL",
+      "side": "long",
+      "size": 0.192,
+      "price": 83.85805,
+      "fee": 0.01127052192,
+      "pnl_gross": -0.0902039423999986,
+      "reason": "stop",
+      "market": "spot",
+      "bar_t": 1794406800000,
+      "observed_at_utc": "2026-11-11T14:25:43.916Z",
+      "replayed": true,
+      "gap_through_stop": true,
+      "stop_trigger": 83.90622288899999,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "bar_open_gap",
+      "fill_source": "virtual_stop_plus_5bp"
+    },
+    {
+      "seq": 11,
+      "event": "net_pnl",
+      "ts_ms": 1794406800000,
+      "ts_utc": "2026-11-11T14:20:00.000Z",
+      "ts_myt": "2026-11-11T22:20:00+08:00",
+      "id": "P000001",
+      "coin": "USOL",
+      "entry_ms": 1794403545079,
+      "exit_ms": 1794406800000,
+      "pnl_net": -0.1128081289996786,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
+    },
+    {
+      "seq": 12,
+      "event": "signal",
+      "ts_ms": 1794407143916,
+      "ts_utc": "2026-11-11T14:25:43.916Z",
+      "ts_myt": "2026-11-11T22:25:43+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T14:25:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 84.69,
+        "prior_exit_low": 83.927
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 13,
+      "event": "valuation",
+      "ts_ms": 1794407143916,
+      "ts_utc": "2026-11-11T14:25:43.916Z",
+      "ts_myt": "2026-11-11T22:25:43+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 14,
+      "event": "day_rollover",
+      "ts_ms": 1794412800000,
+      "ts_utc": "2026-11-11T16:00:00.000Z",
+      "ts_myt": "2026-11-12T00:00:00+08:00",
+      "equity": 16.12719187100032,
+      "halt_persists": false
+    },
+    {
+      "seq": 15,
+      "event": "signal",
+      "ts_ms": 1794439956441,
+      "ts_utc": "2026-11-11T23:32:36.441Z",
+      "ts_myt": "2026-11-12T07:32:36+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-11T23:30:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 84.794,
+        "prior_exit_low": 82.159
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 16,
+      "event": "valuation",
+      "ts_ms": 1794439956441,
+      "ts_utc": "2026-11-11T23:32:36.441Z",
+      "ts_myt": "2026-11-12T07:32:36+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 17,
+      "event": "signal",
+      "ts_ms": 1794444256405,
+      "ts_utc": "2026-11-12T00:44:16.405Z",
+      "ts_myt": "2026-11-12T08:44:16+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T00:40:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.725,
+        "prior_exit_low": 82.848
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 18,
+      "event": "valuation",
+      "ts_ms": 1794444256405,
+      "ts_utc": "2026-11-12T00:44:16.405Z",
+      "ts_myt": "2026-11-12T08:44:16+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 19,
+      "event": "signal",
+      "ts_ms": 1794444349896,
+      "ts_utc": "2026-11-12T00:45:49.896Z",
+      "ts_myt": "2026-11-12T08:45:49+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T00:45:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.725,
+        "prior_exit_low": 82.885
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 20,
+      "event": "valuation",
+      "ts_ms": 1794444349896,
+      "ts_utc": "2026-11-12T00:45:49.896Z",
+      "ts_myt": "2026-11-12T08:45:49+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 21,
+      "event": "signal",
+      "ts_ms": 1794444642533,
+      "ts_utc": "2026-11-12T00:50:42.533Z",
+      "ts_myt": "2026-11-12T08:50:42+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T00:50:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.725,
+        "prior_exit_low": 83.186
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 22,
+      "event": "signal",
+      "ts_ms": 1794447359011,
+      "ts_utc": "2026-11-12T01:35:59.011Z",
+      "ts_myt": "2026-11-12T09:35:59+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T01:35:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.736,
+        "prior_exit_low": 82.938
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 23,
+      "event": "valuation",
+      "ts_ms": 1794447359011,
+      "ts_utc": "2026-11-12T01:35:59.011Z",
+      "ts_myt": "2026-11-12T09:35:59+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 24,
+      "event": "signal",
+      "ts_ms": 1794448456287,
+      "ts_utc": "2026-11-12T01:54:16.287Z",
+      "ts_myt": "2026-11-12T09:54:16+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T01:50:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.736,
+        "prior_exit_low": 82.938
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 25,
+      "event": "valuation",
+      "ts_ms": 1794448456287,
+      "ts_utc": "2026-11-12T01:54:16.287Z",
+      "ts_myt": "2026-11-12T09:54:16+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 26,
+      "event": "signal",
+      "ts_ms": 1794448529865,
+      "ts_utc": "2026-11-12T01:55:29.865Z",
+      "ts_myt": "2026-11-12T09:55:29+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T01:55:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.736,
+        "prior_exit_low": 82.938
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 27,
+      "event": "signal",
+      "ts_ms": 1794461841478,
+      "ts_utc": "2026-11-12T05:37:21.478Z",
+      "ts_myt": "2026-11-12T13:37:21+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T05:35:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.371,
+        "prior_exit_low": 82.624
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 28,
+      "event": "valuation",
+      "ts_ms": 1794461841478,
+      "ts_utc": "2026-11-12T05:37:21.478Z",
+      "ts_myt": "2026-11-12T13:37:21+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 29,
+      "event": "signal",
+      "ts_ms": 1794462686357,
+      "ts_utc": "2026-11-12T05:51:26.357Z",
+      "ts_myt": "2026-11-12T13:51:26+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T05:50:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.33,
+        "prior_exit_low": 82.624
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 30,
+      "event": "valuation",
+      "ts_ms": 1794462686357,
+      "ts_utc": "2026-11-12T05:51:26.357Z",
+      "ts_myt": "2026-11-12T13:51:26+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 31,
+      "event": "signal",
+      "ts_ms": 1794463314629,
+      "ts_utc": "2026-11-12T06:01:54.629Z",
+      "ts_myt": "2026-11-12T14:01:54+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T06:00:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.165,
+        "prior_exit_low": 82.624
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 32,
+      "event": "valuation",
+      "ts_ms": 1794463314629,
+      "ts_utc": "2026-11-12T06:01:54.629Z",
+      "ts_myt": "2026-11-12T14:01:54+08:00",
+      "equity": 16.12719187100032,
+      "cash": 16.12719187100032,
+      "unrealized": 0.0,
+      "fees": 0.02260418659968,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 1.0375678080864223
+    },
+    {
+      "seq": 33,
+      "event": "signal",
+      "ts_ms": 1794463537755,
+      "ts_utc": "2026-11-12T06:05:37.755Z",
+      "ts_myt": "2026-11-12T14:05:37+08:00",
+      "coin": "USOL",
+      "boundary_utc": "2026-11-12T06:05:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 83.165,
+        "prior_exit_low": 82.624
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 34,
+      "event": "retired",
+      "ts_ms": 1794463863778,
+      "ts_utc": "2026-11-12T06:11:03.778Z",
+      "ts_myt": "2026-11-12T14:11:03+08:00",
+      "status": "RETIRED_DATA_QUALITY",
+      "note_sha256": "c952a584ff1545db162c3ca131490e6d0f140e74ce4bedd92bc3b8a55b49d617",
+      "reason": "USOL/USDC spot pair too thin: Hyperliquid omits 1m candles for no-trade minutes, so the frozen 512-bar continuity check fails for hours at a time, and real fills on a pair this thin would also be poor.",
+      "history_preserved": true,
+      "kept_in_dsr_trial_count": true
+    }
+  ],
+  "peak": 16.29627679292032,
+  "max_drawdown_pct": 1.0375678080864223,
+  "decisions": {
+    "USOL": 1794463500000
+  },
+  "stopped_sides": {},
+  "spot_spec": {
+    "coins": [
+      "USOL"
+    ],
+    "market": "spot",
+    "leverage": 1,
+    "long_only": true,
+    "sizing": "all_in_cash",
+    "starting_equity": 16.24,
+    "spot_pair": "USOL/USDC",
+    "api_coin": "@156",
+    "price_source": "spot_pair",
+    "taker_fee": 0.0007,
+    "maker_fee_documented": 0.0004,
+    "min_notional": 10.0,
+    "no_funding": true,
+    "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+    "owner": "Desk-defined spot experiment at owner request; unvalidated",
+    "id": "sp-donchian5m-usol-v1",
+    "kind": "spot_donchian",
+    "interval": 300000,
+    "hold_ms": 14400000,
+    "lane": "spot_fast",
+    "params": {
+      "lookback": 20,
+      "exit_lookback": 10
+    },
+    "sha256": "7250eaa1556a8a0ff450d4f7ed52ac9db27b08f0514bbaf96da5d51bdea160c2"
+  },
+  "activation_ms": 1794388565487,
+  "market": "spot",
+  "leverage": 1,
+  "evaluation": {
+    "start_ms": 1794388619638,
+    "start_equity": 16.24,
+    "btc_id": "b0-btc-1x-hold-control-v1",
+    "random_id": "c1-random15m-v1",
+    "btc_start": 99.64991761286977,
+    "random_start": 100.0,
+    "daily_returns": [
+      0.0
+    ],
+    "day": "2026-11-13",
+    "day_start": 16.12719187100032,
+    "previous": 16.12719187100032,
+    "skip_partial_day": false,
+    "status": "NOT_SIGNIFICANT",
+    "flag_ms": null,
+    "oos": null,
+    "trial_count": 434,
+    "dsr_probability": null,
+    "days": 1,
+    "return_pct": -0.6946313362049095,
+    "excess_btc_pct": 5.989740849798208,
+    "excess_random_pct": -2.1663437270675656
+  },
+  "valuation_bucket": 1993848,
+  "retired": true,
+  "retired_status": "RETIRED_DATA_QUALITY",
+  "retired_ms": 1794463863778,
+  "retired_utc": "2026-11-12T06:11:03.778Z",
+  "retirement_note_sha256": "c952a584ff1545db162c3ca131490e6d0f140e74ce4bedd92bc3b8a55b49d617",
+  "labels_v1": {
+    "label": null,
+    "description": null,
+    "promotion_eligible": true,
+    "clusters": [
+      "TREND"
+    ],
+    "note_sha256": "18d5fbce30ce61da9de8ae4b75d2d6b41fb91365cd4ca44d1a5d7f1aa29bd0f6"
+  }
+}

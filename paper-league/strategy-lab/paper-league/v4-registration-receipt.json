@@ -1,0 +1,253 @@
+{
+  "version": 4,
+  "mode": "PAPER_ONLY",
+  "registered_utc": "2026-11-12T05:47:18.443Z",
+  "original_manifest_sha256": "de7ede5ebf187565a7e6c582412b66660005881e85bd03cfe59133552aedae1a",
+  "extension_v2_sha256": "409738ca51181d616afe106c921b7441d8cbc0624b38c2be30f03fbb4712ce92",
+  "spot_extension_v3_sha256": "7a1e374a349ba2998feed402cb9e248c3de481162759193fbe0a39cc04372be7",
+  "implementation_sha256": {
+    "league_v4.py": "8400bbb8110d7027a68abe41971e863e5a1d39dd62b0de3b36f30dc5c0859265",
+    "strategies_v4.py": "c90e1efb2daeb797ca69f384b7ea7ccf756b9837e315340affd89d570d7c0a6d",
+    "register_v4.py": "c205ccefae0f6e5c97627992ba3b1c9f564a1063bd20b6cb2c1bcfb1c4db0b42"
+  },
+  "prior_known_trials": 425,
+  "prior_league_books": 116,
+  "v4_books": 9,
+  "total_league_books": 125,
+  "total_known_trials": 434,
+  "research_memo": "/workspace/trading-desk/research/strategy-sweep-2026-11-12.md",
+  "strategies": [
+    {
+      "id": "n1-tsmom-mh1h-v1",
+      "kind": "tsmom_mh",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "horizons": [
+          6,
+          24,
+          72
+        ],
+        "exit_h": 24,
+        "stop_atr": 3.0
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://www.nber.org/papers/w24877",
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3309565",
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4675565"
+      ],
+      "sha256": "5d121c7829f05cd80ea05af36eb527a9c6f375c55e15561d52ce5de0f88d5ea5"
+    },
+    {
+      "id": "n2-shockrev1h-v1",
+      "kind": "shock_reversal",
+      "interval": 3600000,
+      "hold_ms": 86400000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "window": 168,
+        "z": 3.0,
+        "stop_atr": 3.0,
+        "stop_floor": 0.01
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://www.tandfonline.com/doi/full/10.1080/15140326.2022.2151253",
+        "https://ledgerjournal.org/ojs/ledger/article/view/213"
+      ],
+      "sha256": "1eef1c6eafe52a3b232665e27fa4223ee91fdf1702bfb7f6deb41ed536fca162"
+    },
+    {
+      "id": "n3-negfund-btc-v1",
+      "kind": "neg_funding",
+      "interval": 3600000,
+      "hold_ms": 86400000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "hours": 8,
+        "stop_atr": 3.0
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://www.aijmr.com/research-paper.php?id=1493",
+        "https://janorium.com/articles/funding-rate-signal-backtest"
+      ],
+      "sha256": "b65b191359ff5f427608038259bed5100123b9ad768a713ebc7679f83cc249b1"
+    },
+    {
+      "id": "n4-utc21-btc-v1",
+      "kind": "hour_window",
+      "interval": 3600000,
+      "hold_ms": 7200000,
+      "lane": "fast",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "entry_hour_utc": 21,
+        "stop_atr": 2.0
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://quantpedia.com/the-seasonality-of-bitcoin/",
+        "https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=NART98431919"
+      ],
+      "sha256": "e2a3a81772c3a45441f6caa7007802d8687801a0bfef563b194d9b6ed2d55230"
+    },
+    {
+      "id": "n5-weekend-btc-v1",
+      "kind": "weekend",
+      "interval": 3600000,
+      "hold_ms": 234000000,
+      "lane": "slow",
+      "coins": [
+        "BTC"
+      ],
+      "params": {
+        "weekday_utc": 4,
+        "entry_hour_utc": 20,
+        "stop_pct": 0.04
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://quantpedia.com/how-to-profitably-trade-bitcoins-overnight-sessions/",
+        "https://research.dial.uclouvain.be/server/api/core/bitstreams/e8ffcd60-cb1e-4e49-ac84-09b305474d6b/content"
+      ],
+      "sha256": "876e5d478d5a4ccedfb141c8285d9597e26532eb8182106a77da99adda885466"
+    },
+    {
+      "id": "n6-ethbtc-z1h-v1",
+      "kind": "ratio_mr",
+      "interval": 3600000,
+      "hold_ms": 172800000,
+      "lane": "slow",
+      "coins": [
+        "ETH"
+      ],
+      "params": {
+        "window": 168,
+        "z": 2.0,
+        "stop_atr": 3.0,
+        "numerator": "ETH",
+        "denominator": "BTC"
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://www.utupub.fi/items/3ae68380-4490-4f5b-ab53-55e4c1375ebe",
+        "https://ijsra.net/sites/default/files/fulltext_pdf/IJSRA-2026-0283.pdf"
+      ],
+      "sha256": "171ebe9a622edba8a6aa3adc6b9701fd1b68c6e83f878dc496079106597e07ee"
+    },
+    {
+      "id": "n7-xsmom72h-v1",
+      "kind": "xs_momentum",
+      "interval": 3600000,
+      "hold_ms": 259200000,
+      "lane": "slow",
+      "coins": [
+        "BTC",
+        "ETH",
+        "SOL"
+      ],
+      "params": {
+        "lookback": 72,
+        "rebalance_hour_utc": 0,
+        "stop_atr": 3.0
+      },
+      "market": "perp",
+      "owner": "v4 research sweep 2026-11-12; source-motivated, unvalidated",
+      "sources": [
+        "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4675565",
+        "https://doi.org/10.1007/s11408-025-00474-9"
+      ],
+      "sha256": "5a5d8eccc96b4847af0b16b11bc35307363e90ba7d79b3c56c5ca2be32446b84"
+    },
+    {
+      "id": "sp4-utc21-ubtc-v1",
+      "kind": "hour_window",
+      "interval": 3600000,
+      "hold_ms": 7200000,
+      "lane": "spot_fast",
+      "coins": [
+        "UBTC"
+      ],
+      "params": {
+        "entry_hour_utc": 21,
+        "stop_atr": 2.0
+      },
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "v4 research sweep 2026-11-12; source-motivated spot variant, unvalidated",
+      "sources": [
+        "https://quantpedia.com/the-seasonality-of-bitcoin/",
+        "https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=NART98431919"
+      ],
+      "sha256": "04b9912415065b404d5d1001c31f0ad6ac6ed3d22c81b6ce336ed7180cf33c9f"
+    },
+    {
+      "id": "sp4-shockrev1h-ubtc-v1",
+      "kind": "shock_reversal",
+      "interval": 3600000,
+      "hold_ms": 86400000,
+      "lane": "spot_slow",
+      "coins": [
+        "UBTC"
+      ],
+      "params": {
+        "window": 168,
+        "z": 3.0,
+        "stop_atr": 3.0,
+        "stop_floor": 0.01
+      },
+      "market": "spot",
+      "leverage": 1,
+      "long_only": true,
+      "sizing": "all_in_cash",
+      "starting_equity": 16.24,
+      "spot_pair": "UBTC/USDC",
+      "api_coin": "@142",
+      "price_source": "spot_pair",
+      "taker_fee": 0.0007,
+      "min_notional": 10.0,
+      "no_funding": true,
+      "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+      "owner": "v4 research sweep 2026-11-12; source-motivated spot variant, unvalidated",
+      "sources": [
+        "https://www.tandfonline.com/doi/full/10.1080/15140326.2022.2151253",
+        "https://ledgerjournal.org/ojs/ledger/article/view/213"
+      ],
+      "sha256": "9d4eb9d393f28b619a051cd681c764f257f145efb63baf45de9babadb0f9ea2d"
+    }
+  ]
+}

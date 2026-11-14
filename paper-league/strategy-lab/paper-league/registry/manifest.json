@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "mode": "PAPER_ONLY",
+  "registered_utc": "2026-11-11T05:46:02.234Z",
+  "implementation_sha256": {
+    "league.py": "b36228b48352ece2154df28180f14ab5100f2891a23a9c7c33577cfd83dd6ee0",
+    "strategies.py": "a370223327c50b653970162beb17028e68ab0e86c3a4cf4f6b1025524dee1be4",
+    "../paper-trading/simcore.py": "197f4d2357bf42ee7028bde984cb92712f1ada75d744ccb9e4271f806eb73eda",
+    "../paper-trading/shadow_exchange.py": "1c1f832a1c80a4a866f9d112fd2e52f1034db19b81e666e71da94eeb85d542a6",
+    "../paper-trading/sentinel.py": "73c076d559231d4ca78e9a77c797f79c69a619ced676b80e492c4aa1e65266d3",
+    "../../risk-limits.md": "bc8c5b8637374ff5b54fb45d6bb732ce88a726c35866b6c1d2aa7bfa64ce18f0"
+  },
+  "dependencies": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "strategies": [
+    {
+      "id": "s1-donchian40-ablation-v1",
+      "kind": "donchian",
+      "owner": "Crypto Ablation Lab (historical idea provenance)",
+      "sha256": "568c6ab152072c53e63635453dbcfad9dff3be01d868b32c1b1cbbf4a29af061"
+    },
+    {
+      "id": "s2-bb40-ema200-ablation-v1",
+      "kind": "bb",
+      "owner": "Crypto Ablation Lab (historical idea provenance)",
+      "sha256": "5511718a055a827784854811e00ed9b1221ed65a0e61e900c967d451302aa9ea"
+    },
+    {
+      "id": "s4-ewmac-riskcap-noadd-ablation-v1",
+      "kind": "ewmac",
+      "owner": "Crypto Ablation Lab (historical idea provenance; desk risk overlay)",
+      "sha256": "5233f50ef930e53ba2eefb3c1c19ffb3e60550bfc181831357cc3dd14214d4cc"
+    },
+    {
+      "id": "r1-trend-rsi-pullback-market-lane-v1",
+      "kind": "rsi",
+      "owner": "Market Analyst lane (desk-defined; NOT independently submitted/endorsed)",
+      "sha256": "f9c9737e2a6ab4c7dda403ab0150d361d71df4611ee2f26b085f98ff502e0db5"
+    },
+    {
+      "id": "b0-btc-1x-hold-control-v1",
+      "kind": "benchmark",
+      "owner": "Desk measurement control (not a bot strategy)",
+      "sha256": "4361382726aa71cb0a95fb4372437fa76d50bcaabc60f558f6d93d3dbbe7d5ce"
+    }
+  ]
+}

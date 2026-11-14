@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -u
+cd -- "$(dirname -- "$(readlink -f -- "$0")")" || exit 1
+exec 9>.supervisor.lock
+flock -n 9 || exit 0
+printf '%s\n' "$$" > supervisor.pid
+child=''
+quit() {
+    trap - TERM INT
+    if [[ -n "$child" ]]; then kill -TERM "$child" 2>/dev/null || true; wait "$child" 2>/dev/null || true; fi
+    exit 0
+}
+trap quit TERM INT
+backoff=30
+while [[ ! -e STOP ]]; do
+    printf '%s supervisor warming public candle cache if gap >10min\n' "$(date -Is)"
+    if ! python3 warm_cache.py; then
+        printf '%s cache warm-up failed; backing off %ss without starting engine\n' "$(date -Is)" "$backoff"
+        sleep "$backoff" &
+        child=$!
+        wait "$child" || true
+        child=''
+        (( backoff < 300 )) && backoff=$((backoff*2))
+        (( backoff > 300 )) && backoff=300
+        continue
+    fi
+    printf '%s supervisor starting PAPER-only engine\n' "$(date -Is)"
+    began=$SECONDS
+    python3 -u league_v3.py &
+    child=$!
+    wait "$child"
+    rc=$?
+    child=''
+    [[ -e STOP ]] && break
+    printf '%s engine exited rc=%s; restarting after %ss\n' "$(date -Is)" "$rc" "$backoff"
+    if (( SECONDS - began > 600 )); then backoff=30; fi
+    # Child wait is interruptible by TERM, unlike a foreground sleep.
+    sleep "$backoff" &
+    child=$!
+    wait "$child" || true
+    child=''
+    (( backoff < 300 )) && backoff=$((backoff*2))
+    (( backoff > 300 )) && backoff=300
+done
