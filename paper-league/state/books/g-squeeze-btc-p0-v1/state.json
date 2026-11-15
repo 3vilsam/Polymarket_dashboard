@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 97.98513261638237,
+  "cash": 97.95236310954152,
   "day_date": "2026-11-15",
   "day_start_equity": 98.81001372750099,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000018": {
+      "id": "P000018",
+      "coin": "BTC",
+      "dir": 1,
+      "side": "long",
+      "size": 0.00111,
+      "size_initial": 0.00111,
+      "entry_px": 65604.6183,
+      "entry_ms": 1794748743529,
+      "stop": 65276.5952085,
+      "fees": 0.032769506840850005,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.48755564594711254,
+      "funding_hour": 498541,
+      "risk_cap_at_entry": 0.4899256630819119
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -180,25 +198,25 @@
       "reason": "signal_or_time_exit"
     }
   ],
-  "next_seq": 18,
+  "next_seq": 19,
   "marks": {
-    "BTC": 65539.5,
-    "ETH": 1833.85,
-    "SOL": 72.9625,
-    "UBTC": 65547.5,
-    "UETH": 1833.75,
+    "BTC": 65591.5,
+    "ETH": 1834.25,
+    "SOL": 72.9425,
+    "UBTC": 65593.5,
+    "UETH": 1834.05,
     "USOL": 82.9645,
-    "HYPE": 68.1375
+    "HYPE": 68.202
   },
   "stats": {
     "trades_closed": 17,
     "wins": 3,
     "losses": 14,
     "net_pnl": -2.0148673836176525,
-    "fees": 1.1212551276908893,
+    "fees": 1.1540246345317393,
     "funding": 0.0008690886083119996
   },
-  "last_tick_myt": "2026-11-15T21:14:03+08:00",
+  "last_tick_myt": "2026-11-15T21:19:03+08:00",
   "id": "g-squeeze-btc-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "squeeze",
@@ -12574,12 +12592,59 @@
         "prior_lower": 65435.282785954165
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 793,
+      "event": "signal",
+      "ts_ms": 1794748743529,
+      "ts_utc": "2026-11-15T13:19:03.529Z",
+      "ts_myt": "2026-11-15T21:19:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T13:19:00.000Z",
+      "side": 1,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 65586.85793264964,
+        "prior_lower": 65477.44206735036
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 794,
+      "event": "entry",
+      "ts_ms": 1794748743529,
+      "ts_utc": "2026-11-15T13:19:03.529Z",
+      "ts_myt": "2026-11-15T21:19:03+08:00",
+      "trade_id": "P000018",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.00111,
+      "price": 65604.6183,
+      "stop": 65276.5952085,
+      "fee": 0.032769506840850005,
+      "cost_inclusive_risk": 0.48755564594711254,
+      "risk_budget": 0.4899256630819119,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 795,
+      "event": "valuation",
+      "ts_ms": 1794748743529,
+      "ts_utc": "2026-11-15T13:19:03.529Z",
+      "ts_myt": "2026-11-15T21:19:03+08:00",
+      "equity": 97.93780179654152,
+      "cash": 97.95236310954152,
+      "unrealized": -0.014561313000002121,
+      "fees": 1.1540246345317393,
+      "funding": 0.0008690886083119996,
+      "positions": 1,
+      "max_drawdown_pct": 2.2037112845532505
     }
   ],
   "peak": 100.0,
   "max_drawdown_pct": 2.2037112845532505,
   "decisions": {
-    "BTC": 1794748440000
+    "BTC": 1794748740000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -12614,7 +12679,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 98.81001372750099,
-    "previous": 97.98513261638237,
+    "previous": 97.89047752929152,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -12622,11 +12687,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -2.0148673836176245,
-    "excess_btc_pct": 9.33956400711783,
-    "excess_random_pct": -2.997728088162921
+    "return_pct": -2.1095224707084803,
+    "excess_btc_pct": 9.17451362727595,
+    "excess_random_pct": -3.0923831752537767
   },
-  "valuation_bucket": 1994164,
+  "valuation_bucket": 1994165,
   "labels_v1": {
     "label": null,
     "description": null,
