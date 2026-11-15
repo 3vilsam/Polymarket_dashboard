@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "cash": 1000.0,
+  "starting_equity": 1000.0,
+  "day_start_equity": 1000.0,
+  "positions": {},
+  "closed_trades": [],
+  "stats": {
+    "trades_closed": 0,
+    "wins": 0,
+    "losses": 0,
+    "net_pnl": 0.0,
+    "fees": 0.0,
+    "funding": 0.0
+  },
+  "marks": {
+    "BTC": 64562.5,
+    "ETH": 1805.85,
+    "SOL": 70.8335,
+    "UBTC": 64565.5,
+    "UETH": 1806.5,
+    "HYPE": 66.08
+  },
+  "halted": false,
+  "halt_reason": null,
+  "next_seq": 1,
+  "peak": 1000.0,
+  "max_drawdown_pct": 0.0,
+  "id": "g-squeeze-eth-p0-v1-k1000",
+  "parent_id": "g-squeeze-eth-p0-v1",
+  "owner": "Prospective fixed grid; correlated trials",
+  "kind": "squeeze",
+  "lane": "fast",
+  "market": "perp",
+  "events": [
+    {
+      "seq": 1,
+      "event": "registered",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "rules_sha256": "d8968b8121b724d1a5778e959ab894da80d7554736c525fed4c41020293cff55",
+      "status": "UNPROVEN_PAPER_ONLY",
+      "starting_equity": 1000.0,
+      "parent_id": "g-squeeze-eth-p0-v1",
+      "scale_twin": true,
+      "bankroll_only_difference": true,
+      "trial_count_delta": 0
+    },
+    {
+      "seq": 2,
+      "event": "signal",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T02:42:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 1813.6048846294343,
+        "prior_lower": 1791.5251153705653
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 3,
+      "event": "valuation",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "equity": 1000.0,
+      "cash": 1000.0,
+      "unrealized": 0.0,
+      "fees": 0.0,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.0
+    }
+  ],
+  "decisions": {
+    "ETH": 1794710520000
+  },
+  "stopped_sides": {},
+  "day_date": "2026-11-15",
+  "last_tick_myt": "2026-11-15T10:42:03+08:00",
+  "activation_ms": 1794710523311,
+  "scale_cohort": "k1000",
+  "rules_sha256": "d8968b8121b724d1a5778e959ab894da80d7554736c525fed4c41020293cff55",
+  "bankroll": 1000.0,
+  "leverage": null,
+  "spec": {
+    "id": "g-squeeze-eth-p0-v1",
+    "kind": "squeeze",
+    "interval": 60000,
+    "hold_ms": 1800000,
+    "lane": "fast",
+    "coins": [
+      "ETH"
+    ],
+    "params": {
+      "window": 20,
+      "quantile": 0.2
+    },
+    "owner": "Prospective fixed grid; correlated trials",
+    "sha256": "d8968b8121b724d1a5778e959ab894da80d7554736c525fed4c41020293cff55"
+  },
+  "valuation_bucket": 1994122
+}

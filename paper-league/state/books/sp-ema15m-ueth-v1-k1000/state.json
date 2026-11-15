@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "cash": 1000.0,
+  "starting_equity": 1000.0,
+  "day_start_equity": 1000.0,
+  "positions": {},
+  "closed_trades": [],
+  "stats": {
+    "trades_closed": 0,
+    "wins": 0,
+    "losses": 0,
+    "net_pnl": 0.0,
+    "fees": 0.0,
+    "funding": 0.0
+  },
+  "marks": {
+    "UBTC": 64565.5,
+    "UETH": 1806.5,
+    "HYPE": 66.08
+  },
+  "halted": false,
+  "halt_reason": null,
+  "next_seq": 1,
+  "peak": 1000.0,
+  "max_drawdown_pct": 0.0,
+  "id": "sp-ema15m-ueth-v1-k1000",
+  "parent_id": "sp-ema15m-ueth-v1",
+  "owner": "Desk-defined spot experiment at owner request; unvalidated",
+  "kind": "spot_ema",
+  "lane": "spot_fast",
+  "market": "spot",
+  "events": [
+    {
+      "seq": 1,
+      "event": "registered",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "rules_sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc",
+      "status": "UNPROVEN_PAPER_ONLY",
+      "starting_equity": 1000.0,
+      "parent_id": "sp-ema15m-ueth-v1",
+      "scale_twin": true,
+      "bankroll_only_difference": true,
+      "trial_count_delta": 0
+    },
+    {
+      "seq": 2,
+      "event": "signal",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-15T02:30:00.000Z",
+      "side": 0,
+      "details": {
+        "fast": 1757.2135443700292,
+        "slow": 1763.9827375405328,
+        "raw_cross": 0
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 3,
+      "event": "valuation",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "equity": 1000.0,
+      "cash": 1000.0,
+      "unrealized": 0.0,
+      "fees": 0.0,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.0
+    }
+  ],
+  "decisions": {
+    "UETH": 1794709800000
+  },
+  "stopped_sides": {},
+  "day_date": "2026-11-15",
+  "last_tick_myt": "2026-11-15T10:42:03+08:00",
+  "activation_ms": 1794710523311,
+  "scale_cohort": "k1000",
+  "rules_sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc",
+  "bankroll": 1000.0,
+  "leverage": 1,
+  "spot_spec": {
+    "coins": [
+      "UETH"
+    ],
+    "market": "spot",
+    "leverage": 1,
+    "long_only": true,
+    "sizing": "all_in_cash",
+    "starting_equity": 16.24,
+    "spot_pair": "UETH/USDC",
+    "api_coin": "@151",
+    "price_source": "spot_pair",
+    "taker_fee": 0.0007,
+    "maker_fee_documented": 0.0004,
+    "min_notional": 10.0,
+    "no_funding": true,
+    "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+    "owner": "Desk-defined spot experiment at owner request; unvalidated",
+    "id": "sp-ema15m-ueth-v1",
+    "kind": "spot_ema",
+    "interval": 900000,
+    "hold_ms": 43200000,
+    "lane": "spot_fast",
+    "params": {
+      "fast": 9,
+      "slow": 21
+    },
+    "sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc"
+  },
+  "valuation_bucket": 1994122
+}

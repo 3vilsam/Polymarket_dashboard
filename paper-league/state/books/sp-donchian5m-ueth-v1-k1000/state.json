@@ -1,0 +1,128 @@
+{
+  "version": 1,
+  "cash": 1000.0,
+  "starting_equity": 1000.0,
+  "day_start_equity": 1000.0,
+  "positions": {},
+  "closed_trades": [],
+  "stats": {
+    "trades_closed": 0,
+    "wins": 0,
+    "losses": 0,
+    "net_pnl": 0.0,
+    "fees": 0.0,
+    "funding": 0.0
+  },
+  "marks": {
+    "UBTC": 64565.5,
+    "UETH": 1806.5,
+    "HYPE": 66.08
+  },
+  "halted": false,
+  "halt_reason": null,
+  "next_seq": 1,
+  "peak": 1000.0,
+  "max_drawdown_pct": 0.0,
+  "id": "sp-donchian5m-ueth-v1-k1000",
+  "parent_id": "sp-donchian5m-ueth-v1",
+  "owner": "Desk-defined spot experiment at owner request; unvalidated",
+  "kind": "spot_donchian",
+  "lane": "spot_fast",
+  "market": "spot",
+  "events": [
+    {
+      "seq": 1,
+      "event": "registered",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "rules_sha256": "a83f78326d77848f2d9fa670cf4e745853d200fe3ec2b59633d1daa7d2054f5e",
+      "status": "UNPROVEN_PAPER_ONLY",
+      "starting_equity": 1000.0,
+      "parent_id": "sp-donchian5m-ueth-v1",
+      "scale_twin": true,
+      "bankroll_only_difference": true,
+      "trial_count_delta": 0
+    },
+    {
+      "seq": 2,
+      "event": "signal",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-15T02:40:00.000Z",
+      "side": 1,
+      "details": {
+        "prior_high": 1809.2,
+        "prior_exit_low": 1710.5
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 3,
+      "event": "missed_entry",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "coin": "UETH",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-15T02:40:00.000Z"
+    },
+    {
+      "seq": 4,
+      "event": "valuation",
+      "ts_ms": 1794710523311,
+      "ts_utc": "2026-11-15T02:42:03.311Z",
+      "ts_myt": "2026-11-15T10:42:03+08:00",
+      "equity": 1000.0,
+      "cash": 1000.0,
+      "unrealized": 0.0,
+      "fees": 0.0,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.0
+    }
+  ],
+  "decisions": {
+    "UETH": 1794710400000
+  },
+  "stopped_sides": {},
+  "day_date": "2026-11-15",
+  "last_tick_myt": "2026-11-15T10:42:03+08:00",
+  "activation_ms": 1794710523311,
+  "scale_cohort": "k1000",
+  "rules_sha256": "a83f78326d77848f2d9fa670cf4e745853d200fe3ec2b59633d1daa7d2054f5e",
+  "bankroll": 1000.0,
+  "leverage": 1,
+  "spot_spec": {
+    "coins": [
+      "UETH"
+    ],
+    "market": "spot",
+    "leverage": 1,
+    "long_only": true,
+    "sizing": "all_in_cash",
+    "starting_equity": 16.24,
+    "spot_pair": "UETH/USDC",
+    "api_coin": "@151",
+    "price_source": "spot_pair",
+    "taker_fee": 0.0007,
+    "maker_fee_documented": 0.0004,
+    "min_notional": 10.0,
+    "no_funding": true,
+    "slippage": "max(2bp_adverse_mid, L2_notional_walk)",
+    "owner": "Desk-defined spot experiment at owner request; unvalidated",
+    "id": "sp-donchian5m-ueth-v1",
+    "kind": "spot_donchian",
+    "interval": 300000,
+    "hold_ms": 14400000,
+    "lane": "spot_fast",
+    "params": {
+      "lookback": 20,
+      "exit_lookback": 10
+    },
+    "sha256": "a83f78326d77848f2d9fa670cf4e745853d200fe3ec2b59633d1daa7d2054f5e"
+  },
+  "valuation_bucket": 1994122
+}
