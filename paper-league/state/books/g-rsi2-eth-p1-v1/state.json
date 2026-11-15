@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 99.27621256486665,
+  "cash": 99.1237693357675,
   "day_date": "2026-11-16",
   "day_start_equity": 99.3095552793261,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000009": {
-      "id": "P000009",
-      "coin": "ETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.0407,
-      "size_initial": 0.0407,
-      "entry_px": 1820.51403,
-      "entry_ms": 1794777363236,
-      "stop": 1811.41145985,
-      "fees": 0.03334271445945,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.49608401996585105,
-      "funding_hour": 498549,
-      "risk_cap_at_entry": 0.49654777639663056
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -106,27 +88,37 @@
       "fees": 0.0563827909968,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000009",
+      "coin": "ETH",
+      "entry_ms": 1794777363236,
+      "exit_ms": 1794778023916,
+      "pnl_net": -0.1857859435585973,
+      "fees": 0.0666318095586,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 10,
   "marks": {
-    "BTC": 64919.5,
-    "ETH": 1815.65,
-    "SOL": 71.6365,
-    "UBTC": 64928.5,
-    "UETH": 1815.55,
+    "BTC": 65023.5,
+    "ETH": 1817.95,
+    "SOL": 71.7795,
+    "UBTC": 65027.5,
+    "UETH": 1817.95,
     "USOL": 82.9645,
-    "HYPE": 67.3605
+    "HYPE": 67.5915
   },
   "stats": {
-    "trades_closed": 8,
+    "trades_closed": 9,
     "wins": 4,
-    "losses": 4,
-    "net_pnl": -0.6904447206738963,
-    "fees": 0.4553188743643961,
+    "losses": 5,
+    "net_pnl": -0.8762306642324935,
+    "fees": 0.4886079694635461,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-16T05:21:03+08:00",
+  "last_tick_myt": "2026-11-16T05:27:03+08:00",
   "id": "g-rsi2-eth-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "rsi2",
@@ -9457,12 +9449,59 @@
         "ema200": 1816.6551679222748
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 636,
+      "event": "signal",
+      "ts_ms": 1794778023916,
+      "ts_utc": "2026-11-15T21:27:03.916Z",
+      "ts_myt": "2026-11-16T05:27:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T21:25:00.000Z",
+      "side": 0,
+      "details": {
+        "rsi2": 1.107190555111643,
+        "ema200": 1816.63073839071
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 637,
+      "event": "exit",
+      "ts_ms": 1794778023916,
+      "ts_utc": "2026-11-15T21:27:03.916Z",
+      "ts_myt": "2026-11-16T05:27:03+08:00",
+      "trade_id": "P000009",
+      "coin": "ETH",
+      "side": "long",
+      "size": 0.0407,
+      "price": 1817.5864100000001,
+      "fee": 0.03328909509915,
+      "pnl_gross": -0.11915413399999729,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-15T21:25:00.000Z",
+      "delay_ms": 123916
+    },
+    {
+      "seq": 638,
+      "event": "net_pnl",
+      "ts_ms": 1794778023916,
+      "ts_utc": "2026-11-15T21:27:03.916Z",
+      "ts_myt": "2026-11-16T05:27:03+08:00",
+      "id": "P000009",
+      "coin": "ETH",
+      "entry_ms": 1794777363236,
+      "exit_ms": 1794778023916,
+      "pnl_net": -0.1857859435585973,
+      "fees": 0.0666318095586,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "peak": 100.1089025279475,
-  "max_drawdown_pct": 1.0315675809077627,
+  "max_drawdown_pct": 1.0884855957507371,
   "decisions": {
-    "ETH": 1794777600000
+    "ETH": 1794777900000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -9497,7 +9536,7 @@
     ],
     "day": "2026-11-16",
     "day_start": 99.3095552793261,
-    "previous": 99.03021352311666,
+    "previous": 99.1237693357675,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -9505,9 +9544,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 4,
-    "return_pct": -0.9697864768833386,
-    "excess_btc_pct": 11.229988546935854,
-    "excess_random_pct": -1.246558804655662
+    "return_pct": -0.8762306642324913,
+    "excess_btc_pct": 11.182753774084652,
+    "excess_random_pct": -1.237318151504796
   },
   "valuation_bucket": 1994197,
   "labels_v1": {
