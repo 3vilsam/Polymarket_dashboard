@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 99.32435328690136,
+  "cash": 99.29110296016576,
   "day_date": "2026-11-15",
   "day_start_equity": 99.89673494047885,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000011": {
+      "id": "P000011",
+      "coin": "SOL",
+      "dir": 1,
+      "side": "long",
+      "size": 1.04,
+      "size_initial": 1.04,
+      "entry_px": 71.0477067,
+      "entry_ms": 1794719882897,
+      "stop": 70.6924681665,
+      "fees": 0.0332503267356,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.49470944461450167,
+      "funding_hour": 498533,
+      "risk_cap_at_entry": 0.4966217664345068
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -110,25 +128,25 @@
       "reason": "stop"
     }
   ],
-  "next_seq": 11,
+  "next_seq": 12,
   "marks": {
-    "BTC": 64808.5,
-    "ETH": 1808.15,
-    "SOL": 70.7405,
-    "UBTC": 64810.5,
-    "UETH": 1808.15,
+    "BTC": 64948.5,
+    "ETH": 1809.85,
+    "SOL": 71.0335,
+    "UBTC": 64953.5,
+    "UETH": 1809.95,
     "USOL": 82.9645,
-    "HYPE": 65.9325
+    "HYPE": 66.0435
   },
   "stats": {
     "trades_closed": 10,
     "wins": 2,
     "losses": 8,
     "net_pnl": -0.6756467130986352,
-    "fees": 0.6661970794379738,
+    "fees": 0.6994474061735738,
     "funding": -0.0008787009125460001
   },
-  "last_tick_myt": "2026-11-15T13:13:03+08:00",
+  "last_tick_myt": "2026-11-15T13:18:02+08:00",
   "id": "g-squeeze-sol-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "squeeze",
@@ -10298,12 +10316,59 @@
         "prior_lower": 70.6107922515673
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 651,
+      "event": "signal",
+      "ts_ms": 1794719882897,
+      "ts_utc": "2026-11-15T05:18:02.897Z",
+      "ts_myt": "2026-11-15T13:18:02+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T05:18:00.000Z",
+      "side": 1,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 71.0199513312233,
+        "prior_lower": 70.66204866877669
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 652,
+      "event": "entry",
+      "ts_ms": 1794719882897,
+      "ts_utc": "2026-11-15T05:18:02.897Z",
+      "ts_myt": "2026-11-15T13:18:02+08:00",
+      "trade_id": "P000011",
+      "coin": "SOL",
+      "side": "long",
+      "size": 1.04,
+      "price": 71.0477067,
+      "stop": 70.6924681665,
+      "fee": 0.0332503267356,
+      "cost_inclusive_risk": 0.49470944461450167,
+      "risk_budget": 0.4966217664345068,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 653,
+      "event": "valuation",
+      "ts_ms": 1794719882897,
+      "ts_utc": "2026-11-15T05:18:02.897Z",
+      "ts_myt": "2026-11-15T13:18:02+08:00",
+      "equity": 99.27632799216576,
+      "cash": 99.29110296016576,
+      "unrealized": -0.014774968000002673,
+      "fees": 0.6994474061735738,
+      "funding": -0.0008787009125460001,
+      "positions": 1,
+      "max_drawdown_pct": 2.3676756425889756
     }
   ],
   "peak": 101.68387226830367,
-  "max_drawdown_pct": 2.320445640756556,
+  "max_drawdown_pct": 2.3676756425889756,
   "decisions": {
-    "SOL": 1794719580000
+    "SOL": 1794719880000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -10338,7 +10403,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 100.74217847024538,
-    "previous": 99.32435328690136,
+    "previous": 99.22830934616576,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -10346,11 +10411,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -0.6756467130986432,
-    "excess_btc_pct": 11.660141888018194,
-    "excess_random_pct": -1.6572535385678377
+    "return_pct": -0.771690653834245,
+    "excess_btc_pct": 11.374572159106766,
+    "excess_random_pct": -1.7532974793034395
   },
-  "valuation_bucket": 1994132,
+  "valuation_bucket": 1994133,
   "labels_v1": {
     "label": null,
     "description": null,
