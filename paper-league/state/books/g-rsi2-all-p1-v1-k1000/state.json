@@ -1,9 +1,27 @@
 {
   "version": 1,
-  "cash": 997.3650034011456,
+  "cash": 997.0299119520067,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.0,
-  "positions": {},
+  "positions": {
+    "P000005": {
+      "id": "P000005",
+      "coin": "BTC",
+      "dir": 1,
+      "side": "long",
+      "size": 0.01143,
+      "size_initial": 0.01143,
+      "entry_px": 65148.5271,
+      "entry_ms": 1794751563257,
+      "stop": 64822.7844645,
+      "fees": 0.33509144913885,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 4.9856022774375095,
+      "funding_hour": 498542,
+      "risk_cap_at_entry": 4.986825017005728
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -51,20 +69,20 @@
     "wins": 3,
     "losses": 1,
     "net_pnl": -2.6349965988543813,
-    "fees": 2.3003182112281317,
+    "fees": 2.6354096603669817,
     "funding": 0.0
   },
   "marks": {
-    "BTC": 65311.5,
-    "ETH": 1826.45,
-    "SOL": 72.4045,
-    "UBTC": 65330.5,
-    "UETH": 1826.45,
-    "HYPE": 67.8745
+    "BTC": 65135.5,
+    "ETH": 1819.05,
+    "SOL": 72.1845,
+    "UBTC": 65150.5,
+    "UETH": 1819.15,
+    "HYPE": 67.4505
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 5,
+  "next_seq": 6,
   "peak": 1001.1283604271505,
   "max_drawdown_pct": 0.5976350580310638,
   "id": "g-rsi2-all-p1-v1-k1000",
@@ -6515,16 +6533,96 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 0.5976350580310638
+    },
+    {
+      "seq": 437,
+      "event": "signal",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T14:05:00.000Z",
+      "side": 1,
+      "details": {
+        "rsi2": 5.010021795818062,
+        "ema200": 65119.392792754654
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 438,
+      "event": "entry",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "trade_id": "P000005",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.01143,
+      "price": 65148.5271,
+      "stop": 64822.7844645,
+      "fee": 0.33509144913885,
+      "cost_inclusive_risk": 4.9856022774375095,
+      "risk_budget": 4.986825017005728,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 439,
+      "event": "signal",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T14:05:00.000Z",
+      "side": 1,
+      "details": {
+        "rsi2": 6.1575187104608915,
+        "ema200": 1816.8683972008885
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 440,
+      "event": "reject",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "coin": "ETH",
+      "reason": "major_cluster_max_1"
+    },
+    {
+      "seq": 441,
+      "event": "signal",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T14:05:00.000Z",
+      "side": 1,
+      "details": {
+        "rsi2": 3.3557802992862378,
+        "ema200": 71.79054663606601
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 442,
+      "event": "reject",
+      "ts_ms": 1794751563257,
+      "ts_utc": "2026-11-15T14:06:03.257Z",
+      "ts_myt": "2026-11-15T22:06:03+08:00",
+      "coin": "SOL",
+      "reason": "major_cluster_max_1"
     }
   ],
   "decisions": {
-    "BTC": 1794751200000,
-    "ETH": 1794751200000,
-    "SOL": 1794751200000
+    "BTC": 1794751500000,
+    "ETH": 1794751500000,
+    "SOL": 1794751500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-15",
-  "last_tick_myt": "2026-11-15T22:01:03+08:00",
+  "last_tick_myt": "2026-11-15T22:06:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "e5ea6c6d50e2fd95ac4cebf7a1dcca8cbe71ef5d6bcc23a1d01b1c1bf22a8621",
