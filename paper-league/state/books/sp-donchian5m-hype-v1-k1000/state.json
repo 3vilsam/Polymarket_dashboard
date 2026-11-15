@@ -1,9 +1,28 @@
 {
   "version": 1,
-  "cash": 1018.2785736188571,
+  "cash": 1017.5663140169214,
   "starting_equity": 1000.0,
   "day_start_equity": 1018.2785736188571,
-  "positions": {},
+  "positions": {
+    "P000003": {
+      "id": "P000003",
+      "coin": "HYPE",
+      "dir": 1,
+      "side": "long",
+      "size": 15.01,
+      "size_initial": 15.01,
+      "entry_px": 67.7890551,
+      "entry_ms": 1794774904921,
+      "stop": 67.38912093614744,
+      "fees": 0.7122596019356999,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498548,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -33,19 +52,19 @@
     "wins": 1,
     "losses": 1,
     "net_pnl": 18.278573618857102,
-    "fees": 2.8488103857083957,
+    "fees": 3.5610699876440957,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64897.5,
-    "UETH": 1825.55,
-    "HYPE": 67.6005
+    "UBTC": 65055.5,
+    "UETH": 1830.85,
+    "HYPE": 67.7755
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 3,
+  "next_seq": 4,
   "peak": 1043.4676182454257,
-  "max_drawdown_pct": 2.413974730612492,
+  "max_drawdown_pct": 2.5017322840740484,
   "id": "sp-donchian5m-hype-v1-k1000",
   "parent_id": "sp-donchian5m-hype-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
@@ -4184,14 +4203,63 @@
         "prior_exit_low": 66.929
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 282,
+      "event": "signal",
+      "ts_ms": 1794774904921,
+      "ts_utc": "2026-11-15T20:35:04.921Z",
+      "ts_myt": "2026-11-16T04:35:04+08:00",
+      "coin": "HYPE",
+      "boundary_utc": "2026-11-15T20:35:00.000Z",
+      "side": 1,
+      "details": {
+        "prior_high": 67.632,
+        "prior_exit_low": 67.006
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 283,
+      "event": "entry",
+      "ts_ms": 1794774904921,
+      "ts_utc": "2026-11-15T20:35:04.921Z",
+      "ts_myt": "2026-11-16T04:35:04+08:00",
+      "trade_id": "P000003",
+      "coin": "HYPE",
+      "side": "long",
+      "size": 15.01,
+      "price": 67.7890551,
+      "stop": 67.38912093614744,
+      "fee": 0.7122596019356999,
+      "fill_source": "observed_mid_plus_2bps_floor",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "HYPE/USDC"
+    },
+    {
+      "seq": 284,
+      "event": "valuation",
+      "ts_ms": 1794774904921,
+      "ts_utc": "2026-11-15T20:35:04.921Z",
+      "ts_myt": "2026-11-16T04:35:04+08:00",
+      "equity": 1017.3628519659213,
+      "cash": 1017.5663140169214,
+      "unrealized": -0.20346205100007395,
+      "fees": 3.5610699876440957,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 2.5017322840740484
     }
   ],
   "decisions": {
-    "HYPE": 1794774300000
+    "HYPE": 1794774900000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T04:29:02+08:00",
+  "last_tick_myt": "2026-11-16T04:35:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "d9deecc1e4cc1940929ad6a5185a352c04a82d3bfdfa733cc4df86ab476c8d3c",
@@ -4226,5 +4294,5 @@
     },
     "sha256": "d9deecc1e4cc1940929ad6a5185a352c04a82d3bfdfa733cc4df86ab476c8d3c"
   },
-  "valuation_bucket": 1994193
+  "valuation_bucket": 1994194
 }
