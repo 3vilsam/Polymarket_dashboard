@@ -72,6 +72,19 @@ def symbols_of(book):
     return set(S.COINS)
 
 
+# These runs committed no tick. One gap row records them; it is not a ledger entry.
+LOST_TICK_RUNS = (
+    43672089302, 43674376748, 43676274556, 43677031366, 43678153687,
+    43681513829, 43681888108, 43682249187, 43684477611, 43685268287, 43685660547,
+)
+
+
+def _present(data, coins, spot):
+    minutes = (data.get('spot_minutes') if spot else data.get('minutes')) or {}
+    mids = data.get('mids') or {}
+    return [c for c in coins if c in minutes and c in mids]
+
+
 def _covered(data, start, end, coins, spot):
     key = 'spot_minutes' if spot else 'minutes'
     series = data.get(key) or {}
@@ -104,42 +117,79 @@ def _open_benchmark(book, data, now):
             bankroll=BANK, scale_twin=True)
 
 
+def _call(books, runnable, ids, fn):
+    """Run one frozen apply. A missing-coin KeyError restores those books and skips them."""
+    snap = {i: copy.deepcopy(books[i]) for i in ids if i in books}
+    try:
+        fn()
+    except KeyError as exc:
+        coin = str(exc.args[0]) if exc.args else 'unknown'
+        for i, book in snap.items():
+            books[i] = book
+            runnable.pop(i, None)
+        return coin
+    return None
+
+
 def _apply(books, data, now, start, retired_symbols):
     end = now // S.MINUTE * S.MINUTE
     failed = set(data.get('failed') or {})
     runnable = {}
     skipped = []
+    missing = []
     for bid, book in books.items():
         coins = symbols_of(book)
         spot = book.get('market') == 'spot'
         if coins & failed or not _covered(data, start, end, coins, spot):
             skipped.append(bid)
+            missing.extend(sorted(coins & failed))
             continue
         runnable[bid] = book
     with V6.without(retired_symbols):
-        originals = {bid: book for bid, book in runnable.items()
-                     if book.get('kind') != 'benchmark' and not any(k in book for k in ('spec', 'spot_spec', 'spec4', 'spot4_spec'))}
-        if originals:
-            L.apply_tick({'books': originals, 'next_minute': start, 'ticks': 0}, data, now)
-        view = {'books': runnable}
-        if any('spec' in book for book in runnable.values()):
-            V.apply_new(view, data, now, start)
-        if any('spot_spec' in book for book in runnable.values()):
-            V3.apply_spot(view, data, now, start)
-        if any('spec4' in book for book in runnable.values()):
-            V4.apply_perp4(view, data, now, start)
-        if any('spot4_spec' in book for book in runnable.values()):
-            V4.apply_spot4(view, data, now, start)
-        for book in runnable.values():
-            if book.get('kind') != 'benchmark':
-                continue
-            _open_benchmark(book, data, now)
-            L.apply_tick({'books': {book['id']: book}, 'next_minute': start, 'ticks': 0}, data, now)
+        spot_ok = _present(data, S3.SPOT_COINS, True)
+        perp_ok = _present(data, S.COINS, False)
+        available = set(spot_ok) | set(perp_ok)
+        missing.extend(c for c in list(S3.SPOT_COINS) + list(S.COINS) if c not in available)
+        for bid, book in list(runnable.items()):
+            if symbols_of(book) - available:
+                skipped.append(bid)
+                del runnable[bid]
+        with V5.universe(perp_ok, spot_ok):
+            originals = [bid for bid, book in runnable.items()
+                         if book.get('kind') != 'benchmark' and not any(k in book for k in ('spec', 'spot_spec', 'spec4', 'spot4_spec'))]
+            if originals:
+                coin = _call(books, runnable, originals, lambda: L.apply_tick(
+                    {'books': {i: runnable[i] for i in originals if i in runnable}, 'next_minute': start, 'ticks': 0}, data, now))
+                if coin: missing.append(coin)
+            view = {'books': runnable}
+            groups = (
+                ('spec', lambda: V.apply_new(view, data, now, start)),
+                ('spot_spec', lambda: V3.apply_spot(view, data, now, start)),
+                ('spec4', lambda: V4.apply_perp4(view, data, now, start)),
+                ('spot4_spec', lambda: V4.apply_spot4(view, data, now, start)),
+            )
+            for key, fn in groups:
+                ids = [bid for bid, book in runnable.items() if key in book]
+                if not ids:
+                    continue
+                coin = _call(books, runnable, ids, fn)
+                if coin:
+                    missing.append(coin)
+            for bid, book in list(runnable.items()):
+                if book.get('kind') != 'benchmark':
+                    continue
+                def bench(book=book):
+                    _open_benchmark(book, data, now)
+                    L.apply_tick({'books': {book['id']: book}, 'next_minute': start, 'ticks': 0}, data, now)
+                coin = _call(books, runnable, [bid], bench)
+                if coin:
+                    missing.append(coin)
     for bid in skipped:
-        books[bid]['twin_next_minute'] = books[bid].get('twin_next_minute', start)
+        if bid in books:
+            books[bid]['twin_next_minute'] = books[bid].get('twin_next_minute', start)
     for bid in runnable:
         books[bid].pop('twin_next_minute', None)
-    return skipped
+    return skipped, sorted(set(missing))
 
 
 def _export_one(root, book):
@@ -155,6 +205,30 @@ def _export_one(root, book):
 
 def _fingerprint(books):
     return {bid: json.dumps(book, sort_keys=True, default=str) for bid, book in books.items()}
+
+
+def _append_gap(root, rec):
+    path = Path(root) / 'data-gaps.jsonl'
+    marker = rec.get('event')
+    if marker == 'ticks_lost_keyerror_ueth' and path.exists() and 'ticks_lost_keyerror_ueth' in path.read_text():
+        return
+    with path.open('a') as handle:
+        handle.write(json.dumps(rec, allow_nan=False) + '\n')
+
+
+def record_lost_ticks(root):
+    """The 11 KeyError runs wrote no tick. Record them once."""
+    _append_gap(root, dict(
+        event='ticks_lost_keyerror_ueth',
+        recorded_utc='2026-11-15T06:51:00Z',
+        failed_runs=list(LOST_TICK_RUNS),
+        ticks_lost=len(LOST_TICK_RUNS),
+        coin='UETH',
+        fills_backfilled=False,
+        double_counted=False,
+        trial_count_unchanged=True,
+        note='Eleven chained runs raised KeyError UETH in the scale-twin spot apply and committed no tick. Those attempts are not ledger ticks and are not replayed.',
+    ))
 
 
 def run_twins(root, data):
@@ -179,13 +253,21 @@ def run_twins(root, data):
         created = True
     retired = set(L.read_json(root / 'registry' / 'retirement-usol-v1.json').get('symbols') or [])
     start = end if created else cohort.get('next_minute', end)
-    skipped = _apply(cohort['books'], data, now, start, retired)
+    skipped, missing = _apply(cohort['books'], data, now, start, retired)
+    if missing:
+        _append_gap(root, dict(
+            event='missing_coin', recorded_ms=now, recorded_utc=L.utc(now), recorded_myt=L.sc.myt(now),
+            tick=state.get('ticks'), coins=missing, skipped_books=skipped, fills_backfilled=False,
+            double_counted=False, candles_fabricated=False,
+            note='A coin was missing from this snapshot. Twins that trade it were not updated. No fill was invented.',
+        ))
     cohort['next_minute'] = end
     cohort['last_tick_ms'] = now
     after = _fingerprint(state['books'])
     if before != after:
         raise RuntimeError('scale twins mutated an existing book')
     state['scale_k1000'] = cohort
+    record_lost_ticks(root)
     L.atomic(root / 'league_state.json', state)
     for book in cohort['books'].values():
         _export_one(root, book)
