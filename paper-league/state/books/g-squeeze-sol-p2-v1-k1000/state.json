@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 997.7559750756171,
+  "cash": 1003.6227319410046,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.0,
-  "positions": {
-    "P000005": {
-      "id": "P000005",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 10.1,
-      "size_initial": 10.1,
-      "entry_px": 72.3900191,
-      "entry_ms": 1794751263370,
-      "stop": 72.7519691955,
-      "fees": 0.3290126368095,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.984893856754828,
-      "funding_hour": 498542,
-      "risk_cap_at_entry": 4.990424938562133
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -62,23 +44,33 @@
       "fees": 0.6709366745865,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000005",
+      "coin": "SOL",
+      "entry_ms": 1794751263370,
+      "exit_ms": 1794753123766,
+      "pnl_net": 5.537744228577996,
+      "fees": 0.655238431422,
+      "funding": 0.0,
+      "reason": "observed_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 4,
-    "wins": 1,
+    "trades_closed": 5,
+    "wins": 2,
     "losses": 3,
-    "net_pnl": -1.9150122875734468,
-    "fees": 2.9756321540077497,
+    "net_pnl": 3.622731941004549,
+    "fees": 3.30185794862025,
     "funding": 0.007307646624525
   },
   "marks": {
-    "BTC": 65202.0,
-    "ETH": 1818.15,
-    "SOL": 71.9735,
-    "UBTC": 65227.5,
-    "UETH": 1818.15,
-    "HYPE": 67.3245
+    "BTC": 64953.5,
+    "ETH": 1811.65,
+    "SOL": 71.7625,
+    "UBTC": 64968.5,
+    "UETH": 1811.75,
+    "HYPE": 66.8365
   },
   "halted": false,
   "halt_reason": null,
@@ -3006,14 +2998,75 @@
         "prior_lower": 71.95587102547641
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 189,
+      "event": "exit",
+      "ts_ms": 1794753123766,
+      "ts_utc": "2026-11-15T14:32:03.766Z",
+      "ts_myt": "2026-11-15T22:32:03+08:00",
+      "trade_id": "P000005",
+      "coin": "SOL",
+      "side": "short",
+      "size": 10.1,
+      "price": 71.7768525,
+      "fee": 0.3262257946125,
+      "pnl_gross": 6.192982659999996,
+      "reason": "observed_time_exit",
+      "delay_ms": 60396
+    },
+    {
+      "seq": 190,
+      "event": "net_pnl",
+      "ts_ms": 1794753123766,
+      "ts_utc": "2026-11-15T14:32:03.766Z",
+      "ts_myt": "2026-11-15T22:32:03+08:00",
+      "id": "P000005",
+      "coin": "SOL",
+      "entry_ms": 1794751263370,
+      "exit_ms": 1794753123766,
+      "pnl_net": 5.537744228577996,
+      "fees": 0.655238431422,
+      "funding": 0.0,
+      "reason": "observed_time_exit"
+    },
+    {
+      "seq": 191,
+      "event": "signal",
+      "ts_ms": 1794753123766,
+      "ts_utc": "2026-11-15T14:32:03.766Z",
+      "ts_myt": "2026-11-15T22:32:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T14:32:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 72.55174010306192,
+        "prior_lower": 71.77765989693808
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 192,
+      "event": "valuation",
+      "ts_ms": 1794753123766,
+      "ts_utc": "2026-11-15T14:32:03.766Z",
+      "ts_myt": "2026-11-15T22:32:03+08:00",
+      "equity": 1003.6227319410046,
+      "cash": 1003.6227319410046,
+      "unrealized": 0.0,
+      "fees": 3.30185794862025,
+      "funding": 0.007307646624525,
+      "positions": 0,
+      "max_drawdown_pct": 1.1389999316617423
     }
   ],
   "decisions": {
-    "SOL": 1794752820000
+    "SOL": 1794753120000
   },
   "stopped_sides": {},
   "day_date": "2026-11-15",
-  "last_tick_myt": "2026-11-15T22:27:03+08:00",
+  "last_tick_myt": "2026-11-15T22:32:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761",
@@ -3035,5 +3088,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761"
   },
-  "valuation_bucket": 1994169
+  "valuation_bucket": 1994170
 }
