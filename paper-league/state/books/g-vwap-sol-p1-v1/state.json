@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 96.15981118099651,
+  "cash": 96.48908482976971,
   "day_date": "2026-11-16",
   "day_start_equity": 96.18306049620331,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000019": {
-      "id": "P000019",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 0.72,
-      "size_initial": 0.72,
-      "entry_px": 71.75714570000001,
-      "entry_ms": 1794760263751,
-      "stop": 72.29646998162283,
-      "fees": 0.0232493152068,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.4765131269138641,
-      "funding_hour": 498544,
-      "risk_cap_at_entry": 0.48091530248101655
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -206,27 +188,37 @@
       "fees": 0.049848345647120054,
       "funding": 0.0,
       "reason": "stop"
+    },
+    {
+      "id": "P000019",
+      "coin": "SOL",
+      "entry_ms": 1794760263751,
+      "exit_ms": 1794760863510,
+      "pnl_net": 0.3060243335664013,
+      "fees": 0.0463400664336,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 20,
   "marks": {
-    "BTC": 64521.5,
-    "ETH": 1811.85,
-    "SOL": 71.3635,
-    "UBTC": 64536.5,
-    "UETH": 1812.0,
+    "BTC": 64490.5,
+    "ETH": 1810.45,
+    "SOL": 71.2535,
+    "UBTC": 64490.5,
+    "UETH": 1810.45,
     "USOL": 82.9645,
-    "HYPE": 67.2275
+    "HYPE": 67.1215
   },
   "stats": {
-    "trades_closed": 18,
-    "wins": 6,
+    "trades_closed": 19,
+    "wins": 7,
     "losses": 12,
-    "net_pnl": -3.8169395037967386,
-    "fees": 0.9571359497628061,
+    "net_pnl": -3.510915170230337,
+    "fees": 0.9802267009896062,
     "funding": 0.001478577661167
   },
-  "last_tick_myt": "2026-11-16T00:36:03+08:00",
+  "last_tick_myt": "2026-11-16T00:41:03+08:00",
   "id": "g-vwap-sol-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "vwap",
@@ -9328,12 +9320,59 @@
         "vwap": 71.30324806914693
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 617,
+      "event": "signal",
+      "ts_ms": 1794760863510,
+      "ts_utc": "2026-11-15T16:41:03.510Z",
+      "ts_myt": "2026-11-16T00:41:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T16:40:00.000Z",
+      "side": 0,
+      "details": {
+        "z": -0.0416120474247336,
+        "vwap": 71.278266637123
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 618,
+      "event": "exit",
+      "ts_ms": 1794760863510,
+      "ts_utc": "2026-11-15T16:41:03.510Z",
+      "ts_myt": "2026-11-16T00:41:03+08:00",
+      "trade_id": "P000019",
+      "coin": "SOL",
+      "side": "short",
+      "size": 0.72,
+      "price": 71.26775070000001,
+      "fee": 0.023090751226800002,
+      "pnl_gross": 0.3523644000000013,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-15T16:40:00.000Z",
+      "delay_ms": 63510
+    },
+    {
+      "seq": 619,
+      "event": "net_pnl",
+      "ts_ms": 1794760863510,
+      "ts_utc": "2026-11-15T16:41:03.510Z",
+      "ts_myt": "2026-11-16T00:41:03+08:00",
+      "id": "P000019",
+      "coin": "SOL",
+      "entry_ms": 1794760263751,
+      "exit_ms": 1794760863510,
+      "pnl_net": 0.3060243335664013,
+      "fees": 0.0463400664336,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "peak": 100.35936716642726,
   "max_drawdown_pct": 4.194816288996146,
   "decisions": {
-    "SOL": 1794760500000
+    "SOL": 1794760800000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -9369,7 +9408,7 @@
     ],
     "day": "2026-11-16",
     "day_start": 96.18306049620331,
-    "previous": 96.40983796699652,
+    "previous": 96.48908482976971,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -9377,9 +9416,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 4,
-    "return_pct": -3.5901620330034856,
-    "excess_btc_pct": 9.145551812710028,
-    "excess_random_pct": -4.383973443266442
+    "return_pct": -3.5109151702302888,
+    "excess_btc_pct": 9.266765100007879,
+    "excess_random_pct": -4.337507874493262
   },
   "valuation_bucket": 1994178,
   "labels_v1": {
