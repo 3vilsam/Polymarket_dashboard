@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 100.29324367272552,
+  "cash": 100.27007780232643,
   "day_date": "2026-11-15",
   "day_start_equity": 100.60503767820856,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000013": {
+      "id": "P000013",
+      "coin": "ETH",
+      "dir": -1,
+      "side": "short",
+      "size": 0.0286,
+      "size_initial": 0.0286,
+      "entry_px": 1799.98993,
+      "entry_ms": 1794731704245,
+      "stop": 1814.4437800107912,
+      "fees": 0.023165870399099998,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.5012883318100232,
+      "funding_hour": 498536,
+      "risk_cap_at_entry": 0.5014662183636276
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -130,25 +148,25 @@
       "reason": "signal_or_time_exit"
     }
   ],
-  "next_seq": 13,
+  "next_seq": 14,
   "marks": {
-    "BTC": 64467.5,
-    "ETH": 1793.05,
-    "SOL": 70.5105,
-    "UBTC": 64466.5,
-    "UETH": 1793.05,
+    "BTC": 64704.5,
+    "ETH": 1800.35,
+    "SOL": 70.5315,
+    "UBTC": 64702.5,
+    "UETH": 1800.3,
     "USOL": 82.9645,
-    "HYPE": 65.2385
+    "HYPE": 65.3785
   },
   "stats": {
     "trades_closed": 12,
     "wins": 6,
     "losses": 6,
     "net_pnl": 0.293243672725523,
-    "fees": 0.5467945740992072,
+    "fees": 0.5699604444983072,
     "funding": 0.007247441010744
   },
-  "last_tick_myt": "2026-11-15T16:29:03+08:00",
+  "last_tick_myt": "2026-11-15T16:35:04+08:00",
   "id": "g-vwap-eth-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "vwap",
@@ -7088,12 +7106,58 @@
         "vwap": 1784.464487055063
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 472,
+      "event": "signal",
+      "ts_ms": 1794731704245,
+      "ts_utc": "2026-11-15T08:35:04.245Z",
+      "ts_myt": "2026-11-15T16:35:04+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T08:35:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 1.9824567553542674,
+        "vwap": 1786.0696697398678
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 473,
+      "event": "entry",
+      "ts_ms": 1794731704245,
+      "ts_utc": "2026-11-15T08:35:04.245Z",
+      "ts_myt": "2026-11-15T16:35:04+08:00",
+      "trade_id": "P000013",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.0286,
+      "price": 1799.98993,
+      "stop": 1814.4437800107912,
+      "fee": 0.023165870399099998,
+      "cost_inclusive_risk": 0.5012883318100232,
+      "risk_budget": 0.5014662183636276,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 474,
+      "event": "valuation",
+      "ts_ms": 1794731704245,
+      "ts_utc": "2026-11-15T08:35:04.245Z",
+      "ts_myt": "2026-11-15T16:35:04+08:00",
+      "equity": 100.25977980032643,
+      "cash": 100.27007780232643,
+      "unrealized": -0.010298001999998587,
+      "fees": 0.5699604444983072,
+      "funding": 0.007247441010744,
+      "positions": 1,
+      "max_drawdown_pct": 3.464958232695966
     }
   ],
   "peak": 103.14247306963692,
   "max_drawdown_pct": 3.464958232695966,
   "decisions": {
-    "ETH": 1794731100000
+    "ETH": 1794731700000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -7128,7 +7192,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 100.60503767820856,
-    "previous": 100.29324367272552,
+    "previous": 100.22631129382643,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -7136,11 +7200,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": 0.2932436727255183,
-    "excess_btc_pct": 13.093364514455697,
-    "excess_random_pct": -0.19594249126091423
+    "return_pct": 0.22631129382642,
+    "excess_btc_pct": 12.705592051287496,
+    "excess_random_pct": -0.26287487016001254
   },
-  "valuation_bucket": 1994145,
+  "valuation_bucket": 1994146,
   "labels_v1": {
     "label": null,
     "description": null,
