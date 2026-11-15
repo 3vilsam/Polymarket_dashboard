@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 99.45380974762953,
+  "cash": 99.53652529616464,
   "day_date": "2026-11-15",
   "day_start_equity": 99.7527506601148,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000007": {
-      "id": "P000007",
-      "coin": "BTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.00114,
-      "size_initial": 0.00114,
-      "entry_px": 65148.5271,
-      "entry_ms": 1794751563257,
-      "stop": 64822.7844645,
-      "fees": 0.0334211944023,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.49725167071555215,
-      "funding_hour": 498542,
-      "risk_cap_at_entry": 0.4974361547101592
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -86,27 +68,37 @@
       "fees": 0.0665341604739,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000007",
+      "coin": "BTC",
+      "entry_ms": 1794751563257,
+      "exit_ms": 1794752163699,
+      "pnl_net": 0.04929435413280055,
+      "fees": 0.0668946738672,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 8,
   "marks": {
-    "BTC": 65196.5,
-    "ETH": 1821.35,
-    "SOL": 72.1475,
-    "UBTC": 65207.5,
-    "UETH": 1821.05,
+    "BTC": 65263.5,
+    "ETH": 1819.65,
+    "SOL": 72.1965,
+    "UBTC": 65279.5,
+    "UETH": 1819.65,
     "USOL": 82.9645,
-    "HYPE": 67.4465
+    "HYPE": 67.559
   },
   "stats": {
-    "trades_closed": 6,
-    "wins": 3,
+    "trades_closed": 7,
+    "wins": 4,
     "losses": 3,
-    "net_pnl": -0.5127690579681589,
-    "fees": 0.3838115483469106,
+    "net_pnl": -0.4634747038353583,
+    "fees": 0.4172850278118106,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-15T22:11:03+08:00",
+  "last_tick_myt": "2026-11-15T22:16:03+08:00",
   "id": "g-rsi2-btc-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "rsi2",
@@ -7703,12 +7695,73 @@
         "ema200": 65120.00579979192
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 520,
+      "event": "signal",
+      "ts_ms": 1794752163699,
+      "ts_utc": "2026-11-15T14:16:03.699Z",
+      "ts_myt": "2026-11-15T22:16:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T14:15:00.000Z",
+      "side": 0,
+      "details": {
+        "rsi2": 54.572823217634166,
+        "ema200": 65121.687334122355
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 521,
+      "event": "exit",
+      "ts_ms": 1794752163699,
+      "ts_utc": "2026-11-15T14:16:03.699Z",
+      "ts_myt": "2026-11-15T22:16:03+08:00",
+      "trade_id": "P000007",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.00114,
+      "price": 65250.4473,
+      "fee": 0.0334734794649,
+      "pnl_gross": 0.11618902800000054,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-15T14:15:00.000Z",
+      "delay_ms": 63699
+    },
+    {
+      "seq": 522,
+      "event": "net_pnl",
+      "ts_ms": 1794752163699,
+      "ts_utc": "2026-11-15T14:16:03.699Z",
+      "ts_myt": "2026-11-15T22:16:03+08:00",
+      "id": "P000007",
+      "coin": "BTC",
+      "entry_ms": 1794751563257,
+      "exit_ms": 1794752163699,
+      "pnl_net": 0.04929435413280055,
+      "fees": 0.0668946738672,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
+    },
+    {
+      "seq": 523,
+      "event": "valuation",
+      "ts_ms": 1794752163699,
+      "ts_utc": "2026-11-15T14:16:03.699Z",
+      "ts_myt": "2026-11-15T22:16:03+08:00",
+      "equity": 99.53652529616464,
+      "cash": 99.53652529616464,
+      "unrealized": 0.0,
+      "fees": 0.4172850278118106,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 0.8211473178579164
     }
   ],
   "peak": 100.00267917744435,
   "max_drawdown_pct": 0.8211473178579164,
   "decisions": {
-    "BTC": 1794751800000
+    "BTC": 1794752100000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -7742,7 +7795,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 99.7527506601148,
-    "previous": 99.46018824712954,
+    "previous": 99.53652529616464,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -7750,11 +7803,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -0.5398117528704671,
-    "excess_btc_pct": 11.280065775797388,
-    "excess_random_pct": -1.5226724574157635
+    "return_pct": -0.4634747038353648,
+    "excess_btc_pct": 11.265701197634048,
+    "excess_random_pct": -1.4463354083806612
   },
-  "valuation_bucket": 1994168,
+  "valuation_bucket": 1994169,
   "labels_v1": {
     "label": null,
     "description": null,
