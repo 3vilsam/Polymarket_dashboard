@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 99.26678514942371,
+  "cash": 99.23991467959272,
   "day_date": "2026-11-15",
   "day_start_equity": 99.7527506601148,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000004": {
+      "id": "P000004",
+      "coin": "BTC",
+      "dir": -1,
+      "side": "short",
+      "size": 0.00092,
+      "size_initial": 0.00092,
+      "entry_px": 64904.5165,
+      "entry_ms": 1794717362623,
+      "stop": 65328.68519829704,
+      "fees": 0.026870469831,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.49211658968159055,
+      "funding_hour": 498532,
+      "risk_cap_at_entry": 0.49633392574711854
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -40,25 +58,25 @@
       "reason": "stop"
     }
   ],
-  "next_seq": 4,
+  "next_seq": 5,
   "marks": {
-    "BTC": 64841.5,
-    "ETH": 1816.25,
-    "SOL": 71.3245,
-    "UBTC": 64848.5,
-    "UETH": 1816.55,
+    "BTC": 64917.5,
+    "ETH": 1819.15,
+    "SOL": 71.4615,
+    "UBTC": 64939.5,
+    "UETH": 1819.35,
     "USOL": 82.9645,
-    "HYPE": 66.3375
+    "HYPE": 66.1975
   },
   "stats": {
     "trades_closed": 3,
     "wins": 0,
     "losses": 3,
     "net_pnl": -0.7332148505762661,
-    "fees": 0.16371360855271058,
+    "fees": 0.19058407838371058,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-15T12:26:03+08:00",
+  "last_tick_myt": "2026-11-15T12:36:02+08:00",
   "id": "g-rsi2-btc-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "rsi2",
@@ -5354,12 +5372,58 @@
         "ema200": 65046.59601947798
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 364,
+      "event": "signal",
+      "ts_ms": 1794717362623,
+      "ts_utc": "2026-11-15T04:36:02.623Z",
+      "ts_myt": "2026-11-15T12:36:02+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T04:35:00.000Z",
+      "side": -1,
+      "details": {
+        "rsi2": 90.54972936890034,
+        "ema200": 65044.677185400054
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 365,
+      "event": "entry",
+      "ts_ms": 1794717362623,
+      "ts_utc": "2026-11-15T04:36:02.623Z",
+      "ts_myt": "2026-11-15T12:36:02+08:00",
+      "trade_id": "P000004",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.00092,
+      "price": 64904.5165,
+      "stop": 65328.68519829704,
+      "fee": 0.026870469831,
+      "cost_inclusive_risk": 0.49211658968159055,
+      "risk_budget": 0.49633392574711854,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 366,
+      "event": "valuation",
+      "ts_ms": 1794717362623,
+      "ts_utc": "2026-11-15T04:36:02.623Z",
+      "ts_myt": "2026-11-15T12:36:02+08:00",
+      "equity": 99.22796985959272,
+      "cash": 99.23991467959272,
+      "unrealized": -0.011944820000001927,
+      "fees": 0.19058407838371058,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 0.7746885625703985
     }
   ],
   "peak": 100.00267917744435,
-  "max_drawdown_pct": 0.7358743126420353,
+  "max_drawdown_pct": 0.7746885625703985,
   "decisions": {
-    "BTC": 1794716700000
+    "BTC": 1794717300000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -5393,7 +5457,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 99.7527506601148,
-    "previous": 99.26678514942371,
+    "previous": 99.18914919459272,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -5401,11 +5465,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -0.7332148505762914,
-    "excess_btc_pct": 11.556800612190688,
-    "excess_random_pct": -1.714821676045486
+    "return_pct": -0.8108508054072816,
+    "excess_btc_pct": 11.376279229492825,
+    "excess_random_pct": -1.7924576308764761
   },
-  "valuation_bucket": 1994129,
+  "valuation_bucket": 1994130,
   "labels_v1": {
     "label": null,
     "description": null,
