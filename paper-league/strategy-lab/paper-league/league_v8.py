@@ -27,6 +27,7 @@ import signal as signals
 import time
 import league as L
 import league_v7 as V7
+import scale_k1000 as K
 
 ROOT = L.ROOT
 RUNNING = True
@@ -104,7 +105,7 @@ def main():
             try: warm_public_cache(ROOT)
             except Exception as e: print(f'{L.sc.myt()} CACHE_WARM_BEFORE_TICK_FAILED {e!r}', flush=True)
             sleep_until_aligned()
-            try: print(json.dumps(V7.tick(), indent=2)); return 0
+            try: print(json.dumps(K.tick(), indent=2)); return 0
             except Exception as e:
                 if is_stale_guard(e) and 'snapshot collection exceeded 60s' in str(e):
                     keep_warm_cache(ROOT)
@@ -118,7 +119,7 @@ def main():
             except Exception as e: print(f'{L.sc.myt()} CACHE_WARM_BEFORE_TICK_FAILED {e!r}', flush=True)
             L.heartbeat(ROOT, 'fetching', engine_version=8, consecutive_skips=skips, alert=skips >= SKIP_ALERT_AFTER)
             try:
-                _, skips = run_once(V7.tick, ROOT, skips)
+                _, skips = run_once(K.tick, ROOT, skips)
             except Exception as e:
                 L.heartbeat(ROOT, 'ERROR_NO_NEW_RISK', engine_version=8, error=repr(e)); print(f'{L.sc.myt()} ERROR_NO_NEW_RISK {e!r}', flush=True); return 1
             # never start two ticks in the same minute
