@@ -1,28 +1,47 @@
 {
   "version": 1,
-  "cash": 1000.0,
+  "cash": 999.3009349844539,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.0,
-  "positions": {},
+  "positions": {
+    "P000001": {
+      "id": "P000001",
+      "coin": "UBTC",
+      "dir": 1,
+      "side": "long",
+      "size": 0.01531,
+      "size_initial": 0.01531,
+      "entry_px": 65229.5433,
+      "entry_ms": 1794733208082,
+      "stop": 64534.27311242244,
+      "fees": 0.6990650155461,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498537,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [],
   "stats": {
     "trades_closed": 0,
     "wins": 0,
     "losses": 0,
     "net_pnl": 0.0,
-    "fees": 0.0,
+    "fees": 0.6990650155461,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64757.5,
-    "UETH": 1801.05,
-    "HYPE": 65.6505
+    "UBTC": 65216.5,
+    "UETH": 1811.65,
+    "HYPE": 65.9345
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 1,
+  "next_seq": 2,
   "peak": 1000.0,
-  "max_drawdown_pct": 0.0,
+  "max_drawdown_pct": 0.08987579385460549,
   "id": "sp-ema15m-ubtc-v1-k1000",
   "parent_id": "sp-ema15m-ubtc-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
@@ -803,14 +822,64 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 0.0
+    },
+    {
+      "seq": 53,
+      "event": "signal",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "coin": "UBTC",
+      "boundary_utc": "2026-11-15T09:00:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 64539.68004557665,
+        "slow": 64484.463971873665,
+        "raw_cross": 1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 54,
+      "event": "entry",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "trade_id": "P000001",
+      "coin": "UBTC",
+      "side": "long",
+      "size": 0.01531,
+      "price": 65229.5433,
+      "stop": 64534.27311242244,
+      "fee": 0.6990650155461,
+      "fill_source": "max(2bp_floor,L2_ask_walk)",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "UBTC/USDC"
+    },
+    {
+      "seq": 55,
+      "event": "valuation",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "equity": 999.101242061454,
+      "cash": 999.3009349844539,
+      "unrealized": -0.1996929229999624,
+      "fees": 0.6990650155461,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 0.08987579385460549
     }
   ],
   "decisions": {
-    "UBTC": 1794732300000
+    "UBTC": 1794733200000
   },
   "stopped_sides": {},
   "day_date": "2026-11-15",
-  "last_tick_myt": "2026-11-15T16:55:04+08:00",
+  "last_tick_myt": "2026-11-15T17:00:08+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "33c7ed0425cfdae14b60aa4a54461e21dda0614df0d9f1bbd9949dec65e04b8c",
@@ -845,5 +914,5 @@
     },
     "sha256": "33c7ed0425cfdae14b60aa4a54461e21dda0614df0d9f1bbd9949dec65e04b8c"
   },
-  "valuation_bucket": 1994147
+  "valuation_bucket": 1994148
 }

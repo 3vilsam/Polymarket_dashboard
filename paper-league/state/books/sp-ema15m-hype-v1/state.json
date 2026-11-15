@@ -2,12 +2,31 @@
   "version": 1,
   "created_myt": "2026-11-11T17:16:05+08:00",
   "starting_equity": 16.24,
-  "cash": 15.91948452294219,
+  "cash": 15.908405311542989,
   "day_date": "2026-11-15",
   "day_start_equity": 15.91948452294219,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000002": {
+      "id": "P000002",
+      "coin": "HYPE",
+      "dir": 1,
+      "side": "long",
+      "size": 0.24,
+      "size_initial": 0.24,
+      "entry_px": 65.9476869,
+      "entry_ms": 1794733208082,
+      "stop": 65.0556175616412,
+      "fees": 0.011079211399199998,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498537,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -21,22 +40,22 @@
       "market": "spot"
     }
   ],
-  "next_seq": 2,
+  "next_seq": 3,
   "marks": {
-    "UBTC": 64757.5,
-    "UETH": 1801.05,
+    "UBTC": 65216.5,
+    "UETH": 1811.65,
     "USOL": 82.9645,
-    "HYPE": 65.6505
+    "HYPE": 65.9345
   },
   "stats": {
     "trades_closed": 1,
     "wins": 0,
     "losses": 1,
     "net_pnl": -0.32051547705781025,
-    "fees": 0.021783319489702323,
+    "fees": 0.03286253088890232,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-15T16:55:04+08:00",
+  "last_tick_myt": "2026-11-15T17:00:08+08:00",
   "id": "sp-ema15m-hype-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
   "kind": "spot_ema",
@@ -3536,12 +3555,62 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 4.229783228613203
+    },
+    {
+      "seq": 235,
+      "event": "signal",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "coin": "HYPE",
+      "boundary_utc": "2026-11-15T09:00:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 65.39581982421961,
+        "slow": 65.35502630853193,
+        "raw_cross": 1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 236,
+      "event": "entry",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "trade_id": "P000002",
+      "coin": "HYPE",
+      "side": "long",
+      "size": 0.24,
+      "price": 65.9476869,
+      "stop": 65.0556175616412,
+      "fee": 0.011079211399199998,
+      "fill_source": "max(2bp_floor,L2_ask_walk)",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "HYPE/USDC"
+    },
+    {
+      "seq": 237,
+      "event": "valuation",
+      "ts_ms": 1794733208082,
+      "ts_utc": "2026-11-15T09:00:08.082Z",
+      "ts_myt": "2026-11-15T17:00:08+08:00",
+      "equity": 15.905240455542991,
+      "cash": 15.908405311542989,
+      "unrealized": -0.003164855999998508,
+      "fees": 0.03286253088890232,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 4.315474283531569
     }
   ],
   "peak": 16.622583784,
-  "max_drawdown_pct": 4.229783228613203,
+  "max_drawdown_pct": 4.315474283531569,
   "decisions": {
-    "HYPE": 1794732300000
+    "HYPE": 1794733200000
   },
   "stopped_sides": {},
   "spot_spec": {
@@ -3590,7 +3659,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 15.91948452294219,
-    "previous": 15.91948452294219,
+    "previous": 15.890998603542991,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -3598,11 +3667,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -1.97361746956779,
-    "excess_btc_pct": 10.16180008529959,
-    "excess_random_pct": -2.4628036335542225
+    "return_pct": -2.1490233771983225,
+    "excess_btc_pct": 9.32642503559965,
+    "excess_random_pct": -2.582397984075213
   },
-  "valuation_bucket": 1994147,
+  "valuation_bucket": 1994148,
   "labels_v1": {
     "label": null,
     "description": null,
