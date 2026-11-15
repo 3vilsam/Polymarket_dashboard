@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cash": 999.6878942038225,
+  "cash": 999.695201850447,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.0,
   "positions": {
@@ -16,9 +16,9 @@
       "stop": 70.74348114451527,
       "fees": 0.3121057961775,
       "realized_gross": 0.0,
-      "funding": 0.0,
+      "funding": 0.007307646624525,
       "risk_at_entry": 4.9949326120396345,
-      "funding_hour": 498530,
+      "funding_hour": 498531,
       "risk_cap_at_entry": 5.0
     }
   },
@@ -29,20 +29,20 @@
     "losses": 0,
     "net_pnl": 0.0,
     "fees": 0.3121057961775,
-    "funding": 0.0
+    "funding": 0.007307646624525
   },
   "marks": {
-    "BTC": 64826.5,
-    "ETH": 1812.75,
-    "SOL": 71.2285,
-    "UBTC": 64819.5,
-    "UETH": 1812.65,
-    "HYPE": 66.0435
+    "BTC": 65407.0,
+    "ETH": 1826.0,
+    "SOL": 71.6945,
+    "UBTC": 65396.5,
+    "UETH": 1826.4,
+    "HYPE": 66.4695
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 2,
-  "peak": 1000.6022082538225,
+  "peak": 1007.181015900447,
   "max_drawdown_pct": 0.20595417461775015,
   "id": "g-squeeze-sol-p2-v1-k1000",
   "parent_id": "g-squeeze-sol-p2-v1",
@@ -173,14 +173,59 @@
         "prior_lower": 70.53085425304728
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 9,
+      "event": "funding",
+      "ts_ms": 1794711600003,
+      "ts_utc": "2026-11-15T03:00:00.003Z",
+      "ts_myt": "2026-11-15T11:00:00+08:00",
+      "trade_id": "P000001",
+      "coin": "SOL",
+      "payment": 0.007307646624525,
+      "rate": -1.05121e-05,
+      "price": 71.299,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-15T03:00:00.000Z"
+    },
+    {
+      "seq": 10,
+      "event": "signal",
+      "ts_ms": 1794711782974,
+      "ts_utc": "2026-11-15T03:03:02.974Z",
+      "ts_myt": "2026-11-15T11:03:02+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T03:03:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 71.5514133622713,
+        "prior_lower": 70.54925330439538
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 11,
+      "event": "valuation",
+      "ts_ms": 1794711782974,
+      "ts_utc": "2026-11-15T03:03:02.974Z",
+      "ts_myt": "2026-11-15T11:03:02+08:00",
+      "equity": 1005.1481409004471,
+      "cash": 999.695201850447,
+      "unrealized": 5.4529390500000865,
+      "fees": 0.3121057961775,
+      "funding": 0.007307646624525,
+      "positions": 1,
+      "max_drawdown_pct": 0.20595417461775015
     }
   ],
   "decisions": {
-    "SOL": 1794711480000
+    "SOL": 1794711780000
   },
   "stopped_sides": {},
   "day_date": "2026-11-15",
-  "last_tick_myt": "2026-11-15T10:58:03+08:00",
+  "last_tick_myt": "2026-11-15T11:03:02+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761",
@@ -202,5 +247,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761"
   },
-  "valuation_bucket": 1994123
+  "valuation_bucket": 1994124
 }
