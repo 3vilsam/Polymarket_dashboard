@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 96.99877752053251,
+  "cash": 96.96628306322401,
   "day_date": "2026-11-15",
   "day_start_equity": 98.70706196048651,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000020": {
+      "id": "P000020",
+      "coin": "BTC",
+      "dir": -1,
+      "side": "short",
+      "size": 0.0011,
+      "size_initial": 0.0011,
+      "entry_px": 65645.3683,
+      "entry_ms": 1794749103964,
+      "stop": 65973.5951415,
+      "fees": 0.0324944573085,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.4841493614203674,
+      "funding_hour": 498541,
+      "risk_cap_at_entry": 0.4849938876026626
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -200,25 +218,25 @@
       "reason": "stop"
     }
   ],
-  "next_seq": 20,
+  "next_seq": 21,
   "marks": {
-    "BTC": 65591.5,
-    "ETH": 1834.25,
-    "SOL": 72.9425,
-    "UBTC": 65593.5,
-    "UETH": 1834.05,
+    "BTC": 65658.5,
+    "ETH": 1835.95,
+    "SOL": 73.1085,
+    "UBTC": 65664.5,
+    "UETH": 1836.25,
     "USOL": 82.9645,
-    "HYPE": 68.202
+    "HYPE": 68.4695
   },
   "stats": {
     "trades_closed": 19,
     "wins": 7,
     "losses": 12,
     "net_pnl": -3.001222479467438,
-    "fees": 1.012557734784008,
+    "fees": 1.045052192092508,
     "funding": 0.0005695085552289991
   },
-  "last_tick_myt": "2026-11-15T21:19:03+08:00",
+  "last_tick_myt": "2026-11-15T21:25:03+08:00",
   "id": "f1-vwap5m-v1",
   "owner": "Desk-defined experimental family",
   "kind": "vwap",
@@ -19074,14 +19092,85 @@
       "funding": 0.0005695085552289991,
       "positions": 0,
       "max_drawdown_pct": 4.928630513064489
+    },
+    {
+      "seq": 1278,
+      "event": "signal",
+      "ts_ms": 1794749103964,
+      "ts_utc": "2026-11-15T13:25:03.964Z",
+      "ts_myt": "2026-11-15T21:25:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T13:25:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 1.5542465014276312,
+        "vwap": 65490.59807129674
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1279,
+      "event": "entry",
+      "ts_ms": 1794749103964,
+      "ts_utc": "2026-11-15T13:25:03.964Z",
+      "ts_myt": "2026-11-15T21:25:03+08:00",
+      "trade_id": "P000020",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.0011,
+      "price": 65645.3683,
+      "stop": 65973.5951415,
+      "fee": 0.0324944573085,
+      "cost_inclusive_risk": 0.4841493614203674,
+      "risk_budget": 0.4849938876026626,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 1280,
+      "event": "signal",
+      "ts_ms": 1794749103964,
+      "ts_utc": "2026-11-15T13:25:03.964Z",
+      "ts_myt": "2026-11-15T21:25:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T13:25:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 1.648957598453661,
+        "vwap": 1828.832116601664
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1281,
+      "event": "reject",
+      "ts_ms": 1794749103964,
+      "ts_utc": "2026-11-15T13:25:03.964Z",
+      "ts_myt": "2026-11-15T21:25:03+08:00",
+      "coin": "ETH",
+      "reason": "major_cluster_max_1"
+    },
+    {
+      "seq": 1282,
+      "event": "signal",
+      "ts_ms": 1794749103964,
+      "ts_utc": "2026-11-15T13:25:03.964Z",
+      "ts_myt": "2026-11-15T21:25:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T13:25:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 3.674547296586604,
+        "vwap": 72.33065999291367
+      },
+      "entry_window_open": true
     }
   ],
   "peak": 102.02732751615812,
-  "max_drawdown_pct": 4.928630513064489,
+  "max_drawdown_pct": 4.974637135457945,
   "decisions": {
-    "BTC": 1794748500000,
-    "ETH": 1794748500000,
-    "SOL": 1794748500000
+    "BTC": 1794749100000,
+    "ETH": 1794749100000,
+    "SOL": 1794749100000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -19118,7 +19207,7 @@
     ],
     "day": "2026-11-15",
     "day_start": 98.70706196048651,
-    "previous": 96.99877752053251,
+    "previous": 96.90489236572402,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -19126,9 +19215,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 3,
-    "return_pct": -3.0012224794674913,
-    "excess_btc_pct": 8.282813618516938,
-    "excess_random_pct": -3.9840831840127877
+    "return_pct": -3.095107634275973,
+    "excess_btc_pct": 8.098226836510014,
+    "excess_random_pct": -4.07796833882127
   },
   "valuation_bucket": 1994165,
   "labels_v1": {
