@@ -12,6 +12,8 @@ A separate private repo could not be created from this environment (`gh` here is
 
 The scheduler engine is v8. `last_tick.json` keeps `engine_version: 7` because v8 is the scheduling wrapper and does not relabel the tick record. `heartbeat.json` records `engine_version: 8`.
 
+Scale twins (`-k1000`) are a separate cohort at 1,000 virtual USDT. They are not in `books` and do not change the DSR trial count. See `trial-ledger.md` and the `-k1000` section of `NEW-BOOK-HASHES.md`. A measured tick on the tick-493 state collected the snapshot in 3.9s and applied 117 twins in 1.1s (7.7s wall together), under the 60s guard.
+
 ## Why v8 was skipping on the box
 
 v8 treats `snapshot collection exceeded 60s` as a skip and keeps the process up. That guard is wall clock from the moment the tick is marked started until the last `allMids`, and the cache is saved only after the guard passes. A public `allMids` returns in about 0.2s and a `candleSnapshot` of the whole gap (1,157 one-minute bars) in about 0.6s. Warming the stale cache on a healthy host still took 61.5s (34 requests, estimated weight 854) because the series are fetched one after another with the existing pace. That is already over the guard, so an in-tick catch-up is rejected before the collector's own save. The old v8 skip left that cache unwritten and did not exit, so `supervise.sh` never warmed again and every later minute repeated the cold catch-up. v8 now warms and writes `market_cache.json` when that 60s guard trips (no fills, no `league_state`), and it warms again before the next minute, so the catch-up cannot loop. After a warm, the same v8 one-shot tick collected in 3.0s (8 requests) and advanced 351 to 352. It is not a 60-second API.
