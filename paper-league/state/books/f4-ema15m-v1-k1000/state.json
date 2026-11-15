@@ -1,9 +1,27 @@
 {
   "version": 1,
-  "cash": 995.0924856553396,
+  "cash": 994.8376181982909,
   "starting_equity": 1000.0,
   "day_start_equity": 995.0924856553396,
-  "positions": {},
+  "positions": {
+    "P000002": {
+      "id": "P000002",
+      "coin": "BTC",
+      "dir": 1,
+      "side": "long",
+      "size": 0.00871,
+      "size_initial": 0.00871,
+      "entry_px": 65025.502499999995,
+      "entry_ms": 1794775506021,
+      "stop": 64564.549640604804,
+      "fees": 0.25486745704874997,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 4.973917866414547,
+      "funding_hour": 498548,
+      "risk_cap_at_entry": 4.975462428276698
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -21,22 +39,22 @@
     "wins": 0,
     "losses": 1,
     "net_pnl": -4.90751434466045,
-    "fees": 0.34623253709637114,
+    "fees": 0.6010999941451212,
     "funding": -0.0242522175
   },
   "marks": {
-    "BTC": 65075.5,
-    "ETH": 1830.65,
-    "SOL": 71.9605,
-    "UBTC": 65071.5,
-    "UETH": 1830.8,
-    "HYPE": 67.6795
+    "BTC": 65012.5,
+    "ETH": 1827.15,
+    "SOL": 71.9055,
+    "UBTC": 65026.5,
+    "UETH": 1827.45,
+    "HYPE": 67.6165
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 2,
+  "next_seq": 3,
   "peak": 1004.442079108794,
-  "max_drawdown_pct": 0.9308245490621003,
+  "max_drawdown_pct": 0.9674736739549269,
   "id": "f4-ema15m-v1-k1000",
   "parent_id": "f4-ema15m-v1",
   "owner": "Desk-defined experimental family",
@@ -4602,16 +4620,101 @@
       "funding": -0.0242522175,
       "positions": 0,
       "max_drawdown_pct": 0.9308245490621003
+    },
+    {
+      "seq": 315,
+      "event": "signal",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-15T20:45:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 64852.96383700602,
+        "slow": 64832.7025741584
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 316,
+      "event": "entry",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "trade_id": "P000002",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.00871,
+      "price": 65025.502499999995,
+      "stop": 64564.549640604804,
+      "fee": 0.25486745704874997,
+      "cost_inclusive_risk": 4.973917866414547,
+      "risk_budget": 4.975462428276698,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 317,
+      "event": "signal",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-15T20:45:00.000Z",
+      "side": 0,
+      "details": {
+        "fast": 1821.5710701669782,
+        "slow": 1818.8648442239055
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 318,
+      "event": "signal",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-15T20:45:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 71.54241339796418,
+        "slow": 71.49930541862516
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 319,
+      "event": "reject",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "coin": "SOL",
+      "reason": "major_cluster_max_1"
+    },
+    {
+      "seq": 320,
+      "event": "valuation",
+      "ts_ms": 1794775506021,
+      "ts_utc": "2026-11-15T20:45:06.021Z",
+      "ts_myt": "2026-11-16T04:45:06+08:00",
+      "equity": 994.7243664232909,
+      "cash": 994.8376181982909,
+      "unrealized": -0.11325177499995692,
+      "fees": 0.6010999941451212,
+      "funding": -0.0242522175,
+      "positions": 1,
+      "max_drawdown_pct": 0.9674736739549269
     }
   ],
   "decisions": {
-    "BTC": 1794774600000,
-    "ETH": 1794774600000,
-    "SOL": 1794774600000
+    "BTC": 1794775500000,
+    "ETH": 1794775500000,
+    "SOL": 1794775500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T04:40:05+08:00",
+  "last_tick_myt": "2026-11-16T04:45:06+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "bf67bc5d75f9cc08299e8221cad80287a36d30d34715147cf870ee9ea41a06fd",
@@ -4635,5 +4738,5 @@
     "owner": "Desk-defined experimental family",
     "sha256": "bf67bc5d75f9cc08299e8221cad80287a36d30d34715147cf870ee9ea41a06fd"
   },
-  "valuation_bucket": 1994194
+  "valuation_bucket": 1994195
 }
