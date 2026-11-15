@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "cash": 1007.2265554444581,
+  "cash": 1000.5649767904299,
   "starting_equity": 1000.0,
   "day_start_equity": 1007.9315560718892,
-  "positions": {
-    "P000002": {
-      "id": "P000002",
-      "coin": "UETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.5511,
-      "size_initial": 0.5511,
-      "entry_px": 1827.5154300000002,
-      "entry_ms": 1794760263751,
-      "stop": 1817.6081379848272,
-      "fees": 0.7050006274311001,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498544,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -34,26 +15,37 @@
       "funding": 0.0,
       "reason": "signal_or_time_exit",
       "market": "spot"
+    },
+    {
+      "id": "P000002",
+      "coin": "UETH",
+      "entry_ms": 1794760263751,
+      "exit_ms": 1794760319999,
+      "pnl_net": -7.36657928145933,
+      "fees": 1.4058287294758118,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
     }
   ],
   "stats": {
-    "trades_closed": 1,
+    "trades_closed": 2,
     "wins": 1,
-    "losses": 0,
-    "net_pnl": 7.931556071889297,
-    "fees": 2.1103972685417998,
+    "losses": 1,
+    "net_pnl": 0.5649767904299665,
+    "fees": 2.811225370586511,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64899.0,
-    "UETH": 1827.15,
-    "HYPE": 67.6115
+    "UBTC": 64536.5,
+    "UETH": 1812.0,
+    "HYPE": 67.2275
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 3,
   "peak": 1022.6840223188941,
-  "max_drawdown_pct": 1.5311528297792583,
+  "max_drawdown_pct": 2.162842583412046,
   "id": "sp-donchian5m-ueth-v1-k1000",
   "parent_id": "sp-donchian5m-ueth-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
@@ -3121,14 +3113,70 @@
       "funding": 0.0,
       "positions": 1,
       "max_drawdown_pct": 1.5311528297792583
+    },
+    {
+      "seq": 209,
+      "event": "exit",
+      "ts_ms": 1794760319999,
+      "ts_utc": "2026-11-15T16:31:59.999Z",
+      "ts_myt": "2026-11-16T00:31:59+08:00",
+      "trade_id": "P000002",
+      "coin": "UETH",
+      "side": "long",
+      "size": 0.5511,
+      "price": 1816.6993339158348,
+      "fee": 0.7008281020447116,
+      "pnl_gross": -5.960750551983518,
+      "reason": "stop",
+      "market": "spot",
+      "bar_t": 1794760260000,
+      "observed_at_utc": "2026-11-15T16:36:03.523Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1817.6081379848272,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": true,
+      "fill_timing": "intraminute_unknown_stop_assumed",
+      "fill_source": "virtual_stop_plus_5bp"
+    },
+    {
+      "seq": 210,
+      "event": "net_pnl",
+      "ts_ms": 1794760319999,
+      "ts_utc": "2026-11-15T16:31:59.999Z",
+      "ts_myt": "2026-11-16T00:31:59+08:00",
+      "id": "P000002",
+      "coin": "UETH",
+      "entry_ms": 1794760263751,
+      "exit_ms": 1794760319999,
+      "pnl_net": -7.36657928145933,
+      "fees": 1.4058287294758118,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
+    },
+    {
+      "seq": 211,
+      "event": "signal",
+      "ts_ms": 1794760563523,
+      "ts_utc": "2026-11-15T16:36:03.523Z",
+      "ts_myt": "2026-11-16T00:36:03+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-15T16:35:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 1822.9,
+        "prior_exit_low": 1802.2
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "UETH": 1794760200000
+    "UETH": 1794760500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T00:31:03+08:00",
+  "last_tick_myt": "2026-11-16T00:36:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "a83f78326d77848f2d9fa670cf4e745853d200fe3ec2b59633d1daa7d2054f5e",
