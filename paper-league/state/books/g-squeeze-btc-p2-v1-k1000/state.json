@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 983.5180944316422,
+  "cash": 984.8824736256134,
   "starting_equity": 1000.0,
   "day_start_equity": 987.9576515936997,
-  "positions": {
-    "P000011": {
-      "id": "P000011",
-      "coin": "BTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.01137,
-      "size_initial": 0.01137,
-      "entry_px": 64580.413499999995,
-      "entry_ms": 1794810843591,
-      "stop": 64257.511432499996,
-      "fees": 0.33042568567274994,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.91618349333439,
-      "funding_hour": 498558,
-      "risk_cap_at_entry": 4.919242600586575
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -122,23 +104,33 @@
       "fees": 0.6618439604195999,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000011",
+      "coin": "BTC",
+      "entry_ms": 1794810843591,
+      "exit_ms": 1794812704728,
+      "pnl_net": 1.0339535082983755,
+      "fees": 0.6616144359225,
+      "funding": -0.000131115779196,
+      "reason": "observed_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 10,
-    "wins": 3,
+    "trades_closed": 11,
+    "wins": 4,
     "losses": 7,
-    "net_pnl": -16.15147988268506,
-    "fees": 6.985954721203047,
-    "funding": -2.9596249999999658e-06
+    "net_pnl": -15.117526374386683,
+    "fees": 7.317143471452797,
+    "funding": -0.00013407540419599996
   },
   "marks": {
-    "BTC": 64676.5,
-    "ETH": 1816.15,
-    "SOL": 71.2425,
-    "UBTC": 64656.5,
-    "UETH": 1816.15,
-    "HYPE": 66.3245
+    "BTC": 64742.5,
+    "ETH": 1817.35,
+    "SOL": 71.2395,
+    "UBTC": 64734.0,
+    "UETH": 1817.25,
+    "HYPE": 66.3935
   },
   "halted": false,
   "halt_reason": null,
@@ -7374,14 +7366,76 @@
       "funding": -2.9596249999999658e-06,
       "positions": 1,
       "max_drawdown_pct": 1.6975517063357755
+    },
+    {
+      "seq": 466,
+      "event": "funding",
+      "ts_ms": 1794812400047,
+      "ts_utc": "2026-11-16T07:00:00.047Z",
+      "ts_myt": "2026-11-16T15:00:00+08:00",
+      "trade_id": "P000011",
+      "coin": "BTC",
+      "payment": -0.000131115779196,
+      "rate": 1.783e-07,
+      "price": 64676.0,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-16T07:00:00.000Z"
+    },
+    {
+      "seq": 467,
+      "event": "exit",
+      "ts_ms": 1794812704728,
+      "ts_utc": "2026-11-16T07:05:04.728Z",
+      "ts_myt": "2026-11-16T15:05:04+08:00",
+      "trade_id": "P000011",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.01137,
+      "price": 64729.5515,
+      "fee": 0.33118875024975003,
+      "pnl_gross": 1.6956990600000714,
+      "reason": "observed_time_exit",
+      "delay_ms": 61137
+    },
+    {
+      "seq": 468,
+      "event": "net_pnl",
+      "ts_ms": 1794812704728,
+      "ts_utc": "2026-11-16T07:05:04.728Z",
+      "ts_myt": "2026-11-16T15:05:04+08:00",
+      "id": "P000011",
+      "coin": "BTC",
+      "entry_ms": 1794810843591,
+      "exit_ms": 1794812704728,
+      "pnl_net": 1.0339535082983755,
+      "fees": 0.6616144359225,
+      "funding": -0.000131115779196,
+      "reason": "observed_time_exit"
+    },
+    {
+      "seq": 469,
+      "event": "signal",
+      "ts_ms": 1794812704728,
+      "ts_utc": "2026-11-16T07:05:04.728Z",
+      "ts_myt": "2026-11-16T15:05:04+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-16T07:05:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 64765.780944326354,
+        "prior_lower": 64505.95238900698
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "BTC": 1794812400000
+    "BTC": 1794812700000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T15:00:07+08:00",
+  "last_tick_myt": "2026-11-16T15:05:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c272c8b0a0c73e54a2df05ecd8a9aacafd0e909b63ec26d5f0f82a7167f3b7bf",
