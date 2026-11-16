@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 98.18801801821621,
+  "cash": 97.74151407838039,
   "day_date": "2026-11-16",
   "day_start_equity": 96.77594708911067,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000038": {
-      "id": "P000038",
-      "coin": "ETH",
-      "dir": -1,
-      "side": "short",
-      "size": 0.032,
-      "size_initial": 0.032,
-      "entry_px": 1823.5852100000002,
-      "entry_ms": 1794838564929,
-      "stop": 1835.7940407275194,
-      "fees": 0.026259627024000004,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.49025676715873007,
-      "funding_hour": 498566,
-      "risk_cap_at_entry": 0.4910713882262011
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -396,27 +378,37 @@
       "fees": 0.06539457403980001,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000038",
+      "coin": "ETH",
+      "entry_ms": 1794838564929,
+      "exit_ms": 1794839579999,
+      "pnl_net": -0.472763566859819,
+      "fees": 0.05270827892756952,
+      "funding": 0.0,
+      "reason": "stop"
     }
   ],
   "next_seq": 39,
   "marks": {
-    "BTC": 64420.5,
-    "ETH": 1820.95,
-    "SOL": 71.223,
-    "UBTC": 64401.5,
-    "UETH": 1820.35,
+    "BTC": 65303.5,
+    "ETH": 1852.05,
+    "SOL": 72.3785,
+    "UBTC": 65260.5,
+    "UETH": 1851.05,
     "USOL": 82.9645,
-    "HYPE": 66.4855
+    "HYPE": 67.6505
   },
   "stats": {
-    "trades_closed": 37,
+    "trades_closed": 38,
     "wins": 19,
-    "losses": 18,
-    "net_pnl": -1.7857223547596925,
-    "fees": 2.1257565589223977,
+    "losses": 19,
+    "net_pnl": -2.2584859216195117,
+    "fees": 2.1522052108259673,
     "funding": 0.004508680400994
   },
-  "last_tick_myt": "2026-11-16T22:31:05+08:00",
+  "last_tick_myt": "2026-11-16T22:37:03+08:00",
   "id": "f1-vwap5m-v1",
   "owner": "Desk-defined experimental family",
   "kind": "vwap",
@@ -34718,14 +34710,117 @@
       "funding": 0.004508680400994,
       "positions": 1,
       "max_drawdown_pct": 5.646262277540986
+    },
+    {
+      "seq": 2328,
+      "event": "exit",
+      "ts_ms": 1794839579999,
+      "ts_utc": "2026-11-16T14:32:59.999Z",
+      "ts_myt": "2026-11-16T22:32:59+08:00",
+      "trade_id": "P000038",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.032,
+      "price": 1836.711937747883,
+      "fee": 0.026448651903569514,
+      "pnl_gross": -0.4200552879322495,
+      "reason": "stop",
+      "bar_t": 1794839520000,
+      "observed_at_utc": "2026-11-16T14:37:03.348Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1835.7940407275194,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 2329,
+      "event": "net_pnl",
+      "ts_ms": 1794839579999,
+      "ts_utc": "2026-11-16T14:32:59.999Z",
+      "ts_myt": "2026-11-16T22:32:59+08:00",
+      "id": "P000038",
+      "coin": "ETH",
+      "entry_ms": 1794838564929,
+      "exit_ms": 1794839579999,
+      "pnl_net": -0.472763566859819,
+      "fees": 0.05270827892756952,
+      "funding": 0.0,
+      "reason": "stop"
+    },
+    {
+      "seq": 2330,
+      "event": "signal",
+      "ts_ms": 1794839823348,
+      "ts_utc": "2026-11-16T14:37:03.348Z",
+      "ts_myt": "2026-11-16T22:37:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-16T14:35:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 2.8244908656866636,
+        "vwap": 64415.45571702834
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 2331,
+      "event": "missed_entry",
+      "ts_ms": 1794839823348,
+      "ts_utc": "2026-11-16T14:37:03.348Z",
+      "ts_myt": "2026-11-16T22:37:03+08:00",
+      "coin": "BTC",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-16T14:35:00.000Z"
+    },
+    {
+      "seq": 2332,
+      "event": "signal",
+      "ts_ms": 1794839823348,
+      "ts_utc": "2026-11-16T14:37:03.348Z",
+      "ts_myt": "2026-11-16T22:37:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-16T14:35:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 3.4906399292606674,
+        "vwap": 1816.2544937436362
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 2333,
+      "event": "signal",
+      "ts_ms": 1794839823348,
+      "ts_utc": "2026-11-16T14:37:03.348Z",
+      "ts_myt": "2026-11-16T22:37:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-16T14:35:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 2.720279161984831,
+        "vwap": 71.18798421896409
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 2334,
+      "event": "missed_entry",
+      "ts_ms": 1794839823348,
+      "ts_utc": "2026-11-16T14:37:03.348Z",
+      "ts_myt": "2026-11-16T22:37:03+08:00",
+      "coin": "SOL",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-16T14:35:00.000Z"
     }
   ],
   "peak": 102.02732751615812,
   "max_drawdown_pct": 5.646262277540986,
   "decisions": {
-    "BTC": 1794839400000,
-    "ETH": 1794839400000,
-    "SOL": 1794839400000
+    "BTC": 1794839700000,
+    "ETH": 1794839700000,
+    "SOL": 1794839700000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -34763,7 +34858,7 @@
     ],
     "day": "2026-11-16",
     "day_start": 96.77594708911067,
-    "previous": 98.23446897821621,
+    "previous": 97.74151407838039,
     "skip_partial_day": false,
     "status": "UNPROVEN",
     "flag_ms": null,
@@ -34771,9 +34866,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 4,
-    "return_pct": -1.7655310217837838,
-    "excess_btc_pct": 11.12033885282676,
-    "excess_random_pct": -2.455107884755914
+    "return_pct": -2.258485921619613,
+    "excess_btc_pct": 9.43201773185336,
+    "excess_random_pct": -2.948062784591743
   },
   "valuation_bucket": 1994266,
   "labels_v1": {
