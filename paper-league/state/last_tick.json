@@ -2,9 +2,9 @@
   "status": "ok",
   "mode": "PAPER_ONLY",
   "engine_version": 7,
-  "tick": 851,
-  "ts_myt": "2026-11-16T18:37:04+08:00",
-  "ts_utc": "2026-11-16T10:37:04.384Z",
+  "tick": 852,
+  "ts_myt": "2026-11-16T18:42:04+08:00",
+  "ts_utc": "2026-11-16T10:42:04.307Z",
   "book_count": 125,
   "active_books": 121,
   "retired_books": [
@@ -15,9 +15,9 @@
   ],
   "trial_count": 434,
   "evidence": {
-    "path": "sources/1794825421038.json.gz",
-    "sha256": "9b6cb39a86803baea4ab6a2be9719ffbf5c8bf190c416e04dd375f2cf5d91998",
-    "received_ms": 1794825424384,
+    "path": "sources/1794825721037.json.gz",
+    "sha256": "355df48904cc51f3e8364fed87ff08d59317d6a32cf6df7e2aa21decc4429145",
+    "received_ms": 1794825724307,
     "requests": 8,
     "request_types": {
       "metaAndAssetCtxs": 1,
@@ -25,13 +25,15 @@
       "allMids": 1
     },
     "estimated_weight": 148,
-    "collection_seconds": 2.4171,
-    "failed_symbols": []
+    "collection_seconds": 2.2285,
+    "failed_symbols": [
+      "UETH"
+    ]
   },
   "load": {
-    "wall_seconds": 3.9606,
+    "wall_seconds": 4.053,
     "signal_computations": 27,
-    "spot_signal_computations": 3,
+    "spot_signal_computations": 2,
     "v4_signal_computations": 0,
     "requests": 8,
     "request_types": {
@@ -40,19 +42,36 @@
       "allMids": 1
     },
     "estimated_weight": 148,
-    "collection_seconds": 2.4171
+    "collection_seconds": 2.2285
   },
   "data_isolation": {
     "rule_id": "data-isolation-v1",
-    "failed_symbols": {},
-    "skipped_books": [],
-    "stale_positions": [],
+    "failed_symbols": {
+      "UETH": "ValueError('UETH spot 1m warmup/continuity missing')"
+    },
+    "skipped_books": [
+      "sp-donchian5m-ueth-v1",
+      "sp-ema15m-ueth-v1",
+      "sp-hold-ueth-v1",
+      "sp-rsi1h-ueth-v1"
+    ],
+    "stale_positions": [
+      {
+        "book": "sp-hold-ueth-v1",
+        "trade_id": "SPOT_HOLD",
+        "coin": "UETH",
+        "side": "long",
+        "stop": null,
+        "last_cursor_utc": "2026-11-16T10:37:00.000Z",
+        "market": "spot"
+      }
+    ],
     "fail_rate_24h": {
       "BTC": 0.0,
       "ETH": 0.0,
       "SOL": 0.0,
       "UBTC": 0.0,
-      "UETH": 0.0471,
+      "UETH": 0.0507,
       "HYPE": 0.0
     },
     "window_ticks": 276,
@@ -98,7 +117,7 @@
       "labels": []
     },
     "b0-btc-1x-hold-control-v1": {
-      "equity": 87.20451403,
+      "equity": 87.29523789,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -106,7 +125,7 @@
       "labels": []
     },
     "f1-vwap5m-v1": {
-      "equity": 97.56623599,
+      "equity": 97.68083599,
       "positions": 1,
       "closed_trades": 34,
       "market": "perp",
@@ -186,7 +205,7 @@
       ]
     },
     "c1-random15m-v1": {
-      "equity": 100.60215408,
+      "equity": 100.64637408,
       "positions": 1,
       "closed_trades": 11,
       "market": "perp",
@@ -218,7 +237,7 @@
       "labels": []
     },
     "g-vwap-eth-p0-v1": {
-      "equity": 102.6536525,
+      "equity": 102.7739525,
       "positions": 1,
       "closed_trades": 21,
       "market": "perp",
@@ -234,7 +253,7 @@
       "labels": []
     },
     "g-vwap-eth-p2-v1": {
-      "equity": 103.57082855,
+      "equity": 103.68332855,
       "positions": 1,
       "closed_trades": 18,
       "market": "perp",
@@ -420,7 +439,7 @@
       ]
     },
     "g-ema-btc-p1-v1": {
-      "equity": 98.1968035,
+      "equity": 98.1458835,
       "positions": 1,
       "closed_trades": 5,
       "market": "perp",
@@ -450,7 +469,7 @@
       ]
     },
     "g-ema-eth-p1-v1": {
-      "equity": 98.85949464,
+      "equity": 98.78329464,
       "positions": 1,
       "closed_trades": 6,
       "market": "perp",
@@ -516,7 +535,7 @@
       "labels": []
     },
     "g-squeeze-btc-p2-v1": {
-      "equity": 98.70166879,
+      "equity": 98.77804879,
       "positions": 1,
       "closed_trades": 24,
       "market": "perp",
@@ -582,7 +601,7 @@
       ]
     },
     "g-supertrend-btc-p1-v1": {
-      "equity": 99.90978976,
+      "equity": 99.88164976,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -592,7 +611,7 @@
       ]
     },
     "g-supertrend-btc-p2-v1": {
-      "equity": 99.73191785,
+      "equity": 99.74732785,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -938,7 +957,7 @@
       "labels": []
     },
     "g-ema-all-p1-v1": {
-      "equity": 98.22496819,
+      "equity": 98.17404819,
       "positions": 1,
       "closed_trades": 7,
       "market": "perp",
@@ -948,7 +967,7 @@
       ]
     },
     "sp-hold-ubtc-v1": {
-      "equity": 14.21132087,
+      "equity": 14.22452087,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1056,7 +1075,7 @@
       ]
     },
     "sp-hold-hype-v1": {
-      "equity": 15.24195901,
+      "equity": 15.27572901,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1082,7 +1101,7 @@
       "labels": []
     },
     "sp-donchian5m-hype-v1": {
-      "equity": 16.01116133,
+      "equity": 16.04646633,
       "positions": 1,
       "closed_trades": 6,
       "market": "spot",
@@ -1200,9 +1219,9 @@
     "bankroll": 1000.0,
     "count": 117,
     "created": false,
-    "skipped": 0,
+    "skipped": 4,
     "trial_count_delta": 0,
     "note": "scale twins, not new strategy trials; bankroll is the only difference; trial count unchanged",
-    "wall_seconds": 2.7909
+    "wall_seconds": 3.855
   }
 }
