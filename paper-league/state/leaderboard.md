@@ -1,6 +1,6 @@
 # PAPER league — 100 virtual USDC perp books + 16.24 virtual USDC spot books
 
-Updated 2026-11-16T19:27:04+08:00 MYT | tick 856 | 125 books (107 perp @100 USDC, 18 spot @16.24 USDC; incl. 9 v4 research-sweep books registered 12 Nov 2026) | public reads only
+Updated 2026-11-16T19:32:04+08:00 MYT | tick 857 | 125 books (107 perp @100 USDC, 18 spot @16.24 USDC; incl. 9 v4 research-sweep books registered 12 Nov 2026) | public reads only
 
 Spot research books use 5m/15m/1h timeframes. Do not compare raw Net MTM USDC across the 100-USDC and 16.24-USDC tables. An 'Early read (not evidence)' table lists fast books with >=10 closed trades; it is not the promotion bar. Ranks use net MTM (open exit cost not deducted). Gate comparisons use same-start indicative exit equity: perp books deduct taker+2bp; spot books deduct official tier-0 spot taker 0.070%+2bp. Official promotion controls remain the BTC-perp hold and random-entry books.
 
@@ -50,12 +50,12 @@ Spot research books use 5m/15m/1h timeframes. Do not compare raw Net MTM USDC ac
 | 33 | g-asia-sol-p0-v1 | 3 | -1.2183 | 0.0000 | 0.0000 | 1.4176 | -0.4061 | 0.1365 | +0.0005 | +11.3624 | -1.9079 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 34 | g-asia-sol-p1-v1 | 3 | -1.2183 | 0.0000 | 0.0000 | 1.4176 | -0.4061 | 0.1365 | +0.0005 | +11.3624 | -1.9079 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 35 | g-asia-sol-p2-v1 | 3 | -1.2183 | 0.0000 | 0.0000 | 1.4176 | -0.4061 | 0.1365 | +0.0005 | +11.3624 | -1.9079 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
-| 36 | g-ema-eth-p1-v1 [cluster:TREND] | 6 | -1.3010 | 16.6667 | 0.2809 | 1.9625 | -0.2171 | 0.2649 | -0.0015 | +11.2498 | -2.0204 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
+| 36 | g-ema-eth-p1-v1 [cluster:TREND] | 6 | -1.2858 | 16.6667 | 0.2809 | 1.9625 | -0.2171 | 0.2649 | -0.0015 | +11.2651 | -2.0052 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 37 | g-squeeze-btc-p2-v1 | 25 | -1.3381 | 32.0000 | 0.7384 | 2.3161 | -0.0535 | 1.6478 | -0.0071 | +11.2426 | -2.0277 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 38 | g-vwap-btc-p0-v1 | 19 | -1.4389 | 52.6316 | 0.5906 | 2.8246 | -0.0757 | 1.1655 | -0.0019 | +11.1419 | -2.1284 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 39 | f3-rsi2-5m-v1 | 12 | -1.4423 | 33.3333 | 0.2140 | 2.2184 | -0.1202 | 0.6741 | +0.0001 | +11.1384 | -2.1319 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
-| 40 | g-ema-all-p1-v1 [cluster:TREND] | 7 | -1.9076 | 14.2857 | 0.2103 | 2.1043 | -0.2714 | 0.3491 | -0.0009 | +10.6412 | -2.6291 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
-| 41 | g-ema-btc-p1-v1 [cluster:TREND] | 5 | -1.9358 | 0.0000 | 0.0000 | 2.0329 | -0.3856 | 0.2545 | -0.0004 | +10.6130 | -2.6573 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
+| 40 | g-ema-all-p1-v1 [cluster:TREND] | 8 | -1.9396 | 12.5000 | 0.2069 | 2.1043 | -0.2424 | 0.3712 | -0.0009 | +10.6412 | -2.6291 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
+| 41 | g-ema-btc-p1-v1 [cluster:TREND] | 6 | -1.9677 | 0.0000 | 0.0000 | 2.0329 | -0.3280 | 0.2766 | -0.0004 | +10.6130 | -2.6573 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 42 | g-squeeze-btc-p1-v1 | 18 | -2.0833 | 16.6667 | 0.3968 | 2.5637 | -0.1157 | 1.1908 | +0.0001 | +10.4974 | -2.7729 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 43 | g-rsi2-sol-p1-v1 | 11 | -2.1438 | 18.1818 | 0.0709 | 2.2755 | -0.1949 | 0.5410 | +0.0003 | +10.4369 | -2.8333 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 44 | g-vwap-btc-p2-v1 | 15 | -2.1627 | 40.0000 | 0.3658 | 2.9197 | -0.1442 | 0.9016 | -0.0028 | +10.4180 | -2.8523 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
@@ -131,9 +131,9 @@ Spot research books use 5m/15m/1h timeframes. Do not compare raw Net MTM USDC ac
 | Rank | Book | Closed | Net MTM USDC | Win % | PF | MaxDD % | Expectancy | Fees | Funding | vs BTC pp | vs random pp | DSR trials | DSR probability | Full days | Fresh OOS | Gate |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
 | 1 | sp-hold-usol-v1 (RETIRED_DATA_QUALITY) | 1 | -0.0166 | 0.0000 | 0.0000 | 3.9287 | -0.0166 | 0.0226 | +0.0000 | +12.2067 | -0.7920 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
-| 2 | sp-hold-hype-v1 | 0 | -0.9841 | — | — | 19.4142 | — | 0.0110 | +0.0000 | +6.1675 | -6.8312 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
-| 3 | sp-hold-ueth-v1 | 0 | -1.9469 | — | — | 18.4092 | — | 0.0114 | +0.0000 | +0.2414 | -12.7573 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
-| 4 | sp-hold-ubtc-v1 | 0 | -1.9917 | — | — | 16.5977 | — | 0.0113 | +0.0000 | -0.0339 | -13.0327 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
+| 2 | sp-hold-hype-v1 | 0 | -1.0292 | — | — | 19.4142 | — | 0.0110 | +0.0000 | +5.8901 | -7.1086 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
+| 3 | sp-hold-ueth-v1 | 0 | -1.9509 | — | — | 18.4092 | — | 0.0114 | +0.0000 | +0.2171 | -12.7816 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
+| 4 | sp-hold-ubtc-v1 | 0 | -1.9922 | — | — | 16.5977 | — | 0.0113 | +0.0000 | -0.0366 | -13.0354 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); CONTROL; SPOT HOLD CONTROL (no stop/halt flatten) |
 
 ## Spot fast / 5m and 15m (16.24 virtual USDC, long-only, no leverage)
 
@@ -145,8 +145,8 @@ Spot research books use 5m/15m/1h timeframes. Do not compare raw Net MTM USDC ac
 | 4 | sp-donchian5m-usol-v1 (RETIRED_DATA_QUALITY) [cluster:TREND] | 1 | -0.1128 | 0.0000 | 0.0000 | 1.0376 | -0.1128 | 0.0226 | +0.0000 | +11.6145 | -1.3842 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 5 | sp-donchian5m-ueth-v1 [cluster:TREND] | 9 | -0.1148 | 33.3333 | 0.8332 | 3.9796 | -0.0128 | 0.2038 | +0.0000 | +11.6023 | -1.3964 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT; HALTED |
 | 6 | sp-ema15m-ueth-v1 [cluster:TREND] | 2 | -0.1371 | 0.0000 | 0.0000 | 2.8634 | -0.0686 | 0.0450 | +0.0000 | +11.4648 | -1.5339 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
-| 7 | sp-donchian5m-hype-v1 [cluster:TREND] | 6 | -0.2142 | 16.6667 | 0.6092 | 4.0284 | -0.0444 | 0.1428 | +0.0000 | +10.9042 | -2.0945 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
-| 8 | sp-ema15m-ubtc-v1 [cluster:TREND] | 2 | -0.2564 | 0.0000 | 0.0000 | 2.9158 | -0.1282 | 0.0436 | +0.0000 | +10.7304 | -2.2683 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
+| 7 | sp-ema15m-ubtc-v1 [cluster:TREND] | 2 | -0.2564 | 0.0000 | 0.0000 | 2.9158 | -0.1282 | 0.0436 | +0.0000 | +10.7304 | -2.2683 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
+| 8 | sp-donchian5m-hype-v1 [cluster:TREND] | 6 | -0.2614 | 16.6667 | 0.6092 | 4.0284 | -0.0444 | 0.1428 | +0.0000 | +10.6141 | -2.3846 | 434 | — | 4 | not flagged | NOT SIGNIFICANT (<30); NOT_SIGNIFICANT |
 | 9 | sp4-utc21-ubtc-v1 [NON_V1_RESEARCH, cluster:BTC_FRI21] | 1 | -0.3304 | 0.0000 | 0.0000 | 2.1185 | -0.3304 | 0.0225 | +0.0000 | +10.1858 | -2.7242 | 434 | — | 3 | not flagged | NOT SIGNIFICANT (<30); INELIGIBLE_NON_V1_RESEARCH; HALTED |
 
 ## Spot slow / 1h (16.24 virtual USDC, long-only, no leverage)
