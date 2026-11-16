@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 987.813515339301,
+  "cash": 983.4192810709715,
   "starting_equity": 1000.0,
   "day_start_equity": 991.020828245416,
-  "positions": {
-    "P000010": {
-      "id": "P000010",
-      "coin": "ETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.4035,
-      "size_initial": 0.4035,
-      "entry_px": 1828.81569,
-      "entry_ms": 1794848344445,
-      "stop": 1819.6716115499999,
-      "fees": 0.33206720891175,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.940606623258675,
-      "funding_hour": 498568,
-      "risk_cap_at_entry": 4.940727912741064
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -112,29 +94,39 @@
       "fees": 0.6659139972032999,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000010",
+      "coin": "ETH",
+      "entry_ms": 1794848344445,
+      "exit_ms": 1794851939999,
+      "pnl_net": -4.72630147724132,
+      "fees": 0.6623088783425077,
+      "funding": -0.0072381966936,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 9,
+    "trades_closed": 10,
     "wins": 2,
-    "losses": 7,
-    "net_pnl": -11.8544174517871,
-    "fees": 6.374286295828675,
-    "funding": -0.006625330815368001
+    "losses": 8,
+    "net_pnl": -16.58071892902842,
+    "fees": 6.704527965259433,
+    "funding": -0.013863527508968
   },
   "marks": {
-    "BTC": 64881.5,
-    "ETH": 1828.45,
-    "SOL": 71.3815,
-    "UBTC": 64881.5,
-    "UETH": 1828.35,
-    "HYPE": 67.1155
+    "BTC": 65262.5,
+    "ETH": 1828.05,
+    "SOL": 71.7155,
+    "UBTC": 65241.5,
+    "UETH": 1827.85,
+    "HYPE": 70.477
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 11,
   "peak": 1009.3752514769619,
-  "max_drawdown_pct": 2.154346226707678,
+  "max_drawdown_pct": 2.571488687483723,
   "id": "g-squeeze-eth-p1-v1-k1000",
   "parent_id": "g-squeeze-eth-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -9267,14 +9259,97 @@
       "cost_inclusive_risk": 4.940606623258675,
       "risk_budget": 4.940727912741064,
       "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 590,
+      "event": "funding",
+      "ts_ms": 1794848400043,
+      "ts_utc": "2026-11-16T17:00:00.043Z",
+      "ts_myt": "2026-11-17T01:00:00+08:00",
+      "trade_id": "P000010",
+      "coin": "ETH",
+      "payment": -0.0072381966936,
+      "rate": 9.8132e-06,
+      "price": 1828.0,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-16T17:00:00.000Z"
+    },
+    {
+      "seq": 591,
+      "event": "exit",
+      "ts_ms": 1794851939999,
+      "ts_utc": "2026-11-16T17:58:59.999Z",
+      "ts_myt": "2026-11-17T01:58:59+08:00",
+      "trade_id": "P000010",
+      "coin": "ETH",
+      "side": "long",
+      "size": 0.4035,
+      "price": 1818.761775744225,
+      "fee": 0.33024166943075767,
+      "pnl_gross": -4.056754402205212,
+      "reason": "stop",
+      "bar_t": 1794851880000,
+      "observed_at_utc": "2026-11-16T23:19:03.904Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1819.6716115499999,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 592,
+      "event": "net_pnl",
+      "ts_ms": 1794851939999,
+      "ts_utc": "2026-11-16T17:58:59.999Z",
+      "ts_myt": "2026-11-17T01:58:59+08:00",
+      "id": "P000010",
+      "coin": "ETH",
+      "entry_ms": 1794848344445,
+      "exit_ms": 1794851939999,
+      "pnl_net": -4.72630147724132,
+      "fees": 0.6623088783425077,
+      "funding": -0.0072381966936,
+      "reason": "stop"
+    },
+    {
+      "seq": 593,
+      "event": "signal",
+      "ts_ms": 1794871143904,
+      "ts_utc": "2026-11-16T23:19:03.904Z",
+      "ts_myt": "2026-11-17T07:19:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-16T23:19:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 1830.4054724821362,
+        "prior_lower": 1822.9945275178638
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 594,
+      "event": "valuation",
+      "ts_ms": 1794871143904,
+      "ts_utc": "2026-11-16T23:19:03.904Z",
+      "ts_myt": "2026-11-17T07:19:03+08:00",
+      "equity": 983.4192810709715,
+      "cash": 983.4192810709715,
+      "unrealized": 0.0,
+      "fees": 6.704527965259433,
+      "funding": -0.013863527508968,
+      "positions": 0,
+      "max_drawdown_pct": 2.571488687483723
     }
   ],
   "decisions": {
-    "ETH": 1794848340000
+    "ETH": 1794871140000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T00:59:04+08:00",
+  "last_tick_myt": "2026-11-17T07:19:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "3f9d37ffb2069bb1c5f73406cb69835173e20acb990d27f9b9a899ca2be285ae",
@@ -9296,5 +9371,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "3f9d37ffb2069bb1c5f73406cb69835173e20acb990d27f9b9a899ca2be285ae"
   },
-  "valuation_bucket": 1994275
+  "valuation_bucket": 1994301
 }
