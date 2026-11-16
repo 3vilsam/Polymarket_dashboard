@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "cash": 1002.6916139940987,
+  "cash": 994.1803795121161,
   "starting_equity": 1000.0,
   "day_start_equity": 1018.2785736188571,
-  "positions": {
-    "P000005": {
-      "id": "P000005",
-      "coin": "HYPE",
-      "dir": 1,
-      "side": "long",
-      "size": 14.95,
-      "size_initial": 14.95,
-      "entry_px": 67.028403,
-      "entry_ms": 1794823804594,
-      "stop": 66.53891306378053,
-      "fees": 0.701452237395,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498562,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -67,26 +48,37 @@
       "funding": 0.0,
       "reason": "stop",
       "market": "spot"
+    },
+    {
+      "id": "P000005",
+      "coin": "HYPE",
+      "entry_ms": 1794823804594,
+      "exit_ms": 1794828959999,
+      "pnl_net": -9.212686719377597,
+      "fees": 1.397433797744857,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
     }
   ],
   "stats": {
-    "trades_closed": 4,
+    "trades_closed": 5,
     "wins": 1,
-    "losses": 3,
-    "net_pnl": 3.3930662314935898,
-    "fees": 6.379162052047587,
+    "losses": 4,
+    "net_pnl": -5.819620487884007,
+    "fees": 7.075143612397444,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64631.5,
-    "UETH": 1808.45,
-    "HYPE": 67.0975
+    "UBTC": 64672.5,
+    "UETH": 1808.95,
+    "HYPE": 66.507
   },
-  "halted": false,
-  "halt_reason": null,
+  "halted": true,
+  "halt_reason": "daily_loss_minus_2_percent",
   "next_seq": 6,
   "peak": 1043.4676182454257,
-  "max_drawdown_pct": 4.1117643088408355,
+  "max_drawdown_pct": 4.723408553509812,
   "id": "sp-donchian5m-hype-v1-k1000",
   "parent_id": "sp-donchian5m-hype-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
@@ -7752,14 +7744,79 @@
       "funding": 0.0,
       "positions": 1,
       "max_drawdown_pct": 4.1117643088408355
+    },
+    {
+      "seq": 520,
+      "event": "exit",
+      "ts_ms": 1794828959999,
+      "ts_utc": "2026-11-16T11:35:59.999Z",
+      "ts_myt": "2026-11-16T19:35:59+08:00",
+      "trade_id": "P000005",
+      "coin": "HYPE",
+      "side": "long",
+      "size": 14.95,
+      "price": 66.50564360724864,
+      "fee": 0.695981560349857,
+      "pnl_gross": -7.81525292163274,
+      "reason": "stop",
+      "market": "spot",
+      "bar_t": 1794828900000,
+      "observed_at_utc": "2026-11-16T11:37:03.720Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 66.53891306378053,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed",
+      "fill_source": "virtual_stop_plus_5bp"
+    },
+    {
+      "seq": 521,
+      "event": "net_pnl",
+      "ts_ms": 1794828959999,
+      "ts_utc": "2026-11-16T11:35:59.999Z",
+      "ts_myt": "2026-11-16T19:35:59+08:00",
+      "id": "P000005",
+      "coin": "HYPE",
+      "entry_ms": 1794823804594,
+      "exit_ms": 1794828959999,
+      "pnl_net": -9.212686719377597,
+      "fees": 1.397433797744857,
+      "funding": 0.0,
+      "reason": "stop",
+      "market": "spot"
+    },
+    {
+      "seq": 522,
+      "event": "halt",
+      "ts_ms": 1794828959999,
+      "ts_utc": "2026-11-16T11:35:59.999Z",
+      "ts_myt": "2026-11-16T19:35:59+08:00",
+      "equity": 994.1803795121161,
+      "note": "replayed threshold; flatten at next actually observed quote, not unseen historical close"
+    },
+    {
+      "seq": 523,
+      "event": "signal",
+      "ts_ms": 1794829023720,
+      "ts_utc": "2026-11-16T11:37:03.720Z",
+      "ts_myt": "2026-11-16T19:37:03+08:00",
+      "coin": "HYPE",
+      "boundary_utc": "2026-11-16T11:35:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 67.789,
+        "prior_exit_low": 67.109
+      },
+      "entry_window_open": false
     }
   ],
   "decisions": {
-    "HYPE": 1794828600000
+    "HYPE": 1794828900000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T19:32:04+08:00",
+  "last_tick_myt": "2026-11-16T19:37:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "d9deecc1e4cc1940929ad6a5185a352c04a82d3bfdfa733cc4df86ab476c8d3c",
