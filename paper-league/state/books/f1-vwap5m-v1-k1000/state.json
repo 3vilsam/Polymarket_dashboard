@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cash": 993.5256507437166,
+  "cash": 993.5345111249666,
   "starting_equity": 1000.0,
   "day_start_equity": 983.8882366813694,
   "positions": {
@@ -16,9 +16,9 @@
       "stop": 65674.85725783037,
       "fees": 0.31896606777525,
       "realized_gross": 0.0,
-      "funding": 0.0,
+      "funding": 0.00886038125,
       "risk_at_entry": 4.967271006603362,
-      "funding_hour": 498551,
+      "funding_hour": 498552,
       "risk_cap_at_entry": 4.969223084057459
     }
   },
@@ -140,15 +140,15 @@
     "losses": 5,
     "net_pnl": -6.155383188508209,
     "fees": 6.701553789271478,
-    "funding": 0.0123184802167
+    "funding": 0.0211788614667
   },
   "marks": {
-    "BTC": 65242.5,
-    "ETH": 1833.25,
-    "SOL": 72.6665,
-    "UBTC": 65260.5,
-    "UETH": 1833.55,
-    "HYPE": 68.0695
+    "BTC": 65289.5,
+    "ETH": 1834.85,
+    "SOL": 72.6235,
+    "UBTC": 65305.5,
+    "UETH": 1834.95,
+    "HYPE": 68.0865
   },
   "halted": false,
   "halt_reason": null,
@@ -12974,16 +12974,100 @@
         "vwap": 72.12271381225428
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 869,
+      "event": "funding",
+      "ts_ms": 1794787200037,
+      "ts_utc": "2026-11-16T00:00:00.037Z",
+      "ts_myt": "2026-11-16T08:00:00+08:00",
+      "trade_id": "P000012",
+      "coin": "BTC",
+      "payment": 0.00886038125,
+      "rate": 1.25e-05,
+      "price": 65330.0,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-16T00:00:00.000Z"
+    },
+    {
+      "seq": 870,
+      "event": "signal",
+      "ts_ms": 1794787323996,
+      "ts_utc": "2026-11-16T00:02:03.996Z",
+      "ts_myt": "2026-11-16T08:02:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-16T00:00:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 1.3782056351149137,
+        "vwap": 65067.45182651061
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 871,
+      "event": "signal",
+      "ts_ms": 1794787323996,
+      "ts_utc": "2026-11-16T00:02:03.996Z",
+      "ts_myt": "2026-11-16T08:02:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-16T00:00:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 1.3550704373775633,
+        "vwap": 1824.7112463727506
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 872,
+      "event": "signal",
+      "ts_ms": 1794787323996,
+      "ts_utc": "2026-11-16T00:02:03.996Z",
+      "ts_myt": "2026-11-16T08:02:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-16T00:00:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 1.960181127120335,
+        "vwap": 72.13748515729549
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 873,
+      "event": "missed_entry",
+      "ts_ms": 1794787323996,
+      "ts_utc": "2026-11-16T00:02:03.996Z",
+      "ts_myt": "2026-11-16T08:02:03+08:00",
+      "coin": "SOL",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-16T00:00:00.000Z"
+    },
+    {
+      "seq": 874,
+      "event": "valuation",
+      "ts_ms": 1794787323996,
+      "ts_utc": "2026-11-16T00:02:03.996Z",
+      "ts_myt": "2026-11-16T08:02:03+08:00",
+      "equity": 993.9569200699666,
+      "cash": 993.5345111249666,
+      "unrealized": 0.42240894500001086,
+      "fees": 6.701553789271478,
+      "funding": 0.0211788614667,
+      "positions": 1,
+      "max_drawdown_pct": 2.199454793111625
     }
   ],
   "decisions": {
-    "BTC": 1794786900000,
-    "ETH": 1794786900000,
-    "SOL": 1794786900000
+    "BTC": 1794787200000,
+    "ETH": 1794787200000,
+    "SOL": 1794787200000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T07:57:03+08:00",
+  "last_tick_myt": "2026-11-16T08:02:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "323d5941fd3373584b63b9601a481367b8a087e48de5390d8bd760269a56658c",
@@ -13007,5 +13091,5 @@
     "owner": "Desk-defined experimental family",
     "sha256": "323d5941fd3373584b63b9601a481367b8a087e48de5390d8bd760269a56658c"
   },
-  "valuation_bucket": 1994207
+  "valuation_bucket": 1994208
 }
