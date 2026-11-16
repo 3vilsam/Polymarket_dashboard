@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 1007.3516926240667,
+  "cash": 1002.8776563683423,
   "starting_equity": 1000.0,
   "day_start_equity": 1007.6897823615928,
-  "positions": {
-    "P000014": {
-      "id": "P000014",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 10.68,
-      "size_initial": 10.68,
-      "entry_px": 70.34742770000001,
-      "entry_ms": 1794845524210,
-      "stop": 70.69916483850001,
-      "fees": 0.33808973752620003,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 5.03734926150841,
-      "funding_hour": 498568,
-      "risk_cap_at_entry": 5.038448911807964
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -152,29 +134,39 @@
       "fees": 0.6776295299784,
       "funding": -0.007012091347744,
       "reason": "observed_time_exit"
+    },
+    {
+      "id": "P000014",
+      "coin": "SOL",
+      "entry_ms": 1794845524210,
+      "exit_ms": 1794846119999,
+      "pnl_net": -4.812125993250648,
+      "fees": 0.6780398138331379,
+      "funding": 0.0,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 13,
+    "trades_closed": 14,
     "wins": 5,
-    "losses": 8,
-    "net_pnl": 7.689782361592643,
-    "fees": 9.078026857336855,
+    "losses": 9,
+    "net_pnl": 2.877656368341995,
+    "fees": 9.417976933643793,
     "funding": 0.0002955552767810003
   },
   "marks": {
-    "BTC": 64491.5,
-    "ETH": 1819.85,
-    "SOL": 70.6395,
-    "UBTC": 64496.5,
-    "UETH": 1819.45,
-    "HYPE": 66.5375
+    "BTC": 64587.5,
+    "ETH": 1823.25,
+    "SOL": 70.8005,
+    "UBTC": 64584.5,
+    "UETH": 1822.8,
+    "HYPE": 66.512
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 15,
   "peak": 1026.8146907754128,
-  "max_drawdown_pct": 2.199260540214188,
+  "max_drawdown_pct": 2.331193215495794,
   "id": "g-squeeze-sol-p2-v1-k1000",
   "parent_id": "g-squeeze-sol-p2-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -9327,14 +9319,68 @@
       "funding": 0.0002955552767810003,
       "positions": 1,
       "max_drawdown_pct": 2.199260540214188
+    },
+    {
+      "seq": 591,
+      "event": "exit",
+      "ts_ms": 1794846119999,
+      "ts_utc": "2026-11-16T16:21:59.999Z",
+      "ts_myt": "2026-11-17T00:21:59+08:00",
+      "trade_id": "P000014",
+      "coin": "SOL",
+      "side": "short",
+      "size": 10.68,
+      "price": 70.73451442091925,
+      "fee": 0.3399500763069379,
+      "pnl_gross": -4.13408617941751,
+      "reason": "stop",
+      "bar_t": 1794846060000,
+      "observed_at_utc": "2026-11-16T16:22:04.180Z",
+      "replayed": false,
+      "gap_through_stop": false,
+      "stop_trigger": 70.69916483850001,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 592,
+      "event": "net_pnl",
+      "ts_ms": 1794846119999,
+      "ts_utc": "2026-11-16T16:21:59.999Z",
+      "ts_myt": "2026-11-17T00:21:59+08:00",
+      "id": "P000014",
+      "coin": "SOL",
+      "entry_ms": 1794845524210,
+      "exit_ms": 1794846119999,
+      "pnl_net": -4.812125993250648,
+      "fees": 0.6780398138331379,
+      "funding": 0.0,
+      "reason": "stop"
+    },
+    {
+      "seq": 593,
+      "event": "signal",
+      "ts_ms": 1794846124180,
+      "ts_utc": "2026-11-16T16:22:04.180Z",
+      "ts_myt": "2026-11-17T00:22:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-16T16:22:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 71.02892677742594,
+        "prior_lower": 70.28233988924072
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "SOL": 1794845820000
+    "SOL": 1794846120000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T00:17:04+08:00",
+  "last_tick_myt": "2026-11-17T00:22:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c43877d559fd044fcf714d5e5f1a50cf141b42dd0cc4dd21d947a47aa456a761",
