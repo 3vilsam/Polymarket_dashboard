@@ -1,9 +1,28 @@
 {
   "version": 1,
-  "cash": 991.5079590505184,
+  "cash": 990.8145017607932,
   "starting_equity": 1000.0,
   "day_start_equity": 994.6761167119456,
-  "positions": {},
+  "positions": {
+    "P000003": {
+      "id": "P000003",
+      "coin": "UETH",
+      "dir": 1,
+      "side": "long",
+      "size": 0.5434,
+      "size_initial": 0.5434,
+      "entry_px": 1823.06454,
+      "entry_ms": 1794838564929,
+      "stop": 1805.6496377645954,
+      "fees": 0.6934572897251999,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498566,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -33,17 +52,17 @@
     "wins": 0,
     "losses": 2,
     "net_pnl": -8.492040949481597,
-    "fees": 2.7861341134816,
+    "fees": 3.4795914032067996,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64026.5,
-    "UETH": 1801.65,
-    "HYPE": 65.5145
+    "UBTC": 64534.5,
+    "UETH": 1822.7,
+    "HYPE": 66.0945
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 3,
+  "next_seq": 4,
   "peak": 1016.2769207188666,
   "max_drawdown_pct": 2.8799854660890833,
   "id": "sp-ema15m-ueth-v1-k1000",
@@ -4373,14 +4392,64 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 2.8799854660890833
+    },
+    {
+      "seq": 289,
+      "event": "signal",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-16T14:15:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 1805.0029447524985,
+        "slow": 1804.3942978457753,
+        "raw_cross": 1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 290,
+      "event": "entry",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "trade_id": "P000003",
+      "coin": "UETH",
+      "side": "long",
+      "size": 0.5434,
+      "price": 1823.06454,
+      "stop": 1805.6496377645954,
+      "fee": 0.6934572897251999,
+      "fill_source": "max(2bp_floor,L2_ask_walk)",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "UETH/USDC"
+    },
+    {
+      "seq": 291,
+      "event": "valuation",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "equity": 990.6164107247931,
+      "cash": 990.8145017607932,
+      "unrealized": -0.19809103600001826,
+      "fees": 3.4795914032067996,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 2.8799854660890833
     }
   ],
   "decisions": {
-    "UETH": 1794837600000
+    "UETH": 1794838500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T22:11:03+08:00",
+  "last_tick_myt": "2026-11-16T22:16:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc",
@@ -4415,5 +4484,5 @@
     },
     "sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc"
   },
-  "valuation_bucket": 1994264
+  "valuation_bucket": 1994265
 }

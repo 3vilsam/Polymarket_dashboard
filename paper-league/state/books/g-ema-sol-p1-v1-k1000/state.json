@@ -1,9 +1,27 @@
 {
   "version": 1,
-  "cash": 995.5879126706084,
+  "cash": 995.4237392329865,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.4818926432303,
-  "positions": {},
+  "positions": {
+    "P000003": {
+      "id": "P000003",
+      "coin": "SOL",
+      "dir": 1,
+      "side": "long",
+      "size": 5.11,
+      "size_initial": 5.11,
+      "entry_px": 71.3952762,
+      "entry_ms": 1794838564929,
+      "stop": 70.54180007214163,
+      "fees": 0.16417343762189998,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 4.977330577842991,
+      "funding_hour": 498566,
+      "risk_cap_at_entry": 4.977939563353042
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -31,22 +49,22 @@
     "wins": 1,
     "losses": 1,
     "net_pnl": -4.412087329391645,
-    "fees": 0.6025808432097692,
+    "fees": 0.7667542808316692,
     "funding": -0.010868618028026002
   },
   "marks": {
-    "BTC": 64048.5,
-    "ETH": 1802.45,
-    "SOL": 70.6565,
-    "UBTC": 64026.5,
-    "UETH": 1801.65,
-    "HYPE": 65.5145
+    "BTC": 64554.5,
+    "ETH": 1823.95,
+    "SOL": 71.381,
+    "UBTC": 64534.5,
+    "UETH": 1822.7,
+    "HYPE": 66.0945
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 3,
+  "next_seq": 4,
   "peak": 1008.2854959076344,
-  "max_drawdown_pct": 1.2593241982119339,
+  "max_drawdown_pct": 1.282841824973836,
   "id": "g-ema-sol-p1-v1-k1000",
   "parent_id": "g-ema-sol-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -4396,14 +4414,60 @@
       "funding": -0.010868618028026002,
       "positions": 0,
       "max_drawdown_pct": 1.2593241982119339
+    },
+    {
+      "seq": 302,
+      "event": "signal",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-16T14:15:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 71.06406740186401,
+        "slow": 71.05939059361987
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 303,
+      "event": "entry",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "trade_id": "P000003",
+      "coin": "SOL",
+      "side": "long",
+      "size": 5.11,
+      "price": 71.3952762,
+      "stop": 70.54180007214163,
+      "fee": 0.16417343762189998,
+      "cost_inclusive_risk": 4.977330577842991,
+      "risk_budget": 4.977939563353042,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 304,
+      "event": "valuation",
+      "ts_ms": 1794838564929,
+      "ts_utc": "2026-11-16T14:16:04.929Z",
+      "ts_myt": "2026-11-16T22:16:04+08:00",
+      "equity": 995.3507878509864,
+      "cash": 995.4237392329865,
+      "unrealized": -0.0729513819999879,
+      "fees": 0.7667542808316692,
+      "funding": -0.010868618028026002,
+      "positions": 1,
+      "max_drawdown_pct": 1.282841824973836
     }
   ],
   "decisions": {
-    "SOL": 1794837600000
+    "SOL": 1794838500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T22:11:03+08:00",
+  "last_tick_myt": "2026-11-16T22:16:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "1700adfc66f25601c4a706f95a8d3717978ef0af9a68f3b6121d3a453f271efb",
@@ -4425,5 +4489,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "1700adfc66f25601c4a706f95a8d3717978ef0af9a68f3b6121d3a453f271efb"
   },
-  "valuation_bucket": 1994264
+  "valuation_bucket": 1994265
 }
