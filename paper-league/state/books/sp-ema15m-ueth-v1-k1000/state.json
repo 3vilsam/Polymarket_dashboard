@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "cash": 993.9804531069456,
+  "cash": 991.5079590505184,
   "starting_equity": 1000.0,
   "day_start_equity": 994.6761167119456,
-  "positions": {
-    "P000002": {
-      "id": "P000002",
-      "coin": "UETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.5447,
-      "size_initial": 0.5447,
-      "entry_px": 1824.5,
-      "entry_ms": 1794798907292,
-      "stop": 1804.2165091717623,
-      "fees": 0.6956636049999999,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498555,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -34,26 +15,37 @@
       "funding": 0.0,
       "reason": "signal_or_time_exit",
       "market": "spot"
+    },
+    {
+      "id": "P000002",
+      "coin": "UETH",
+      "entry_ms": 1794798907292,
+      "exit_ms": 1794806405315,
+      "pnl_net": -3.1681576614271987,
+      "fees": 1.3900825574272,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
     }
   ],
   "stats": {
-    "trades_closed": 1,
+    "trades_closed": 2,
     "wins": 0,
-    "losses": 1,
-    "net_pnl": -5.3238832880543985,
-    "fees": 2.0917151610544,
+    "losses": 2,
+    "net_pnl": -8.492040949481597,
+    "fees": 2.7861341134816,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64642.5,
-    "UETH": 1813.35,
-    "HYPE": 66.2175
+    "UBTC": 64841.5,
+    "UETH": 1821.6,
+    "HYPE": 66.4165
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 3,
   "peak": 1016.2769207188666,
-  "max_drawdown_pct": 2.874625706471448,
+  "max_drawdown_pct": 2.8799854660890833,
   "id": "sp-ema15m-ueth-v1-k1000",
   "parent_id": "sp-ema15m-ueth-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
@@ -3357,14 +3349,78 @@
       "funding": 0.0,
       "positions": 1,
       "max_drawdown_pct": 2.874625706471448
+    },
+    {
+      "seq": 221,
+      "event": "signal",
+      "ts_ms": 1794806405315,
+      "ts_utc": "2026-11-16T05:20:05.315Z",
+      "ts_myt": "2026-11-16T13:20:05+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-16T05:15:00.000Z",
+      "side": 0,
+      "details": {
+        "fast": 1819.293317010176,
+        "slow": 1820.3182833146175,
+        "raw_cross": -1
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 222,
+      "event": "exit",
+      "ts_ms": 1794806405315,
+      "ts_utc": "2026-11-16T05:20:05.315Z",
+      "ts_myt": "2026-11-16T13:20:05+08:00",
+      "trade_id": "P000002",
+      "coin": "UETH",
+      "side": "long",
+      "size": 0.5447,
+      "price": 1821.23568,
+      "fee": 0.6944189524272,
+      "pnl_gross": -1.7780751039999987,
+      "reason": "signal_or_time_exit",
+      "market": "spot",
+      "signal_boundary_utc": "2026-11-16T05:15:00.000Z",
+      "delay_ms": 305315
+    },
+    {
+      "seq": 223,
+      "event": "net_pnl",
+      "ts_ms": 1794806405315,
+      "ts_utc": "2026-11-16T05:20:05.315Z",
+      "ts_myt": "2026-11-16T13:20:05+08:00",
+      "id": "P000002",
+      "coin": "UETH",
+      "entry_ms": 1794798907292,
+      "exit_ms": 1794806405315,
+      "pnl_net": -3.1681576614271987,
+      "fees": 1.3900825574272,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
+    },
+    {
+      "seq": 224,
+      "event": "valuation",
+      "ts_ms": 1794806405315,
+      "ts_utc": "2026-11-16T05:20:05.315Z",
+      "ts_myt": "2026-11-16T13:20:05+08:00",
+      "equity": 991.5079590505184,
+      "cash": 991.5079590505184,
+      "unrealized": 0.0,
+      "fees": 2.7861341134816,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 2.8799854660890833
     }
   ],
   "decisions": {
-    "UETH": 1794805200000
+    "UETH": 1794806100000
   },
   "stopped_sides": {},
   "day_date": "2026-11-16",
-  "last_tick_myt": "2026-11-16T13:14:03+08:00",
+  "last_tick_myt": "2026-11-16T13:20:05+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc",
@@ -3399,5 +3455,5 @@
     },
     "sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc"
   },
-  "valuation_bucket": 1994228
+  "valuation_bucket": 1994229
 }
