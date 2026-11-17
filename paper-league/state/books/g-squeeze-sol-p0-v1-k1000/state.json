@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 976.3648687880288,
+  "cash": 972.5977561876516,
   "starting_equity": 1000.0,
   "day_start_equity": 983.6653303656917,
-  "positions": {
-    "P000022": {
-      "id": "P000022",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 10.02,
-      "size_initial": 10.02,
-      "entry_px": 72.6309709,
-      "entry_ms": 1794889865062,
-      "stop": 72.99412575449999,
-      "fees": 0.32749304778809996,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.879464471460544,
-      "funding_hour": 498580,
-      "risk_cap_at_entry": 4.883461809179085
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -232,29 +214,39 @@
       "fees": 0.6565885217253,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000022",
+      "coin": "SOL",
+      "entry_ms": 1794889865062,
+      "exit_ms": 1794890464651,
+      "pnl_net": -4.094605648165307,
+      "fees": 0.6565332281652,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 21,
+    "trades_closed": 22,
     "wins": 4,
-    "losses": 17,
-    "net_pnl": -23.307638164183498,
-    "fees": 14.288245822942033,
+    "losses": 18,
+    "net_pnl": -27.402243812348804,
+    "fees": 14.617286003319133,
     "funding": 0.013760688386740001
   },
   "marks": {
-    "BTC": 64936.5,
-    "ETH": 1828.75,
-    "SOL": 72.6405,
-    "UBTC": 64904.5,
-    "UETH": 1828.25,
-    "HYPE": 70.0115
+    "BTC": 64992.5,
+    "ETH": 1831.25,
+    "SOL": 72.9595,
+    "UBTC": 64968.5,
+    "UETH": 1831.05,
+    "HYPE": 70.275
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 23,
   "peak": 1002.7246734759831,
-  "max_drawdown_pct": 2.6459038456129425,
+  "max_drawdown_pct": 3.0045054325725693,
   "id": "g-squeeze-sol-p0-v1-k1000",
   "parent_id": "g-squeeze-sol-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -11305,14 +11297,62 @@
         "prior_lower": 72.55392285060144
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 711,
+      "event": "signal",
+      "ts_ms": 1794890464651,
+      "ts_utc": "2026-11-17T04:41:04.651Z",
+      "ts_myt": "2026-11-17T12:41:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-17T04:41:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 72.94415077694195,
+        "prior_lower": 72.52414922305805
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 712,
+      "event": "exit",
+      "ts_ms": 1794890464651,
+      "ts_utc": "2026-11-17T04:41:04.651Z",
+      "ts_myt": "2026-11-17T12:41:04+08:00",
+      "trade_id": "P000022",
+      "coin": "SOL",
+      "side": "short",
+      "size": 10.02,
+      "price": 72.9740919,
+      "fee": 0.32904018037710003,
+      "pnl_gross": -3.4380724200001067,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T04:41:00.000Z",
+      "delay_ms": 4651
+    },
+    {
+      "seq": 713,
+      "event": "net_pnl",
+      "ts_ms": 1794890464651,
+      "ts_utc": "2026-11-17T04:41:04.651Z",
+      "ts_myt": "2026-11-17T12:41:04+08:00",
+      "id": "P000022",
+      "coin": "SOL",
+      "entry_ms": 1794889865062,
+      "exit_ms": 1794890464651,
+      "pnl_net": -4.094605648165307,
+      "fees": 0.6565332281652,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "decisions": {
-    "SOL": 1794890160000
+    "SOL": 1794890460000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T12:36:04+08:00",
+  "last_tick_myt": "2026-11-17T12:41:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "2c440120e1e5c13b63244eafec58c2e7fc7177347961b766d97c9059b2e340bc",
