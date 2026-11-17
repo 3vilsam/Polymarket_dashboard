@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 979.4271155813939,
+  "cash": 975.0776185191893,
   "starting_equity": 1000.0,
   "day_start_equity": 988.0085867852746,
-  "positions": {
-    "P000029": {
-      "id": "P000029",
-      "coin": "BTC",
-      "dir": -1,
-      "side": "short",
-      "size": 0.01126,
-      "size_initial": 0.01126,
-      "entry_px": 64866.5241,
-      "entry_ms": 1794925624785,
-      "stop": 65190.85672049999,
-      "fees": 0.3286786776147,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.897129697193579,
-      "funding_hour": 498590,
-      "risk_cap_at_entry": 4.898778971295043
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -302,29 +284,39 @@
       "fees": 0.6588236968874999,
       "funding": -0.00914821875,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000029",
+      "coin": "BTC",
+      "entry_ms": 1794925624785,
+      "exit_ms": 1794926159999,
+      "pnl_net": -4.678175739819255,
+      "fees": 0.6591659096529747,
+      "funding": 0.0,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 28,
+    "trades_closed": 29,
     "wins": 7,
-    "losses": 21,
-    "net_pnl": -20.244205740991433,
-    "fees": 18.9386982141642,
+    "losses": 22,
+    "net_pnl": -24.92238148081069,
+    "fees": 19.269185446202478,
     "funding": -0.062516142442645
   },
   "marks": {
-    "BTC": 64805.5,
-    "ETH": 1815.35,
-    "SOL": 73.4785,
-    "UBTC": 64781.0,
-    "UETH": 1815.5,
-    "HYPE": 69.4205
+    "BTC": 65010.5,
+    "ETH": 1820.05,
+    "SOL": 73.6725,
+    "UBTC": 64994.0,
+    "UETH": 1819.6,
+    "HYPE": 69.465
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 30,
   "peak": 1002.4489568597445,
-  "max_drawdown_pct": 2.3476407203886533,
+  "max_drawdown_pct": 2.73044708693181,
   "id": "g-squeeze-btc-p0-v1-k1000",
   "parent_id": "g-squeeze-btc-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -14243,14 +14235,68 @@
       "funding": -0.062516142442645,
       "positions": 1,
       "max_drawdown_pct": 2.3476407203886533
+    },
+    {
+      "seq": 897,
+      "event": "exit",
+      "ts_ms": 1794926159999,
+      "ts_utc": "2026-11-17T14:35:59.999Z",
+      "ts_myt": "2026-11-17T22:35:59+08:00",
+      "trade_id": "P000029",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.01126,
+      "price": 65223.45214886024,
+      "fee": 0.3304872320382748,
+      "pnl_gross": -4.01900983016628,
+      "reason": "stop",
+      "bar_t": 1794926100000,
+      "observed_at_utc": "2026-11-17T14:37:03.917Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 65190.85672049999,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 898,
+      "event": "net_pnl",
+      "ts_ms": 1794926159999,
+      "ts_utc": "2026-11-17T14:35:59.999Z",
+      "ts_myt": "2026-11-17T22:35:59+08:00",
+      "id": "P000029",
+      "coin": "BTC",
+      "entry_ms": 1794925624785,
+      "exit_ms": 1794926159999,
+      "pnl_net": -4.678175739819255,
+      "fees": 0.6591659096529747,
+      "funding": 0.0,
+      "reason": "stop"
+    },
+    {
+      "seq": 899,
+      "event": "signal",
+      "ts_ms": 1794926223917,
+      "ts_utc": "2026-11-17T14:37:03.917Z",
+      "ts_myt": "2026-11-17T22:37:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T14:37:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 65148.13520068465,
+        "prior_lower": 64767.66479931535
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "BTC": 1794925920000
+    "BTC": 1794926220000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T22:32:04+08:00",
+  "last_tick_myt": "2026-11-17T22:37:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "dc6e8541853b15f58043b9927e7058a1d6e02a913754d16c97e9e2ac425e266d",
