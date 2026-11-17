@@ -2,9 +2,9 @@
   "status": "ok",
   "mode": "PAPER_ONLY",
   "engine_version": 7,
-  "tick": 955,
-  "ts_myt": "2026-11-17T11:50:05+08:00",
-  "ts_utc": "2026-11-17T03:50:05.225Z",
+  "tick": 956,
+  "ts_myt": "2026-11-17T11:55:05+08:00",
+  "ts_utc": "2026-11-17T03:55:05.847Z",
   "book_count": 125,
   "active_books": 121,
   "retired_books": [
@@ -15,44 +15,63 @@
   ],
   "trial_count": 434,
   "evidence": {
-    "path": "sources/1794887401052.json.gz",
-    "sha256": "d92265664f4098cfd20e4bd06dae1d11058641eca16e2e871b01b14bd26ef420",
-    "received_ms": 1794887405225,
-    "requests": 14,
+    "path": "sources/1794887701049.json.gz",
+    "sha256": "dd84d8baafd7770d21db7f8302ce90a7657bd5bdf112cf9ae47a2edb89351351",
+    "received_ms": 1794887705847,
+    "requests": 13,
     "request_types": {
       "metaAndAssetCtxs": 1,
-      "candleSnapshot": 12,
+      "candleSnapshot": 11,
       "allMids": 1
     },
-    "estimated_weight": 274,
-    "collection_seconds": 2.5906,
-    "failed_symbols": []
+    "estimated_weight": 253,
+    "collection_seconds": 3.1762,
+    "failed_symbols": [
+      "UETH"
+    ]
   },
   "load": {
-    "wall_seconds": 5.3394,
-    "signal_computations": 48,
-    "spot_signal_computations": 6,
+    "wall_seconds": 5.8716,
+    "signal_computations": 27,
+    "spot_signal_computations": 2,
     "v4_signal_computations": 0,
-    "requests": 14,
+    "requests": 13,
     "request_types": {
       "metaAndAssetCtxs": 1,
-      "candleSnapshot": 12,
+      "candleSnapshot": 11,
       "allMids": 1
     },
-    "estimated_weight": 274,
-    "collection_seconds": 2.5906
+    "estimated_weight": 253,
+    "collection_seconds": 3.1762
   },
   "data_isolation": {
     "rule_id": "data-isolation-v1",
-    "failed_symbols": {},
-    "skipped_books": [],
-    "stale_positions": [],
+    "failed_symbols": {
+      "UETH": "ValueError('UETH spot 1m warmup/continuity missing')"
+    },
+    "skipped_books": [
+      "sp-donchian5m-ueth-v1",
+      "sp-ema15m-ueth-v1",
+      "sp-hold-ueth-v1",
+      "sp-rsi1h-ueth-v1"
+    ],
+    "stale_positions": [
+      {
+        "book": "sp-hold-ueth-v1",
+        "trade_id": "SPOT_HOLD",
+        "coin": "UETH",
+        "side": "long",
+        "stop": null,
+        "last_cursor_utc": "2026-11-17T03:50:00.000Z",
+        "market": "spot"
+      }
+    ],
     "fail_rate_24h": {
       "BTC": 0.0,
       "ETH": 0.0,
       "SOL": 0.0,
       "UBTC": 0.0,
-      "UETH": 0.1264,
+      "UETH": 0.1319,
       "HYPE": 0.0
     },
     "window_ticks": 182,
@@ -80,7 +99,7 @@
       "labels": []
     },
     "s4-ewmac-riskcap-noadd-ablation-v1": {
-      "equity": 99.97892501,
+      "equity": 99.98116501,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -98,7 +117,7 @@
       "labels": []
     },
     "b0-btc-1x-hold-control-v1": {
-      "equity": 87.88062847,
+      "equity": 87.86167125,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -592,7 +611,7 @@
       ]
     },
     "g-supertrend-btc-p2-v1": {
-      "equity": 99.84676002,
+      "equity": 99.84354002,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -948,7 +967,7 @@
       ]
     },
     "sp-hold-ubtc-v1": {
-      "equity": 14.32308087,
+      "equity": 14.31758087,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1056,7 +1075,7 @@
       ]
     },
     "sp-hold-hype-v1": {
-      "equity": 15.86466901,
+      "equity": 15.89766901,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1152,7 +1171,7 @@
       ]
     },
     "n7-xsmom72h-v1": {
-      "equity": 99.81720498,
+      "equity": 99.81822498,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -1200,9 +1219,9 @@
     "bankroll": 1000.0,
     "count": 117,
     "created": false,
-    "skipped": 0,
+    "skipped": 4,
     "trial_count_delta": 0,
     "note": "scale twins, not new strategy trials; bankroll is the only difference; trial count unchanged",
-    "wall_seconds": 5.0352
+    "wall_seconds": 4.9542
   }
 }
