@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 1002.3245148830947,
+  "cash": 997.7807839105548,
   "starting_equity": 1000.0,
   "day_start_equity": 1001.6925989941593,
-  "positions": {
-    "P000018": {
-      "id": "P000018",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 8.36,
-      "size_initial": 8.36,
-      "entry_px": 73.75424620000001,
-      "entry_ms": 1794924009710,
-      "stop": 74.2272221273923,
-      "fees": 0.27746347420440004,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 5.006030474809242,
-      "funding_hour": 498590,
-      "risk_cap_at_entry": 5.013009891786496
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -192,23 +174,33 @@
       "fees": 0.6336602043705,
       "funding": -0.0037696118116799992,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000018",
+      "coin": "SOL",
+      "entry_ms": 1794924009710,
+      "exit_ms": 1794926339999,
+      "pnl_net": -4.821194446744397,
+      "fees": 0.5568459052524715,
+      "funding": 0.0,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 17,
+    "trades_closed": 18,
     "wins": 8,
-    "losses": 9,
-    "net_pnl": 2.601978357298878,
-    "fees": 9.532489577899954,
+    "losses": 10,
+    "net_pnl": -2.2192160894455193,
+    "fees": 9.811872008948026,
     "funding": -0.0021931640195669974
   },
   "marks": {
-    "BTC": 65010.5,
-    "ETH": 1820.05,
-    "SOL": 73.6725,
-    "UBTC": 64994.0,
-    "UETH": 1819.6,
-    "HYPE": 69.465
+    "BTC": 65223.5,
+    "ETH": 1824.45,
+    "SOL": 74.0845,
+    "UBTC": 65199.0,
+    "UETH": 1824.05,
+    "HYPE": 69.774
   },
   "halted": false,
   "halt_reason": null,
@@ -13180,14 +13172,77 @@
         "vwap": 73.51176492979118
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 880,
+      "event": "exit",
+      "ts_ms": 1794926339999,
+      "ts_utc": "2026-11-17T14:38:59.999Z",
+      "ts_myt": "2026-11-17T22:38:59+08:00",
+      "trade_id": "P000018",
+      "coin": "SOL",
+      "side": "short",
+      "size": 8.36,
+      "price": 74.26433573845598,
+      "fee": 0.27938243104807137,
+      "pnl_gross": -4.264348541491926,
+      "reason": "stop",
+      "bar_t": 1794926280000,
+      "observed_at_utc": "2026-11-17T14:42:04.614Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 74.2272221273923,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 881,
+      "event": "net_pnl",
+      "ts_ms": 1794926339999,
+      "ts_utc": "2026-11-17T14:38:59.999Z",
+      "ts_myt": "2026-11-17T22:38:59+08:00",
+      "id": "P000018",
+      "coin": "SOL",
+      "entry_ms": 1794924009710,
+      "exit_ms": 1794926339999,
+      "pnl_net": -4.821194446744397,
+      "fees": 0.5568459052524715,
+      "funding": 0.0,
+      "reason": "stop"
+    },
+    {
+      "seq": 882,
+      "event": "signal",
+      "ts_ms": 1794926524614,
+      "ts_utc": "2026-11-17T14:42:04.614Z",
+      "ts_myt": "2026-11-17T22:42:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-17T14:40:00.000Z",
+      "side": -1,
+      "details": {
+        "z": 2.0151803590285384,
+        "vwap": 73.53953779031528
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 883,
+      "event": "missed_entry",
+      "ts_ms": 1794926524614,
+      "ts_utc": "2026-11-17T14:42:04.614Z",
+      "ts_myt": "2026-11-17T22:42:04+08:00",
+      "coin": "SOL",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-17T14:40:00.000Z"
     }
   ],
   "decisions": {
-    "SOL": 1794926100000
+    "SOL": 1794926400000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T22:37:03+08:00",
+  "last_tick_myt": "2026-11-17T22:42:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "9a551d12b90b6e8103f7447dda4135ea84c9994bb62bd48527bab01efbdc615b",
