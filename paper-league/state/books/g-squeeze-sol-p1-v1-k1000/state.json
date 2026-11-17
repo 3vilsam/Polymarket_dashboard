@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 972.2117269337139,
+  "cash": 969.6068861577988,
   "starting_equity": 1000.0,
   "day_start_equity": 987.9686472483132,
-  "positions": {
-    "P000017": {
-      "id": "P000017",
-      "coin": "SOL",
-      "dir": 1,
-      "side": "long",
-      "size": 9.8,
-      "size_initial": 9.8,
-      "entry_px": 74.0603091,
-      "entry_ms": 1794922144986,
-      "stop": 73.6900075545,
-      "fees": 0.326605963131,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.859352388117381,
-      "funding_hour": 498589,
-      "risk_cap_at_entry": 4.862691664484224
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -182,29 +164,39 @@
       "fees": 0.65445635069775,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000017",
+      "coin": "SOL",
+      "entry_ms": 1794922144986,
+      "exit_ms": 1794922444102,
+      "pnl_net": -2.931446739045991,
+      "fees": 0.652186259046,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 16,
+    "trades_closed": 17,
     "wins": 2,
-    "losses": 14,
-    "net_pnl": -27.461667103155293,
-    "fees": 10.932777819174404,
+    "losses": 15,
+    "net_pnl": -30.393113842201284,
+    "fees": 11.258358115089404,
     "funding": -0.006872116140232001
   },
   "marks": {
-    "BTC": 65102.5,
-    "ETH": 1825.95,
-    "SOL": 74.0455,
-    "UBTC": 65064.5,
-    "UETH": 1826.05,
-    "HYPE": 69.788
+    "BTC": 64929.5,
+    "ETH": 1820.05,
+    "SOL": 73.8425,
+    "UBTC": 64890.5,
+    "UETH": 1819.75,
+    "HYPE": 69.567
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 18,
   "peak": 1000.0,
-  "max_drawdown_pct": 2.793340224628605,
+  "max_drawdown_pct": 3.039311384220116,
   "id": "g-squeeze-sol-p1-v1-k1000",
   "parent_id": "g-squeeze-sol-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -13081,14 +13073,76 @@
       "cost_inclusive_risk": 4.859352388117381,
       "risk_budget": 4.862691664484224,
       "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 830,
+      "event": "signal",
+      "ts_ms": 1794922444102,
+      "ts_utc": "2026-11-17T13:34:04.102Z",
+      "ts_myt": "2026-11-17T21:34:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-17T13:34:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 74.08937727514176,
+        "prior_lower": 73.78822272485824
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 831,
+      "event": "exit",
+      "ts_ms": 1794922444102,
+      "ts_utc": "2026-11-17T13:34:04.102Z",
+      "ts_myt": "2026-11-17T21:34:04+08:00",
+      "trade_id": "P000017",
+      "coin": "SOL",
+      "side": "long",
+      "size": 9.8,
+      "price": 73.8277315,
+      "fee": 0.32558029591500004,
+      "pnl_gross": -2.2792604799999907,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T13:34:00.000Z",
+      "delay_ms": 4102
+    },
+    {
+      "seq": 832,
+      "event": "net_pnl",
+      "ts_ms": 1794922444102,
+      "ts_utc": "2026-11-17T13:34:04.102Z",
+      "ts_myt": "2026-11-17T21:34:04+08:00",
+      "id": "P000017",
+      "coin": "SOL",
+      "entry_ms": 1794922144986,
+      "exit_ms": 1794922444102,
+      "pnl_net": -2.931446739045991,
+      "fees": 0.652186259046,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
+    },
+    {
+      "seq": 833,
+      "event": "valuation",
+      "ts_ms": 1794922444102,
+      "ts_utc": "2026-11-17T13:34:04.102Z",
+      "ts_myt": "2026-11-17T21:34:04+08:00",
+      "equity": 969.6068861577988,
+      "cash": 969.6068861577988,
+      "unrealized": 0.0,
+      "fees": 11.258358115089404,
+      "funding": -0.006872116140232001,
+      "positions": 0,
+      "max_drawdown_pct": 3.039311384220116
     }
   ],
   "decisions": {
-    "SOL": 1794922140000
+    "SOL": 1794922440000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T21:29:04+08:00",
+  "last_tick_myt": "2026-11-17T21:34:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "6dcd68950cbe8987ea620de86df172fe43fbf45dad5b5e3fe65f812c640cd41a",
@@ -13110,5 +13164,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "6dcd68950cbe8987ea620de86df172fe43fbf45dad5b5e3fe65f812c640cd41a"
   },
-  "valuation_bucket": 1994357
+  "valuation_bucket": 1994358
 }
