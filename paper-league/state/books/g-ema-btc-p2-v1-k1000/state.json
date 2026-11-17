@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 987.7864727564399,
+  "cash": 983.2698726626531,
   "starting_equity": 1000.0,
   "day_start_equity": 988.0205270612171,
-  "positions": {
-    "P000004": {
-      "id": "P000004",
-      "coin": "BTC",
-      "dir": -1,
-      "side": "short",
-      "size": 0.00865,
-      "size_initial": 0.00865,
-      "entry_px": 64519.5935,
-      "entry_ms": 1794875464244,
-      "stop": 64979.99818108812,
-      "fees": 0.25114251769874996,
-      "realized_gross": 0.0,
-      "funding": 0.017088212921655,
-      "risk_at_entry": 4.935044489296572,
-      "funding_hour": 498579,
-      "risk_cap_at_entry": 4.9401026353060855
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -52,29 +34,39 @@
       "fees": 0.43259448898709996,
       "funding": 0.011981499375000001,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000004",
+      "coin": "BTC",
+      "entry_ms": 1794875464244,
+      "exit_ms": 1794886139999,
+      "pnl_net": -4.750654398563839,
+      "fees": 0.5042036279400954,
+      "funding": 0.017088212921655,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 3,
+    "trades_closed": 4,
     "wins": 0,
-    "losses": 3,
-    "net_pnl": -11.979472938782935,
-    "fees": 1.5356310834387745,
+    "losses": 4,
+    "net_pnl": -16.730127337346772,
+    "fees": 1.78869219368012,
     "funding": -0.016349601953344995
   },
   "marks": {
-    "BTC": 64707.5,
-    "ETH": 1825.25,
-    "SOL": 72.3025,
-    "UBTC": 64708.5,
-    "UETH": 1824.85,
-    "HYPE": 69.2685
+    "BTC": 65037.5,
+    "ETH": 1829.55,
+    "SOL": 72.5505,
+    "UBTC": 65024.5,
+    "UETH": 1829.45,
+    "HYPE": 69.4415
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 5,
   "peak": 1004.442079108794,
-  "max_drawdown_pct": 1.9478187711284987,
+  "max_drawdown_pct": 2.107857375402495,
   "id": "g-ema-btc-p2-v1-k1000",
   "parent_id": "g-ema-btc-p2-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -5320,6 +5312,44 @@
       "funding": -0.016349601953344995,
       "positions": 1,
       "max_drawdown_pct": 1.9478187711284987
+    },
+    {
+      "seq": 363,
+      "event": "exit",
+      "ts_ms": 1794886139999,
+      "ts_utc": "2026-11-17T03:28:59.999Z",
+      "ts_myt": "2026-11-17T11:28:59+08:00",
+      "trade_id": "P000004",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.00865,
+      "price": 65012.48818017866,
+      "fee": 0.2530611102413454,
+      "pnl_gross": -4.263538983545398,
+      "reason": "stop",
+      "bar_t": 1794886080000,
+      "observed_at_utc": "2026-11-17T03:29:04.702Z",
+      "replayed": false,
+      "gap_through_stop": false,
+      "stop_trigger": 64979.99818108812,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 364,
+      "event": "net_pnl",
+      "ts_ms": 1794886139999,
+      "ts_utc": "2026-11-17T03:28:59.999Z",
+      "ts_myt": "2026-11-17T11:28:59+08:00",
+      "id": "P000004",
+      "coin": "BTC",
+      "entry_ms": 1794875464244,
+      "exit_ms": 1794886139999,
+      "pnl_net": -4.750654398563839,
+      "fees": 0.5042036279400954,
+      "funding": 0.017088212921655,
+      "reason": "stop"
     }
   ],
   "decisions": {
@@ -5327,7 +5357,7 @@
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T11:23:04+08:00",
+  "last_tick_myt": "2026-11-17T11:29:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "7d1f84b5b2afa38af588c13a929a6adadb9fea6a86f1c34869ddc71b5714e3ba",
