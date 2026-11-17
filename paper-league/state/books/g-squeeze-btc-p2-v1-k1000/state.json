@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 983.1788070076728,
+  "cash": 978.8157780040118,
   "starting_equity": 1000.0,
   "day_start_equity": 983.4993315662329,
-  "positions": {
-    "P000023": {
-      "id": "P000023",
-      "coin": "BTC",
-      "dir": -1,
-      "side": "short",
-      "size": 0.01152,
-      "size_initial": 0.01152,
-      "entry_px": 63599.777500000004,
-      "entry_ms": 1794934384214,
-      "stop": 63917.776387499995,
-      "fees": 0.32970124656000005,
-      "realized_gross": 0.0,
-      "funding": 0.009176688,
-      "risk_at_entry": 4.912365406384694,
-      "funding_hour": 498593,
-      "risk_cap_at_entry": 4.9174966578311645
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -242,29 +224,39 @@
       "fees": 0.661548510009,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000023",
+      "coin": "BTC",
+      "entry_ms": 1794934384214,
+      "exit_ms": 1794935159999,
+      "pnl_net": -4.683553562221036,
+      "fees": 0.6612166742291965,
+      "funding": 0.009176688,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 22,
+    "trades_closed": 23,
     "wins": 8,
-    "losses": 14,
-    "net_pnl": -16.50066843376714,
-    "fees": 14.911546161449094,
+    "losses": 15,
+    "net_pnl": -21.184221995988175,
+    "fees": 15.24306158911829,
     "funding": -0.053571439348540986
   },
   "marks": {
-    "BTC": 63540.5,
-    "ETH": 1771.05,
-    "SOL": 71.767,
-    "UBTC": 63502.5,
-    "UETH": 1770.45,
-    "HYPE": 67.783
+    "BTC": 63923.5,
+    "ETH": 1784.65,
+    "SOL": 72.462,
+    "UBTC": 63873.5,
+    "UETH": 1784.2,
+    "HYPE": 68.364
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 24,
   "peak": 1000.0,
-  "max_drawdown_pct": 2.0951618149229834,
+  "max_drawdown_pct": 2.1184221995988195,
   "id": "g-squeeze-btc-p2-v1-k1000",
   "parent_id": "g-squeeze-btc-p2-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -14510,14 +14502,68 @@
       "funding": -0.053571439348540986,
       "positions": 1,
       "max_drawdown_pct": 2.0951618149229834
+    },
+    {
+      "seq": 919,
+      "event": "exit",
+      "ts_ms": 1794935159999,
+      "ts_utc": "2026-11-17T17:05:59.999Z",
+      "ts_myt": "2026-11-18T01:05:59+08:00",
+      "trade_id": "P000023",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.01152,
+      "price": 63949.73527569374,
+      "fee": 0.3315154276691964,
+      "pnl_gross": -4.0315135759918395,
+      "reason": "stop",
+      "bar_t": 1794935100000,
+      "observed_at_utc": "2026-11-17T17:09:04.500Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 63917.776387499995,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 920,
+      "event": "net_pnl",
+      "ts_ms": 1794935159999,
+      "ts_utc": "2026-11-17T17:05:59.999Z",
+      "ts_myt": "2026-11-18T01:05:59+08:00",
+      "id": "P000023",
+      "coin": "BTC",
+      "entry_ms": 1794934384214,
+      "exit_ms": 1794935159999,
+      "pnl_net": -4.683553562221036,
+      "fees": 0.6612166742291965,
+      "funding": 0.009176688,
+      "reason": "stop"
+    },
+    {
+      "seq": 921,
+      "event": "signal",
+      "ts_ms": 1794935344500,
+      "ts_utc": "2026-11-17T17:09:04.500Z",
+      "ts_myt": "2026-11-18T01:09:04+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T17:09:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 64003.12706348242,
+        "prior_lower": 63432.006269850914
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "BTC": 1794935040000
+    "BTC": 1794935340000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T01:04:03+08:00",
+  "last_tick_myt": "2026-11-18T01:09:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c272c8b0a0c73e54a2df05ecd8a9aacafd0e909b63ec26d5f0f82a7167f3b7bf",
