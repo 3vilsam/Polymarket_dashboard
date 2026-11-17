@@ -2,12 +2,31 @@
   "version": 1,
   "created_myt": "2026-11-11T17:16:05+08:00",
   "starting_equity": 16.24,
-  "cash": 15.919341559224927,
+  "cash": 15.908254791224927,
   "day_date": "2026-11-18",
   "day_start_equity": 15.919341559224927,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000004": {
+      "id": "P000004",
+      "coin": "UETH",
+      "dir": 1,
+      "side": "long",
+      "size": 0.0088,
+      "size_initial": 0.0088,
+      "entry_px": 1799.8,
+      "entry_ms": 1794949212770,
+      "stop": 1784.2727734924254,
+      "fees": 0.011086768,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498597,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -43,22 +62,22 @@
       "market": "spot"
     }
   ],
-  "next_seq": 4,
+  "next_seq": 5,
   "marks": {
-    "UBTC": 63945.5,
-    "UETH": 1797.45,
+    "UBTC": 63930.0,
+    "UETH": 1798.05,
     "USOL": 82.9645,
-    "HYPE": 68.1795
+    "HYPE": 68.2255
   },
   "stats": {
     "trades_closed": 3,
     "wins": 0,
     "losses": 3,
     "net_pnl": -0.3206584407750706,
-    "fees": 0.06733834469734559,
+    "fees": 0.07842511269734559,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-18T04:44:04+08:00",
+  "last_tick_myt": "2026-11-18T05:00:12+08:00",
   "id": "sp-ema15m-ueth-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
   "kind": "spot_ema",
@@ -9963,12 +9982,62 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 3.535052503725539
+    },
+    {
+      "seq": 663,
+      "event": "signal",
+      "ts_ms": 1794949212770,
+      "ts_utc": "2026-11-17T21:00:12.770Z",
+      "ts_myt": "2026-11-18T05:00:12+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-17T21:00:00.000Z",
+      "side": 1,
+      "details": {
+        "fast": 1793.504894139881,
+        "slow": 1793.495795480218,
+        "raw_cross": 1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 664,
+      "event": "entry",
+      "ts_ms": 1794949212770,
+      "ts_utc": "2026-11-17T21:00:12.770Z",
+      "ts_myt": "2026-11-18T05:00:12+08:00",
+      "trade_id": "P000004",
+      "coin": "UETH",
+      "side": "long",
+      "size": 0.0088,
+      "price": 1799.8,
+      "stop": 1784.2727734924254,
+      "fee": 0.011086768,
+      "fill_source": "max(2bp_floor,L2_ask_walk)",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "UETH/USDC"
+    },
+    {
+      "seq": 665,
+      "event": "valuation",
+      "ts_ms": 1794949212770,
+      "ts_utc": "2026-11-17T21:00:12.770Z",
+      "ts_myt": "2026-11-18T05:00:12+08:00",
+      "equity": 15.892854791224927,
+      "cash": 15.908254791224927,
+      "unrealized": -0.0154,
+      "fees": 0.07842511269734559,
+      "funding": 0.0,
+      "positions": 1,
+      "max_drawdown_pct": 3.6955518984373374
     }
   ],
   "peak": 16.5027214261841,
-  "max_drawdown_pct": 3.535052503725539,
+  "max_drawdown_pct": 3.6955518984373374,
   "decisions": {
-    "UETH": 1794947400000
+    "UETH": 1794949200000
   },
   "stopped_sides": {},
   "spot_spec": {
@@ -10020,7 +10089,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 15.919341559224927,
-    "previous": 15.919341559224927,
+    "previous": 15.878614235224926,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -10028,11 +10097,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -1.9744977880238435,
-    "excess_btc_pct": 11.380364307461155,
-    "excess_random_pct": -1.370195348823755
+    "return_pct": -2.2252818028021704,
+    "excess_btc_pct": 11.046744659624718,
+    "excess_random_pct": -1.6612131946020625
   },
-  "valuation_bucket": 1994386,
+  "valuation_bucket": 1994388,
   "labels_v1": {
     "label": null,
     "description": null,
@@ -10041,6 +10110,5 @@
       "TREND"
     ],
     "note_sha256": "18d5fbce30ce61da9de8ae4b75d2d6b41fb91365cd4ca44d1a5d7f1aa29bd0f6"
-  },
-  "di_cursor": 1794948240000
+  }
 }
