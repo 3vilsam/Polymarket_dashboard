@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 95.5151320091498,
+  "cash": 95.63202152501074,
   "day_date": "2026-11-18",
   "day_start_equity": 96.09413790988516,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000045": {
-      "id": "P000045",
-      "coin": "BTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.00111,
-      "size_initial": 0.00111,
-      "entry_px": 64243.346099999995,
-      "entry_ms": 1794950464954,
-      "stop": 63922.1293695,
-      "fees": 0.03208955137695,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.477439041903384,
-      "funding_hour": 498597,
-      "risk_cap_at_entry": 0.47773610780263376
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -466,27 +448,37 @@
       "fees": 0.0642862193904,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000045",
+      "coin": "BTC",
+      "entry_ms": 1794950464954,
+      "exit_ms": 1794951724165,
+      "pnl_net": 0.08479996448400344,
+      "fees": 0.064246173516,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 46,
   "marks": {
-    "BTC": 64509.5,
-    "ETH": 1811.25,
-    "SOL": 73.7365,
-    "UBTC": 64488.5,
-    "UETH": 1810.65,
+    "BTC": 64390.5,
+    "ETH": 1810.05,
+    "SOL": 73.5245,
+    "UBTC": 64359.5,
+    "UETH": 1808.35,
     "USOL": 82.9645,
-    "HYPE": 68.9615
+    "HYPE": 68.8255
   },
   "stats": {
-    "trades_closed": 44,
-    "wins": 9,
+    "trades_closed": 45,
+    "wins": 10,
     "losses": 35,
-    "net_pnl": -4.45277843947326,
-    "fees": 2.9036354477940263,
+    "net_pnl": -4.367978474989257,
+    "fees": 2.9357920699330764,
     "funding": -0.006143112774907001
   },
-  "last_tick_myt": "2026-11-18T05:36:04+08:00",
+  "last_tick_myt": "2026-11-18T05:42:04+08:00",
   "id": "g-squeeze-btc-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "squeeze",
@@ -26019,12 +26011,60 @@
         "prior_lower": 63896.533440387815
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1640,
+      "event": "signal",
+      "ts_ms": 1794951724165,
+      "ts_utc": "2026-11-17T21:42:04.165Z",
+      "ts_myt": "2026-11-18T05:42:04+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T21:42:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 64667.1607642524,
+        "prior_lower": 64218.039235747594
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1641,
+      "event": "exit",
+      "ts_ms": 1794951724165,
+      "ts_utc": "2026-11-17T21:42:04.165Z",
+      "ts_myt": "2026-11-18T05:42:04+08:00",
+      "trade_id": "P000045",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.00111,
+      "price": 64377.6219,
+      "fee": 0.032156622139049997,
+      "pnl_gross": 0.14904613800000344,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T21:42:00.000Z",
+      "delay_ms": 4165
+    },
+    {
+      "seq": 1642,
+      "event": "net_pnl",
+      "ts_ms": 1794951724165,
+      "ts_utc": "2026-11-17T21:42:04.165Z",
+      "ts_myt": "2026-11-18T05:42:04+08:00",
+      "id": "P000045",
+      "coin": "BTC",
+      "entry_ms": 1794950464954,
+      "exit_ms": 1794951724165,
+      "pnl_net": 0.08479996448400344,
+      "fees": 0.064246173516,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "peak": 100.0,
   "max_drawdown_pct": 4.556292161850195,
   "decisions": {
-    "BTC": 1794951360000
+    "BTC": 1794951720000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -26062,7 +26102,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 96.09413790988516,
-    "previous": 95.7640192338998,
+    "previous": 95.63202152501074,
     "skip_partial_day": false,
     "status": "UNPROVEN",
     "flag_ms": null,
@@ -26070,9 +26110,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -4.2359807661002,
-    "excess_btc_pct": 8.55796103247275,
-    "excess_random_pct": -4.035705780266696
+    "return_pct": -4.367978474989254,
+    "excess_btc_pct": 8.58706024353314,
+    "excess_random_pct": -4.08921454015575
   },
   "valuation_bucket": 1994390,
   "labels_v1": {
