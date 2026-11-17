@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "cash": 985.9832563307042,
+  "cash": 985.9774583983194,
   "starting_equity": 1000.0,
   "day_start_equity": 1000.5887525227635,
   "positions": {
@@ -16,9 +16,9 @@
       "stop": 63883.3166085,
       "fees": 0.33139069213544997,
       "realized_gross": 0.0,
-      "funding": 0.0,
+      "funding": -0.005797932384767999,
       "risk_at_entry": 4.93054118115525,
-      "funding_hour": 498586,
+      "funding_hour": 498587,
       "risk_cap_at_entry": 4.9315732351141985
     }
   },
@@ -200,21 +200,21 @@
     "losses": 9,
     "net_pnl": -13.685352977160377,
     "fees": 11.33001139359632,
-    "funding": -0.00629567643387
+    "funding": -0.012093608818638
   },
   "marks": {
-    "BTC": 64109.5,
-    "ETH": 1788.65,
-    "SOL": 72.1025,
-    "UBTC": 64098.5,
-    "UETH": 1788.35,
-    "HYPE": 68.4465
+    "BTC": 64143.5,
+    "ETH": 1789.75,
+    "SOL": 72.1535,
+    "UBTC": 64117.5,
+    "UETH": 1789.45,
+    "HYPE": 68.3435
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 19,
   "peak": 1001.888841461663,
-  "max_drawdown_pct": 1.6961343143783243,
+  "max_drawdown_pct": 1.7585279626684942,
   "id": "g-vwap-btc-p0-v1-k1000",
   "parent_id": "g-vwap-btc-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -12322,14 +12322,58 @@
         "vwap": 64348.18190694368
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 821,
+      "event": "funding",
+      "ts_ms": 1794913200047,
+      "ts_utc": "2026-11-17T11:00:00.047Z",
+      "ts_myt": "2026-11-17T19:00:00+08:00",
+      "trade_id": "P000018",
+      "coin": "BTC",
+      "payment": -0.005797932384767999,
+      "rate": 7.8864e-06,
+      "price": 64096.0,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-17T11:00:00.000Z"
+    },
+    {
+      "seq": 822,
+      "event": "signal",
+      "ts_ms": 1794913384943,
+      "ts_utc": "2026-11-17T11:03:04.943Z",
+      "ts_myt": "2026-11-17T19:03:04+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T11:00:00.000Z",
+      "side": 1,
+      "details": {
+        "z": -2.0540935529378586,
+        "vwap": 64331.78059568365
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 823,
+      "event": "valuation",
+      "ts_ms": 1794913384943,
+      "ts_utc": "2026-11-17T11:03:04.943Z",
+      "ts_myt": "2026-11-17T19:03:04+08:00",
+      "equity": 985.2796430973194,
+      "cash": 985.9774583983194,
+      "unrealized": -0.6978153009999517,
+      "fees": 11.33001139359632,
+      "funding": -0.012093608818638,
+      "positions": 1,
+      "max_drawdown_pct": 1.7585279626684942
     }
   ],
   "decisions": {
-    "BTC": 1794912900000
+    "BTC": 1794913200000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T18:57:03+08:00",
+  "last_tick_myt": "2026-11-17T19:03:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "2e534e0720ea6e217fd09a3543312e1b53469dffab7a50d57db024f8366e2097",
@@ -12351,5 +12395,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "2e534e0720ea6e217fd09a3543312e1b53469dffab7a50d57db024f8366e2097"
   },
-  "valuation_bucket": 1994347
+  "valuation_bucket": 1994348
 }
