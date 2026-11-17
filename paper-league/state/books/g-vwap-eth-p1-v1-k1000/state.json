@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 996.2498082787171,
+  "cash": 991.7964564548598,
   "starting_equity": 1000.0,
   "day_start_equity": 992.360894248431,
-  "positions": {
-    "P000028": {
-      "id": "P000028",
-      "coin": "ETH",
-      "dir": -1,
-      "side": "short",
-      "size": 0.3886,
-      "size_initial": 0.3886,
-      "entry_px": 1813.5872100000001,
-      "entry_ms": 1794955204910,
-      "stop": 1823.3146400994756,
-      "fees": 0.3171419954127,
-      "realized_gross": 0.0,
-      "funding": 0.008811019250000001,
-      "risk_at_entry": 4.9817623946961795,
-      "funding_hour": 498599,
-      "risk_cap_at_entry": 4.9827906962743995
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -292,29 +274,39 @@
       "fees": 0.549466699905,
       "funding": 0.0076314830000000005,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000028",
+      "coin": "ETH",
+      "entry_ms": 1794955204910,
+      "exit_ms": 1794956819999,
+      "pnl_net": -4.761682800019921,
+      "fees": 0.6361444480424523,
+      "funding": 0.008811019250000001,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 27,
+    "trades_closed": 28,
     "wins": 17,
-    "losses": 10,
-    "net_pnl": -3.441860745120076,
-    "fees": 16.908822171952483,
+    "losses": 11,
+    "net_pnl": -8.203543545139997,
+    "fees": 17.227824624582237,
     "funding": 0.03889588780789001
   },
   "marks": {
-    "BTC": 64894.5,
-    "ETH": 1819.75,
-    "SOL": 74.6495,
-    "UBTC": 64877.0,
-    "UETH": 1818.85,
-    "HYPE": 69.4995
+    "BTC": 65061.0,
+    "ETH": 1828.55,
+    "SOL": 75.481,
+    "UBTC": 65027.0,
+    "UETH": 1827.9,
+    "HYPE": 69.8665
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 29,
   "peak": 1019.9649158147184,
-  "max_drawdown_pct": 2.753585854475,
+  "max_drawdown_pct": 2.7617086551804055,
   "id": "g-vwap-eth-p1-v1-k1000",
   "parent_id": "g-vwap-eth-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -15821,14 +15813,67 @@
         "vwap": 1808.9221531817375
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1049,
+      "event": "exit",
+      "ts_ms": 1794956819999,
+      "ts_utc": "2026-11-17T23:06:59.999Z",
+      "ts_myt": "2026-11-18T07:06:59+08:00",
+      "trade_id": "P000028",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.3886,
+      "price": 1824.2262974195253,
+      "fee": 0.31900245262975235,
+      "pnl_gross": -4.1343493712274695,
+      "reason": "stop",
+      "bar_t": 1794956760000,
+      "observed_at_utc": "2026-11-17T23:11:04.957Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1823.3146400994756,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 1050,
+      "event": "net_pnl",
+      "ts_ms": 1794956819999,
+      "ts_utc": "2026-11-17T23:06:59.999Z",
+      "ts_myt": "2026-11-18T07:06:59+08:00",
+      "id": "P000028",
+      "coin": "ETH",
+      "entry_ms": 1794955204910,
+      "exit_ms": 1794956819999,
+      "pnl_net": -4.761682800019921,
+      "fees": 0.6361444480424523,
+      "funding": 0.008811019250000001,
+      "reason": "stop"
+    },
+    {
+      "seq": 1051,
+      "event": "signal",
+      "ts_ms": 1794957064957,
+      "ts_utc": "2026-11-17T23:11:04.957Z",
+      "ts_myt": "2026-11-18T07:11:04+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-17T23:10:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 3.1347032514435305,
+        "vwap": 1812.280185630169
+      },
+      "entry_window_open": true
     }
   ],
   "decisions": {
-    "ETH": 1794956700000
+    "ETH": 1794957000000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T07:06:04+08:00",
+  "last_tick_myt": "2026-11-18T07:11:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "1acbbbc5888b325070ebe49d7513a9039967b74633a3b0c101ec9eeb6731b88d",
