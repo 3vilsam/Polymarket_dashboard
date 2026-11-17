@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 990.9054243732578,
+  "cash": 988.9959689092404,
   "starting_equity": 1000.0,
   "day_start_equity": 991.020828245416,
-  "positions": {
-    "P000013": {
-      "id": "P000013",
-      "coin": "ETH",
-      "dir": -1,
-      "side": "short",
-      "size": 0.413,
-      "size_initial": 0.413,
-      "entry_px": 1789.2920700000002,
-      "entry_ms": 1794912725300,
-      "stop": 1798.23853035,
-      "fees": 0.3325399312095,
-      "realized_gross": 0.0,
-      "funding": -0.0066013200141,
-      "risk_at_entry": 4.95466023061525,
-      "funding_hour": 498587,
-      "risk_cap_at_entry": 4.9562228281224066
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -142,23 +124,33 @@
       "fees": 0.66156985458,
       "funding": 0.00555181249656,
       "reason": "observed_time_exit"
+    },
+    {
+      "id": "P000013",
+      "coin": "ETH",
+      "entry_ms": 1794912725300,
+      "exit_ms": 1794913684230,
+      "pnl_net": -2.248596715240988,
+      "fees": 0.6657891552269999,
+      "funding": -0.0066013200141,
+      "reason": "signal_or_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 12,
+    "trades_closed": 13,
     "wins": 4,
-    "losses": 8,
-    "net_pnl": -8.75543437551865,
-    "fees": 8.361969575455733,
+    "losses": 9,
+    "net_pnl": -11.004031090759637,
+    "fees": 8.695218799473233,
     "funding": -0.014913035026507999
   },
   "marks": {
-    "BTC": 64143.5,
-    "ETH": 1789.75,
-    "SOL": 72.1535,
-    "UBTC": 64117.5,
-    "UETH": 1789.45,
-    "HYPE": 68.3435
+    "BTC": 64212.5,
+    "ETH": 1792.75,
+    "SOL": 72.4095,
+    "UBTC": 64183.5,
+    "UETH": 1792.45,
+    "HYPE": 68.5875
   },
   "halted": false,
   "halt_reason": null,
@@ -12341,14 +12333,62 @@
       "funding": -0.014913035026507999,
       "positions": 1,
       "max_drawdown_pct": 2.618767774596327
+    },
+    {
+      "seq": 786,
+      "event": "signal",
+      "ts_ms": 1794913684230,
+      "ts_utc": "2026-11-17T11:08:04.230Z",
+      "ts_myt": "2026-11-17T19:08:04+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-17T11:08:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 1794.7318796117697,
+        "prior_lower": 1786.5781203882307
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 787,
+      "event": "exit",
+      "ts_ms": 1794913684230,
+      "ts_utc": "2026-11-17T11:08:04.230Z",
+      "ts_myt": "2026-11-17T19:08:04+08:00",
+      "trade_id": "P000013",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.413,
+      "price": 1793.10855,
+      "fee": 0.33324922401749996,
+      "pnl_gross": -1.5762062399998877,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T11:08:00.000Z",
+      "delay_ms": 4230
+    },
+    {
+      "seq": 788,
+      "event": "net_pnl",
+      "ts_ms": 1794913684230,
+      "ts_utc": "2026-11-17T11:08:04.230Z",
+      "ts_myt": "2026-11-17T19:08:04+08:00",
+      "id": "P000013",
+      "coin": "ETH",
+      "entry_ms": 1794912725300,
+      "exit_ms": 1794913684230,
+      "pnl_net": -2.248596715240988,
+      "fees": 0.6657891552269999,
+      "funding": -0.0066013200141,
+      "reason": "signal_or_time_exit"
     }
   ],
   "decisions": {
-    "ETH": 1794913380000
+    "ETH": 1794913680000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T19:03:04+08:00",
+  "last_tick_myt": "2026-11-17T19:08:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "3f9d37ffb2069bb1c5f73406cb69835173e20acb990d27f9b9a899ca2be285ae",
