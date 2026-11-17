@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 990.1840218171017,
+  "cash": 989.2087388977427,
   "starting_equity": 1000.0,
   "day_start_equity": 988.0085867852746,
-  "positions": {
-    "P000022": {
-      "id": "P000022",
-      "coin": "BTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.01143,
-      "size_initial": 0.01143,
-      "entry_px": 64685.434499999996,
-      "entry_ms": 1794902043601,
-      "stop": 64362.007327499996,
-      "fees": 0.3327095323507499,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 4.950163325491907,
-      "funding_hour": 498583,
-      "risk_cap_at_entry": 4.9525836567472625
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -232,23 +214,33 @@
       "fees": 0.6651092011320001,
       "funding": 0.0,
       "reason": "observed_time_exit"
+    },
+    {
+      "id": "P000022",
+      "coin": "BTC",
+      "entry_ms": 1794902043601,
+      "exit_ms": 1794902705391,
+      "pnl_net": -1.3079924517096078,
+      "fees": 0.6651317333609998,
+      "funding": -0.004346628348635999,
+      "reason": "signal_or_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 21,
+    "trades_closed": 22,
     "wins": 7,
-    "losses": 14,
-    "net_pnl": -9.483268650547789,
-    "fees": 14.30792621260605,
-    "funding": -0.060674126292937
+    "losses": 15,
+    "net_pnl": -10.791261102257396,
+    "fees": 14.6403484136163,
+    "funding": -0.065020754641573
   },
   "marks": {
-    "BTC": 64716.5,
-    "ETH": 1831.65,
-    "SOL": 72.9095,
-    "UBTC": 64694.5,
-    "UETH": 1831.15,
-    "HYPE": 69.3775
+    "BTC": 64642.5,
+    "ETH": 1830.35,
+    "SOL": 72.8075,
+    "UBTC": 64621.5,
+    "UETH": 1830.15,
+    "HYPE": 69.2705
   },
   "halted": false,
   "halt_reason": null,
@@ -12206,14 +12198,77 @@
       "funding": -0.060674126292937,
       "positions": 1,
       "max_drawdown_pct": 2.0232509907975293
+    },
+    {
+      "seq": 771,
+      "event": "funding",
+      "ts_ms": 1794902400059,
+      "ts_utc": "2026-11-17T08:00:00.059Z",
+      "ts_myt": "2026-11-17T16:00:00+08:00",
+      "trade_id": "P000022",
+      "coin": "BTC",
+      "payment": -0.004346628348635999,
+      "rate": 5.8769e-06,
+      "price": 64708.0,
+      "price_source": "1m_bar_open_proxy_NOT_historical_oracle",
+      "rate_source": "HL fundingHistory",
+      "settlement_hour_utc": "2026-11-17T08:00:00.000Z"
+    },
+    {
+      "seq": 772,
+      "event": "signal",
+      "ts_ms": 1794902705391,
+      "ts_utc": "2026-11-17T08:05:05.391Z",
+      "ts_myt": "2026-11-17T16:05:05+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T08:05:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 64727.94504686992,
+        "prior_lower": 64551.05495313008
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 773,
+      "event": "exit",
+      "ts_ms": 1794902705391,
+      "ts_utc": "2026-11-17T08:05:05.391Z",
+      "ts_myt": "2026-11-17T16:05:05+08:00",
+      "trade_id": "P000022",
+      "coin": "BTC",
+      "side": "long",
+      "size": 0.01143,
+      "price": 64629.5715,
+      "fee": 0.33242220101024994,
+      "pnl_gross": -0.6385140899999721,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T08:05:00.000Z",
+      "delay_ms": 5391
+    },
+    {
+      "seq": 774,
+      "event": "net_pnl",
+      "ts_ms": 1794902705391,
+      "ts_utc": "2026-11-17T08:05:05.391Z",
+      "ts_myt": "2026-11-17T16:05:05+08:00",
+      "id": "P000022",
+      "coin": "BTC",
+      "entry_ms": 1794902043601,
+      "exit_ms": 1794902705391,
+      "pnl_net": -1.3079924517096078,
+      "fees": 0.6651317333609998,
+      "funding": -0.004346628348635999,
+      "reason": "signal_or_time_exit"
     }
   ],
   "decisions": {
-    "BTC": 1794902400000
+    "BTC": 1794902700000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T16:00:09+08:00",
+  "last_tick_myt": "2026-11-17T16:05:05+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "dc6e8541853b15f58043b9927e7058a1d6e02a913754d16c97e9e2ac425e266d",
