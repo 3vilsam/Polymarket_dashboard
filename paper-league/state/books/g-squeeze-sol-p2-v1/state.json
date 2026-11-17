@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 98.00297699973056,
+  "cash": 97.97024887491492,
   "day_date": "2026-11-17",
   "day_start_equity": 99.59798854493452,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000032": {
+      "id": "P000032",
+      "coin": "SOL",
+      "dir": -1,
+      "side": "short",
+      "size": 0.99,
+      "size_initial": 0.99,
+      "entry_px": 73.46380429999999,
+      "entry_ms": 1794925924502,
+      "stop": 73.83112332149999,
+      "fees": 0.032728124815649996,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.48763087746161565,
+      "funding_hour": 498590,
+      "risk_cap_at_entry": 0.4900148849986528
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -320,25 +338,25 @@
       "reason": "signal_or_time_exit"
     }
   ],
-  "next_seq": 32,
+  "next_seq": 33,
   "marks": {
-    "BTC": 64879.5,
-    "ETH": 1819.55,
-    "SOL": 73.6325,
-    "UBTC": 64851.0,
-    "UETH": 1819.3,
+    "BTC": 64805.5,
+    "ETH": 1815.35,
+    "SOL": 73.4785,
+    "UBTC": 64781.0,
+    "UETH": 1815.5,
     "USOL": 82.9645,
-    "HYPE": 69.5265
+    "HYPE": 69.4205
   },
   "stats": {
     "trades_closed": 31,
     "wins": 10,
     "losses": 21,
     "net_pnl": -1.9970230002693676,
-    "fees": 2.056106736342924,
+    "fees": 2.088834861158574,
     "funding": -0.0022722007756779995
   },
-  "last_tick_myt": "2026-11-17T22:27:04+08:00",
+  "last_tick_myt": "2026-11-17T22:32:04+08:00",
   "id": "g-squeeze-sol-p2-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "squeeze",
@@ -23294,12 +23312,59 @@
         "prior_lower": 73.57171228467696
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1473,
+      "event": "signal",
+      "ts_ms": 1794925924502,
+      "ts_utc": "2026-11-17T14:32:04.502Z",
+      "ts_myt": "2026-11-17T22:32:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-17T14:32:00.000Z",
+      "side": -1,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 73.99656353390168,
+        "prior_lower": 73.54776979943165
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1474,
+      "event": "entry",
+      "ts_ms": 1794925924502,
+      "ts_utc": "2026-11-17T14:32:04.502Z",
+      "ts_myt": "2026-11-17T22:32:04+08:00",
+      "trade_id": "P000032",
+      "coin": "SOL",
+      "side": "short",
+      "size": 0.99,
+      "price": 73.46380429999999,
+      "stop": 73.83112332149999,
+      "fee": 0.032728124815649996,
+      "cost_inclusive_risk": 0.48763087746161565,
+      "risk_budget": 0.4900148849986528,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 1475,
+      "event": "valuation",
+      "ts_ms": 1794925924502,
+      "ts_utc": "2026-11-17T14:32:04.502Z",
+      "ts_myt": "2026-11-17T22:32:04+08:00",
+      "equity": 97.95570013191491,
+      "cash": 97.97024887491492,
+      "unrealized": -0.014548743000004265,
+      "fees": 2.088834861158574,
+      "funding": -0.0022722007756779995,
+      "positions": 1,
+      "max_drawdown_pct": 3.472996687003392
     }
   ],
   "peak": 101.48010066601326,
-  "max_drawdown_pct": 3.426409358546506,
+  "max_drawdown_pct": 3.472996687003392,
   "decisions": {
-    "SOL": 1794925620000
+    "SOL": 1794925920000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -23336,7 +23401,7 @@
     ],
     "day": "2026-11-17",
     "day_start": 99.59798854493452,
-    "previous": 98.00297699973056,
+    "previous": 97.90841671716491,
     "skip_partial_day": false,
     "status": "UNPROVEN",
     "flag_ms": null,
@@ -23344,11 +23409,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 5,
-    "return_pct": -1.9970230002694378,
-    "excess_btc_pct": 10.289157246488422,
-    "excess_random_pct": -1.7815067379668093
+    "return_pct": -2.0915832828350855,
+    "excess_btc_pct": 10.29477488053,
+    "excess_random_pct": -1.8279982855324506
   },
-  "valuation_bucket": 1994361,
+  "valuation_bucket": 1994362,
   "labels_v1": {
     "label": null,
     "description": null,
