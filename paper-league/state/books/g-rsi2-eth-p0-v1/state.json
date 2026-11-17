@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 99.4340957244548,
+  "cash": 99.400755118667,
   "day_date": "2026-11-17",
   "day_start_equity": 99.4340957244548,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000007": {
+      "id": "P000007",
+      "coin": "ETH",
+      "dir": 1,
+      "side": "long",
+      "size": 0.0404,
+      "size_initial": 0.0404,
+      "entry_px": 1833.91671,
+      "entry_ms": 1794895208800,
+      "stop": 1824.74712645,
+      "fees": 0.0333406057878,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.4960526464461498,
+      "funding_hour": 498582,
+      "risk_cap_at_entry": 0.49717047862227404
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -70,25 +88,25 @@
       "reason": "signal_or_time_exit"
     }
   ],
-  "next_seq": 7,
+  "next_seq": 8,
   "marks": {
-    "BTC": 64798.5,
-    "ETH": 1834.05,
-    "SOL": 72.6665,
-    "UBTC": 64796.0,
-    "UETH": 1833.35,
+    "BTC": 64782.5,
+    "ETH": 1833.55,
+    "SOL": 72.6125,
+    "UBTC": 64767.5,
+    "UETH": 1832.35,
     "USOL": 82.9645,
-    "HYPE": 70.1145
+    "HYPE": 70.065
   },
   "stats": {
     "trades_closed": 6,
     "wins": 2,
     "losses": 4,
     "net_pnl": -0.5659042755451839,
-    "fees": 0.29990190132095323,
+    "fees": 0.33324250710875325,
     "funding": 0.00010039389416100002
   },
-  "last_tick_myt": "2026-11-17T13:54:03+08:00",
+  "last_tick_myt": "2026-11-17T14:00:08+08:00",
   "id": "g-rsi2-eth-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "rsi2",
@@ -14887,12 +14905,58 @@
         "ema200": 1821.8629685615103
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 1008,
+      "event": "signal",
+      "ts_ms": 1794895208800,
+      "ts_utc": "2026-11-17T06:00:08.800Z",
+      "ts_myt": "2026-11-17T14:00:08+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-17T06:00:00.000Z",
+      "side": 1,
+      "details": {
+        "rsi2": 4.983645898498779,
+        "ema200": 1822.1032701666884
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1009,
+      "event": "entry",
+      "ts_ms": 1794895208800,
+      "ts_utc": "2026-11-17T06:00:08.800Z",
+      "ts_myt": "2026-11-17T14:00:08+08:00",
+      "trade_id": "P000007",
+      "coin": "ETH",
+      "side": "long",
+      "size": 0.0404,
+      "price": 1833.91671,
+      "stop": 1824.74712645,
+      "fee": 0.0333406057878,
+      "cost_inclusive_risk": 0.4960526464461498,
+      "risk_budget": 0.49717047862227404,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 1010,
+      "event": "valuation",
+      "ts_ms": 1794895208800,
+      "ts_utc": "2026-11-17T06:00:08.800Z",
+      "ts_myt": "2026-11-17T14:00:08+08:00",
+      "equity": 99.385940034667,
+      "cash": 99.400755118667,
+      "unrealized": -0.014815084000000478,
+      "fees": 0.33324250710875325,
+      "funding": 0.00010039389416100002,
+      "positions": 1,
+      "max_drawdown_pct": 1.4382745783667326
     }
   ],
   "peak": 100.77877660727381,
   "max_drawdown_pct": 1.4382745783667326,
   "decisions": {
-    "ETH": 1794894600000
+    "ETH": 1794895200000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -14928,7 +14992,7 @@
     ],
     "day": "2026-11-17",
     "day_start": 99.4340957244548,
-    "previous": 99.4340957244548,
+    "previous": 99.33779101166701,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -14936,11 +15000,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 5,
-    "return_pct": -0.5659042755451926,
-    "excess_btc_pct": 11.823109160972557,
-    "excess_random_pct": -1.1170951821663833
+    "return_pct": -0.6622089883329907,
+    "excess_btc_pct": 11.748464538261993,
+    "excess_random_pct": -1.2133998949541813
   },
-  "valuation_bucket": 1994327,
+  "valuation_bucket": 1994328,
   "labels_v1": {
     "label": null,
     "description": null,
