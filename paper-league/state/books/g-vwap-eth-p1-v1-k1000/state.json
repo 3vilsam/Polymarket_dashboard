@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 997.4249087061725,
+  "cash": 992.954033896883,
   "starting_equity": 1000.0,
   "day_start_equity": 1010.0157069691713,
-  "positions": {
-    "P000023": {
-      "id": "P000023",
-      "coin": "ETH",
-      "dir": -1,
-      "side": "short",
-      "size": 0.3788,
-      "size_initial": 0.3788,
-      "entry_px": 1816.08671,
-      "entry_ms": 1794918065300,
-      "stop": 1826.1541844491883,
-      "fees": 0.30957014058660004,
-      "realized_gross": 0.0,
-      "funding": -0.0018229035015,
-      "risk_at_entry": 4.98666940047939,
-      "funding_hour": 498589,
-      "risk_cap_at_entry": 4.988681508751303
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -242,29 +224,39 @@
       "fees": 0.6555363938618644,
       "funding": 0.0,
       "reason": "stop"
+    },
+    {
+      "id": "P000023",
+      "coin": "ETH",
+      "entry_ms": 1794918065300,
+      "exit_ms": 1794920759999,
+      "pnl_net": -4.7822678533776,
+      "fees": 0.6210120259889493,
+      "funding": -0.0018229035015,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 22,
+    "trades_closed": 23,
     "wins": 14,
-    "losses": 8,
-    "net_pnl": -2.2636982497394937,
-    "fees": 14.07598798959937,
+    "losses": 9,
+    "net_pnl": -7.0459661031170935,
+    "fees": 14.387429875001718,
     "funding": 0.015430228944690006
   },
   "marks": {
-    "BTC": 65036.5,
-    "ETH": 1823.15,
-    "SOL": 73.7295,
-    "UBTC": 64988.5,
-    "UETH": 1823.15,
-    "HYPE": 69.546
+    "BTC": 65117.5,
+    "ETH": 1824.05,
+    "SOL": 73.9565,
+    "UBTC": 65071.5,
+    "UETH": 1823.85,
+    "HYPE": 69.7195
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 24,
   "peak": 1019.9649158147184,
-  "max_drawdown_pct": 2.499876031194417,
+  "max_drawdown_pct": 2.6482167669718306,
   "id": "g-vwap-eth-p1-v1-k1000",
   "parent_id": "g-vwap-eth-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -13125,14 +13117,67 @@
       "funding": 0.015430228944690006,
       "positions": 1,
       "max_drawdown_pct": 2.499876031194417
+    },
+    {
+      "seq": 870,
+      "event": "exit",
+      "ts_ms": 1794920759999,
+      "ts_utc": "2026-11-17T13:05:59.999Z",
+      "ts_myt": "2026-11-17T21:05:59+08:00",
+      "trade_id": "P000023",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.3788,
+      "price": 1827.0672615414128,
+      "fee": 0.31144188540234924,
+      "pnl_gross": -4.159432923887151,
+      "reason": "stop",
+      "bar_t": 1794920700000,
+      "observed_at_utc": "2026-11-17T13:08:05.213Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1826.1541844491883,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 871,
+      "event": "net_pnl",
+      "ts_ms": 1794920759999,
+      "ts_utc": "2026-11-17T13:05:59.999Z",
+      "ts_myt": "2026-11-17T21:05:59+08:00",
+      "id": "P000023",
+      "coin": "ETH",
+      "entry_ms": 1794918065300,
+      "exit_ms": 1794920759999,
+      "pnl_net": -4.7822678533776,
+      "fees": 0.6210120259889493,
+      "funding": -0.0018229035015,
+      "reason": "stop"
+    },
+    {
+      "seq": 872,
+      "event": "signal",
+      "ts_ms": 1794920885213,
+      "ts_utc": "2026-11-17T13:08:05.213Z",
+      "ts_myt": "2026-11-17T21:08:05+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-17T13:05:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 2.791578689709513,
+        "vwap": 1813.2158507209508
+      },
+      "entry_window_open": false
     }
   ],
   "decisions": {
-    "ETH": 1794920400000
+    "ETH": 1794920700000
   },
   "stopped_sides": {},
   "day_date": "2026-11-17",
-  "last_tick_myt": "2026-11-17T21:03:04+08:00",
+  "last_tick_myt": "2026-11-17T21:08:05+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "1acbbbc5888b325070ebe49d7513a9039967b74633a3b0c101ec9eeb6731b88d",
