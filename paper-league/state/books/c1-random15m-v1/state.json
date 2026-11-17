@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 100.67069199308838,
+  "cash": 100.76374381233889,
   "day_date": "2026-11-17",
   "day_start_equity": 100.68957686297213,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000013": {
-      "id": "P000013",
-      "coin": "BTC",
-      "dir": -1,
-      "side": "short",
-      "size": 0.00066,
-      "size_initial": 0.00066,
-      "entry_px": 64850.5273,
-      "entry_ms": 1794873614279,
-      "stop": 65499.032573000004,
-      "fees": 0.0192606066081,
-      "realized_gross": 0.0,
-      "funding": 0.000375736724352,
-      "risk_at_entry": 0.5011823846167727,
-      "funding_hour": 498577,
-      "risk_cap_at_entry": 0.5034478843148606
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -146,27 +128,37 @@
       "fees": 0.0384080419602,
       "funding": 0.000477780729096,
       "reason": "observed_time_exit"
+    },
+    {
+      "id": "P000013",
+      "coin": "BTC",
+      "entry_ms": 1794873614279,
+      "exit_ms": 1794878283991,
+      "pnl_net": 0.07416694936675357,
+      "fees": 0.0384706953576,
+      "funding": 0.000375736724352,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 14,
   "marks": {
-    "BTC": 64700.5,
-    "ETH": 1818.45,
-    "SOL": 71.6525,
-    "UBTC": 64670.0,
-    "UETH": 1818.05,
+    "BTC": 64667.5,
+    "ETH": 1818.85,
+    "SOL": 71.7515,
+    "UBTC": 64637.5,
+    "UETH": 1818.35,
     "USOL": 82.9645,
-    "HYPE": 69.0845
+    "HYPE": 69.1005
   },
   "stats": {
-    "trades_closed": 12,
-    "wins": 5,
+    "trades_closed": 13,
+    "wins": 6,
     "losses": 7,
-    "net_pnl": 0.6895768629721786,
-    "fees": 0.4806937569395153,
+    "net_pnl": 0.7637438123389322,
+    "fees": 0.4999038456890153,
     "funding": -0.0003681088824870002
   },
-  "last_tick_myt": "2026-11-17T09:13:04+08:00",
+  "last_tick_myt": "2026-11-17T09:18:03+08:00",
   "id": "c1-random15m-v1",
   "owner": "Luck control",
   "kind": "random",
@@ -15714,14 +15706,112 @@
       "funding": -0.0003681088824870002,
       "positions": 1,
       "max_drawdown_pct": 2.014698869063627
+    },
+    {
+      "seq": 1115,
+      "event": "signal",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-17T01:15:00.000Z",
+      "side": 1,
+      "details": {
+        "draw_sha256": "c1bd0246fce269aae4b946712e41d6f156e1993c02cbf531463eb06b13f24068"
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 1116,
+      "event": "exit",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "trade_id": "P000013",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.00066,
+      "price": 64680.4335,
+      "fee": 0.019210088749499997,
+      "pnl_gross": 0.11226190800000156,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-17T01:15:00.000Z",
+      "delay_ms": 183991
+    },
+    {
+      "seq": 1117,
+      "event": "net_pnl",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "id": "P000013",
+      "coin": "BTC",
+      "entry_ms": 1794873614279,
+      "exit_ms": 1794878283991,
+      "pnl_net": 0.07416694936675357,
+      "fees": 0.0384706953576,
+      "funding": 0.000375736724352,
+      "reason": "signal_or_time_exit"
+    },
+    {
+      "seq": 1118,
+      "event": "missed_entry",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "coin": "BTC",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-17T01:15:00.000Z"
+    },
+    {
+      "seq": 1119,
+      "event": "signal",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-17T01:15:00.000Z",
+      "side": 0,
+      "details": {
+        "draw_sha256": "fe560b0d9329e03fa0186948cd989a12fa1fad6f19bd99de1234a6712211812b"
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 1120,
+      "event": "signal",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-17T01:15:00.000Z",
+      "side": 0,
+      "details": {
+        "draw_sha256": "8f83e87fcf9bd80ada421edaa64e5b8240851ae46fc79b2c04439ac2db8b5ea8"
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 1121,
+      "event": "valuation",
+      "ts_ms": 1794878283991,
+      "ts_utc": "2026-11-17T01:18:03.991Z",
+      "ts_myt": "2026-11-17T09:18:03+08:00",
+      "equity": 100.76374381233889,
+      "cash": 100.76374381233889,
+      "unrealized": 0.0,
+      "fees": 0.4999038456890153,
+      "funding": -0.0003681088824870002,
+      "positions": 0,
+      "max_drawdown_pct": 2.014698869063627
     }
   ],
   "peak": 102.20539211321606,
   "max_drawdown_pct": 2.014698869063627,
   "decisions": {
-    "BTC": 1794877200000,
-    "ETH": 1794877200000,
-    "SOL": 1794877200000
+    "BTC": 1794878100000,
+    "ETH": 1794878100000,
+    "SOL": 1794878100000
   },
   "stopped_sides": {},
   "lane": "control",
@@ -15760,7 +15850,7 @@
     ],
     "day": "2026-11-17",
     "day_start": 100.68957686297213,
-    "previous": 100.74195349658838,
+    "previous": 100.76374381233889,
     "skip_partial_day": false,
     "status": "CONTROL",
     "flag_ms": null,
@@ -15768,11 +15858,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 5,
-    "return_pct": 0.7419534965883878,
-    "excess_btc_pct": 13.260072455310068,
+    "return_pct": 0.7637438123388796,
+    "excess_btc_pct": 13.326536706844871,
     "excess_random_pct": 0.0
   },
-  "valuation_bucket": 1994308,
+  "valuation_bucket": 1994309,
   "labels_v1": {
     "label": null,
     "description": null,
