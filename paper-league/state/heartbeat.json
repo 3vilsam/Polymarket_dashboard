@@ -1,11 +1,11 @@
 {
-  "pid": 2426,
-  "ts_ms": 1794963019731,
-  "ts_myt": "2026-11-18T08:50:19+08:00",
-  "status": "ok",
+  "pid": 2427,
+  "ts_ms": 1794963377317,
+  "ts_myt": "2026-11-18T08:56:17+08:00",
+  "status": "ok_partial_data_isolation",
   "engine_version": 8,
-  "last_success_ms": 1794963019731,
-  "tick": 1196,
+  "last_success_ms": 1794963377317,
+  "tick": 1197,
   "book_count": 125,
   "active_books": 121,
   "retired_books": [
@@ -15,22 +15,43 @@
     "sp-rsi1h-usol-v1"
   ],
   "load": {
-    "wall_seconds": 6.0129,
+    "wall_seconds": 3.7412,
     "signal_computations": 27,
-    "spot_signal_computations": 3,
+    "spot_signal_computations": 2,
     "v4_signal_computations": 0,
-    "requests": 14,
+    "requests": 8,
     "request_types": {
       "metaAndAssetCtxs": 1,
-      "candleSnapshot": 12,
+      "candleSnapshot": 6,
       "allMids": 1
     },
-    "estimated_weight": 274,
-    "collection_seconds": 3.4052
+    "estimated_weight": 148,
+    "collection_seconds": 1.2686
   },
-  "failed_symbols": {},
-  "skipped_books": 0,
-  "stale_positions": [],
+  "failed_symbols": {
+    "UETH": "ValueError('UETH spot 1m warmup/continuity missing')"
+  },
+  "skipped_books": 4,
+  "stale_positions": [
+    {
+      "book": "sp-hold-ueth-v1",
+      "trade_id": "SPOT_HOLD",
+      "coin": "UETH",
+      "side": "long",
+      "stop": null,
+      "last_cursor_utc": "2026-11-18T00:50:00.000Z",
+      "market": "spot"
+    },
+    {
+      "book": "sp-ema15m-ueth-v1",
+      "trade_id": "P000004",
+      "coin": "UETH",
+      "side": "long",
+      "stop": 1784.2727734924254,
+      "last_cursor_utc": "2026-11-18T00:50:00.000Z",
+      "market": "spot"
+    }
+  ],
   "fail_rate_24h": {
     "BTC": 0.0,
     "ETH": 0.0,

@@ -2,9 +2,9 @@
   "status": "ok",
   "mode": "PAPER_ONLY",
   "engine_version": 7,
-  "tick": 1196,
-  "ts_myt": "2026-11-18T08:50:06+08:00",
-  "ts_utc": "2026-11-18T00:50:06.010Z",
+  "tick": 1197,
+  "ts_myt": "2026-11-18T08:56:03+08:00",
+  "ts_utc": "2026-11-18T00:56:03.778Z",
   "book_count": 125,
   "active_books": 121,
   "retired_books": [
@@ -15,38 +15,66 @@
   ],
   "trial_count": 434,
   "evidence": {
-    "path": "sources/1794963001029.json.gz",
-    "sha256": "d8ed1ad14fd630274df43ab0ba06bbb918cacd111f45f366a512359eab595b9a",
-    "received_ms": 1794963006010,
-    "requests": 14,
+    "path": "sources/1794963361027.json.gz",
+    "sha256": "7c034a8fadaa9cc36ef53bf5983ddf72c321bee6d4eedf5bcc3b619dcc8420a4",
+    "received_ms": 1794963363778,
+    "requests": 8,
     "request_types": {
       "metaAndAssetCtxs": 1,
-      "candleSnapshot": 12,
+      "candleSnapshot": 6,
       "allMids": 1
     },
-    "estimated_weight": 274,
-    "collection_seconds": 3.4052,
-    "failed_symbols": []
+    "estimated_weight": 148,
+    "collection_seconds": 1.2686,
+    "failed_symbols": [
+      "UETH"
+    ]
   },
   "load": {
-    "wall_seconds": 6.0129,
+    "wall_seconds": 3.7412,
     "signal_computations": 27,
-    "spot_signal_computations": 3,
+    "spot_signal_computations": 2,
     "v4_signal_computations": 0,
-    "requests": 14,
+    "requests": 8,
     "request_types": {
       "metaAndAssetCtxs": 1,
-      "candleSnapshot": 12,
+      "candleSnapshot": 6,
       "allMids": 1
     },
-    "estimated_weight": 274,
-    "collection_seconds": 3.4052
+    "estimated_weight": 148,
+    "collection_seconds": 1.2686
   },
   "data_isolation": {
     "rule_id": "data-isolation-v1",
-    "failed_symbols": {},
-    "skipped_books": [],
-    "stale_positions": [],
+    "failed_symbols": {
+      "UETH": "ValueError('UETH spot 1m warmup/continuity missing')"
+    },
+    "skipped_books": [
+      "sp-donchian5m-ueth-v1",
+      "sp-ema15m-ueth-v1",
+      "sp-hold-ueth-v1",
+      "sp-rsi1h-ueth-v1"
+    ],
+    "stale_positions": [
+      {
+        "book": "sp-hold-ueth-v1",
+        "trade_id": "SPOT_HOLD",
+        "coin": "UETH",
+        "side": "long",
+        "stop": null,
+        "last_cursor_utc": "2026-11-18T00:50:00.000Z",
+        "market": "spot"
+      },
+      {
+        "book": "sp-ema15m-ueth-v1",
+        "trade_id": "P000004",
+        "coin": "UETH",
+        "side": "long",
+        "stop": 1784.2727734924254,
+        "last_cursor_utc": "2026-11-18T00:50:00.000Z",
+        "market": "spot"
+      }
+    ],
     "fail_rate_24h": {
       "BTC": 0.0,
       "ETH": 0.0,
@@ -80,7 +108,7 @@
       "labels": []
     },
     "s4-ewmac-riskcap-noadd-ablation-v1": {
-      "equity": 100.01872602,
+      "equity": 100.02240602,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -98,7 +126,7 @@
       "labels": []
     },
     "b0-btc-1x-hold-control-v1": {
-      "equity": 87.54379066,
+      "equity": 87.51264665,
       "positions": 1,
       "closed_trades": 0,
       "market": "perp",
@@ -202,7 +230,7 @@
       "labels": []
     },
     "g-vwap-btc-p1-v1": {
-      "equity": 97.11405688,
+      "equity": 97.08829688,
       "positions": 1,
       "closed_trades": 32,
       "market": "perp",
@@ -218,7 +246,7 @@
       "labels": []
     },
     "g-vwap-eth-p0-v1": {
-      "equity": 100.19398499,
+      "equity": 100.23088499,
       "positions": 1,
       "closed_trades": 35,
       "market": "perp",
@@ -226,7 +254,7 @@
       "labels": []
     },
     "g-vwap-eth-p1-v1": {
-      "equity": 99.3942334,
+      "equity": 99.3575134,
       "positions": 1,
       "closed_trades": 39,
       "market": "perp",
@@ -250,9 +278,9 @@
       "labels": []
     },
     "g-vwap-sol-p1-v1": {
-      "equity": 94.59025474,
-      "positions": 1,
-      "closed_trades": 39,
+      "equity": 94.60161527,
+      "positions": 0,
+      "closed_trades": 40,
       "market": "perp",
       "retired": false,
       "labels": []
@@ -394,8 +422,8 @@
       "labels": []
     },
     "g-rsi2-sol-p1-v1": {
-      "equity": 97.4428808,
-      "positions": 0,
+      "equity": 97.3960478,
+      "positions": 1,
       "closed_trades": 16,
       "market": "perp",
       "retired": false,
@@ -440,7 +468,7 @@
       ]
     },
     "g-ema-eth-p0-v1": {
-      "equity": 98.85185967,
+      "equity": 98.82989967,
       "positions": 1,
       "closed_trades": 4,
       "market": "perp",
@@ -490,7 +518,7 @@
       ]
     },
     "g-ema-sol-p2-v1": {
-      "equity": 99.87123141,
+      "equity": 99.83951141,
       "positions": 1,
       "closed_trades": 3,
       "market": "perp",
@@ -516,9 +544,9 @@
       "labels": []
     },
     "g-squeeze-btc-p2-v1": {
-      "equity": 97.49112242,
-      "positions": 1,
-      "closed_trades": 37,
+      "equity": 97.46975792,
+      "positions": 0,
+      "closed_trades": 38,
       "market": "perp",
       "retired": false,
       "labels": []
@@ -930,8 +958,8 @@
       "labels": []
     },
     "g-rsi2-all-p1-v1": {
-      "equity": 96.93245917,
-      "positions": 0,
+      "equity": 96.88562617,
+      "positions": 1,
       "closed_trades": 24,
       "market": "perp",
       "retired": false,
@@ -948,7 +976,7 @@
       ]
     },
     "sp-hold-ubtc-v1": {
-      "equity": 14.26764087,
+      "equity": 14.26302087,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1056,7 +1084,7 @@
       ]
     },
     "sp-hold-hype-v1": {
-      "equity": 15.72672901,
+      "equity": 15.69812901,
       "positions": 1,
       "closed_trades": 0,
       "market": "spot",
@@ -1064,7 +1092,7 @@
       "labels": []
     },
     "sp-ema15m-hype-v1": {
-      "equity": 16.18963327,
+      "equity": 16.15973327,
       "positions": 1,
       "closed_trades": 2,
       "market": "spot",
@@ -1200,9 +1228,9 @@
     "bankroll": 1000.0,
     "count": 117,
     "created": false,
-    "skipped": 0,
+    "skipped": 4,
     "trial_count_delta": 0,
     "note": "scale twins, not new strategy trials; bankroll is the only difference; trial count unchanged",
-    "wall_seconds": 4.8553
+    "wall_seconds": 4.7955
   }
 }
