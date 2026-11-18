@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 987.0447229691783,
+  "cash": 982.6611958897183,
   "starting_equity": 1000.0,
   "day_start_equity": 991.1326474560648,
-  "positions": {
-    "P000034": {
-      "id": "P000034",
-      "coin": "ETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.4116,
-      "size_initial": 0.4116,
-      "entry_px": 1791.4082099999998,
-      "entry_ms": 1795010166549,
-      "stop": 1782.4511689499998,
-      "fees": 0.3318046286562,
-      "realized_gross": 0.0,
-      "funding": 0.004700525400984001,
-      "risk_at_entry": 4.936699866689847,
-      "funding_hour": 498614,
-      "risk_cap_at_entry": 4.936859135362168
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -352,23 +334,33 @@
       "fees": 0.6636808470528,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000034",
+      "coin": "ETH",
+      "entry_ms": 1795010166549,
+      "exit_ms": 1795012499999,
+      "pnl_net": -4.710631182715223,
+      "fees": 0.6617851613663626,
+      "funding": 0.004700525400984001,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 33,
+    "trades_closed": 34,
     "wins": 19,
-    "losses": 14,
-    "net_pnl": -12.62817292756657,
-    "fees": 20.821020541168124,
+    "losses": 15,
+    "net_pnl": -17.338804110281792,
+    "fees": 21.151001073878287,
     "funding": 0.03222801277167199
   },
   "marks": {
-    "BTC": 63851.5,
-    "ETH": 1790.35,
-    "SOL": 74.6345,
-    "UBTC": 63827.5,
-    "UETH": 1789.75,
-    "HYPE": 67.8715
+    "BTC": 63237.5,
+    "ETH": 1766.85,
+    "SOL": 73.6915,
+    "UBTC": 63216.0,
+    "UETH": 1766.4,
+    "HYPE": 67.026
   },
   "halted": false,
   "halt_reason": null,
@@ -19834,14 +19826,77 @@
       "funding": 0.03222801277167199,
       "positions": 1,
       "max_drawdown_pct": 3.0977612600314828
+    },
+    {
+      "seq": 1316,
+      "event": "exit",
+      "ts_ms": 1795012499999,
+      "ts_utc": "2026-11-18T14:34:59.999Z",
+      "ts_myt": "2026-11-18T22:34:59+08:00",
+      "trade_id": "P000034",
+      "coin": "ETH",
+      "side": "long",
+      "size": 0.4116,
+      "price": 1781.559943365525,
+      "fee": 0.32998053271016253,
+      "pnl_gross": -4.053546546749844,
+      "reason": "stop",
+      "bar_t": 1795012440000,
+      "observed_at_utc": "2026-11-18T14:39:04.860Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 1782.4511689499998,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 1317,
+      "event": "net_pnl",
+      "ts_ms": 1795012499999,
+      "ts_utc": "2026-11-18T14:34:59.999Z",
+      "ts_myt": "2026-11-18T22:34:59+08:00",
+      "id": "P000034",
+      "coin": "ETH",
+      "entry_ms": 1795010166549,
+      "exit_ms": 1795012499999,
+      "pnl_net": -4.710631182715223,
+      "fees": 0.6617851613663626,
+      "funding": 0.004700525400984001,
+      "reason": "stop"
+    },
+    {
+      "seq": 1318,
+      "event": "signal",
+      "ts_ms": 1795012744860,
+      "ts_utc": "2026-11-18T14:39:04.860Z",
+      "ts_myt": "2026-11-18T22:39:04+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-18T14:35:00.000Z",
+      "side": 1,
+      "details": {
+        "z": -3.260166432185391,
+        "vwap": 1794.673534759612
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 1319,
+      "event": "missed_entry",
+      "ts_ms": 1795012744860,
+      "ts_utc": "2026-11-18T14:39:04.860Z",
+      "ts_myt": "2026-11-18T22:39:04+08:00",
+      "coin": "ETH",
+      "reason": "no_hindsight_entry_signal_expired",
+      "boundary_utc": "2026-11-18T14:35:00.000Z"
     }
   ],
   "decisions": {
-    "ETH": 1795012200000
+    "ETH": 1795012500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T22:33:04+08:00",
+  "last_tick_myt": "2026-11-18T22:39:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "00ce537901e5cd391711de91eb158cc1422588a2f87569f75953434136d176f7",
