@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "cash": 979.1926936296675,
+  "cash": 983.2675653042828,
   "starting_equity": 1000.0,
   "day_start_equity": 979.8780769224162,
-  "positions": {
-    "P000006": {
-      "id": "P000006",
-      "coin": "UBTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.01521,
-      "size_initial": 0.01521,
-      "entry_px": 64373.3721,
-      "entry_ms": 1794950764807,
-      "stop": 64051.5052395,
-      "fees": 0.6853832927487,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498597,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -78,20 +59,31 @@
       "funding": 0.0,
       "reason": "stop",
       "market": "spot"
+    },
+    {
+      "id": "P000006",
+      "coin": "UBTC",
+      "entry_ms": 1794950764807,
+      "exit_ms": 1794961745362,
+      "pnl_net": 3.3894883818666286,
+      "fees": 1.3741010981334,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
     }
   ],
   "stats": {
-    "trades_closed": 5,
-    "wins": 1,
+    "trades_closed": 6,
+    "wins": 2,
     "losses": 4,
-    "net_pnl": -20.12192307758403,
-    "fees": 7.652087190852663,
+    "net_pnl": -16.7324346957174,
+    "fees": 8.340804996237363,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64711.5,
-    "UETH": 1817.15,
-    "HYPE": 69.6165
+    "UBTC": 64699.5,
+    "UETH": 1817.35,
+    "HYPE": 69.5645
   },
   "halted": false,
   "halt_reason": null,
@@ -14463,14 +14455,63 @@
         "prior_exit_low": 64784.0
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 974,
+      "event": "signal",
+      "ts_ms": 1794961745362,
+      "ts_utc": "2026-11-18T00:29:05.362Z",
+      "ts_myt": "2026-11-18T08:29:05+08:00",
+      "coin": "UBTC",
+      "boundary_utc": "2026-11-18T00:25:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 65195.0,
+        "prior_exit_low": 64784.0
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 975,
+      "event": "exit",
+      "ts_ms": 1794961745362,
+      "ts_utc": "2026-11-18T00:29:05.362Z",
+      "ts_myt": "2026-11-18T08:29:05+08:00",
+      "trade_id": "P000006",
+      "coin": "UBTC",
+      "side": "long",
+      "size": 0.01521,
+      "price": 64686.5601,
+      "fee": 0.6887178053847001,
+      "pnl_gross": 4.763589480000029,
+      "reason": "signal_or_time_exit",
+      "market": "spot",
+      "signal_boundary_utc": "2026-11-18T00:25:00.000Z",
+      "delay_ms": 245362
+    },
+    {
+      "seq": 976,
+      "event": "net_pnl",
+      "ts_ms": 1794961745362,
+      "ts_utc": "2026-11-18T00:29:05.362Z",
+      "ts_myt": "2026-11-18T08:29:05+08:00",
+      "id": "P000006",
+      "coin": "UBTC",
+      "entry_ms": 1794950764807,
+      "exit_ms": 1794961745362,
+      "pnl_net": 3.3894883818666286,
+      "fees": 1.3741010981334,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
     }
   ],
   "decisions": {
-    "UBTC": 1794961200000
+    "UBTC": 1794961500000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T08:24:03+08:00",
+  "last_tick_myt": "2026-11-18T08:29:05+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "2b707f1319edb30eb98f67577060cd73afcbb4c144713857d81032e51e817e05",
