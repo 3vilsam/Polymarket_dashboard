@@ -2,31 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T17:16:05+08:00",
   "starting_equity": 16.24,
-  "cash": 15.960105715280237,
+  "cash": 15.886481743709837,
   "day_date": "2026-11-18",
   "day_start_equity": 15.917466628249036,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000008": {
-      "id": "P000008",
-      "coin": "UBTC",
-      "dir": 1,
-      "side": "long",
-      "size": 0.00024,
-      "size_initial": 0.00024,
-      "entry_px": 64547.4069,
-      "entry_ms": 1794975606377,
-      "stop": 64224.6698655,
-      "fees": 0.0108439643592,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498604,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -104,24 +85,35 @@
       "funding": 0.0,
       "reason": "signal_or_time_exit",
       "market": "spot"
+    },
+    {
+      "id": "P000008",
+      "coin": "UBTC",
+      "entry_ms": 1794975606377,
+      "exit_ms": 1794977165171,
+      "pnl_net": -0.08446793592960064,
+      "fees": 0.021643951929600003,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
     }
   ],
   "next_seq": 9,
   "marks": {
-    "UBTC": 64419.5,
-    "UETH": 1801.55,
+    "UBTC": 64298.5,
+    "UETH": 1799.05,
     "USOL": 82.9645,
-    "HYPE": 68.5455
+    "HYPE": 68.4185
   },
   "stats": {
-    "trades_closed": 7,
+    "trades_closed": 8,
     "wins": 2,
-    "losses": 5,
-    "net_pnl": -0.269050320360558,
-    "fees": 0.16489357171769853,
+    "losses": 6,
+    "net_pnl": -0.35351825629015865,
+    "fees": 0.17569355928809852,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-18T12:41:05+08:00",
+  "last_tick_myt": "2026-11-18T12:46:05+08:00",
   "id": "sp-donchian5m-ubtc-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
   "kind": "spot_donchian",
@@ -19943,12 +19935,75 @@
         "prior_exit_low": 64333.0
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1346,
+      "event": "signal",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "coin": "UBTC",
+      "boundary_utc": "2026-11-18T04:45:00.000Z",
+      "side": 0,
+      "details": {
+        "prior_high": 64629.0,
+        "prior_exit_low": 64333.0
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1347,
+      "event": "exit",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "trade_id": "P000008",
+      "coin": "UBTC",
+      "side": "long",
+      "size": 0.00024,
+      "price": 64285.6403,
+      "fee": 0.0107999875704,
+      "pnl_gross": -0.06282398400000064,
+      "reason": "signal_or_time_exit",
+      "market": "spot",
+      "signal_boundary_utc": "2026-11-18T04:45:00.000Z",
+      "delay_ms": 65171
+    },
+    {
+      "seq": 1348,
+      "event": "net_pnl",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "id": "P000008",
+      "coin": "UBTC",
+      "entry_ms": 1794975606377,
+      "exit_ms": 1794977165171,
+      "pnl_net": -0.08446793592960064,
+      "fees": 0.021643951929600003,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
+    },
+    {
+      "seq": 1349,
+      "event": "valuation",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "equity": 15.886481743709837,
+      "cash": 15.886481743709837,
+      "unrealized": 0.0,
+      "fees": 0.17569355928809852,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 4.2201542231006846
     }
   ],
   "peak": 16.548536353520692,
   "max_drawdown_pct": 4.2201542231006846,
   "decisions": {
-    "UBTC": 1794976800000
+    "UBTC": 1794977100000
   },
   "stopped_sides": {},
   "spot_spec": {
@@ -20000,7 +20055,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 15.917466628249036,
-    "previous": 15.915493447280236,
+    "previous": 15.886481743709837,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -20008,11 +20063,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -1.9981930586192242,
-    "excess_btc_pct": 10.594974648297518,
-    "excess_random_pct": -2.0883877824048214
+    "return_pct": -2.1768365535108525,
+    "excess_btc_pct": 10.599655915091844,
+    "excess_random_pct": -2.2670312772964496
   },
-  "valuation_bucket": 1994418,
+  "valuation_bucket": 1994419,
   "labels_v1": {
     "label": null,
     "description": null,

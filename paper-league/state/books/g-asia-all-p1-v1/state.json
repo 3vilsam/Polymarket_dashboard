@@ -2,12 +2,30 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 98.64277265527103,
+  "cash": 98.61977900592083,
   "day_date": "2026-11-18",
   "day_start_equity": 98.64277265527103,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000006": {
+      "id": "P000006",
+      "coin": "ETH",
+      "dir": -1,
+      "side": "short",
+      "size": 0.0284,
+      "size_initial": 0.0284,
+      "entry_px": 1799.19009,
+      "entry_ms": 1794977165171,
+      "stop": 1813.4614399643494,
+      "fees": 0.0229936493502,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 0.49255627755476067,
+      "funding_hour": 498604,
+      "risk_cap_at_entry": 0.4932138632763552
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -60,25 +78,25 @@
       "reason": "signal_or_time_exit"
     }
   ],
-  "next_seq": 6,
+  "next_seq": 7,
   "marks": {
-    "BTC": 64463.5,
-    "ETH": 1802.05,
-    "SOL": 74.9125,
-    "UBTC": 64419.5,
-    "UETH": 1801.55,
+    "BTC": 64328.5,
+    "ETH": 1799.55,
+    "SOL": 74.7865,
+    "UBTC": 64298.5,
+    "UETH": 1799.05,
     "USOL": 82.9645,
-    "HYPE": 68.5455
+    "HYPE": 68.4185
   },
   "stats": {
     "trades_closed": 5,
     "wins": 0,
     "losses": 5,
     "net_pnl": -1.3572273447289562,
-    "fees": 0.2568502085044928,
+    "fees": 0.2798438578546928,
     "funding": 0.002161916870612
   },
-  "last_tick_myt": "2026-11-18T12:41:05+08:00",
+  "last_tick_myt": "2026-11-18T12:46:05+08:00",
   "id": "g-asia-all-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "asia",
@@ -21059,14 +21077,90 @@
       "funding": 0.002161916870612,
       "positions": 0,
       "max_drawdown_pct": 1.556258068178239
+    },
+    {
+      "seq": 1483,
+      "event": "signal",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-18T04:45:00.000Z",
+      "side": 0,
+      "details": {
+        "range_high": 64970.0,
+        "range_low": 64277.0
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1484,
+      "event": "signal",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-18T04:45:00.000Z",
+      "side": -1,
+      "details": {
+        "range_high": 1825.8,
+        "range_low": 1802.1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1485,
+      "event": "entry",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "trade_id": "P000006",
+      "coin": "ETH",
+      "side": "short",
+      "size": 0.0284,
+      "price": 1799.19009,
+      "stop": 1813.4614399643494,
+      "fee": 0.0229936493502,
+      "cost_inclusive_risk": 0.49255627755476067,
+      "risk_budget": 0.4932138632763552,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 1486,
+      "event": "signal",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-18T04:45:00.000Z",
+      "side": 0,
+      "details": {
+        "range_high": 75.391,
+        "range_low": 74.167
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1487,
+      "event": "valuation",
+      "ts_ms": 1794977165171,
+      "ts_utc": "2026-11-18T04:46:05.171Z",
+      "ts_myt": "2026-11-18T12:46:05+08:00",
+      "equity": 98.60955756192084,
+      "cash": 98.61977900592083,
+      "unrealized": -0.010221443999997155,
+      "fees": 0.2798438578546928,
+      "funding": 0.002161916870612,
+      "positions": 1,
+      "max_drawdown_pct": 1.589406143703599
     }
   ],
   "peak": 100.20217712121011,
-  "max_drawdown_pct": 1.556258068178239,
+  "max_drawdown_pct": 1.589406143703599,
   "decisions": {
-    "BTC": 1794976200000,
-    "ETH": 1794976200000,
-    "SOL": 1794976200000
+    "BTC": 1794977100000,
+    "ETH": 1794977100000,
+    "SOL": 1794977100000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -21105,7 +21199,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 98.64277265527103,
-    "previous": 98.64277265527103,
+    "previous": 98.57633786892083,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -21113,11 +21207,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -1.3572273447289729,
-    "excess_btc_pct": 11.506636876983245,
-    "excess_random_pct": -1.44742206851457
+    "return_pct": -1.423662131079173,
+    "excess_btc_pct": 11.622959100659758,
+    "excess_random_pct": -1.5138568548647702
   },
-  "valuation_bucket": 1994418,
+  "valuation_bucket": 1994419,
   "labels_v1": {
     "label": null,
     "description": null,
