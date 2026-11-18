@@ -2,30 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T14:05:05+08:00",
   "starting_equity": 100.0,
-  "cash": 94.63259823567572,
+  "cash": 94.61194110937937,
   "day_date": "2026-11-18",
   "day_start_equity": 96.52502270446693,
   "halted": false,
   "halt_reason": null,
-  "positions": {
-    "P000032": {
-      "id": "P000032",
-      "coin": "BTC",
-      "dir": -1,
-      "side": "short",
-      "size": 0.00109,
-      "size_initial": 0.00109,
-      "entry_px": 64656.566100000004,
-      "entry_ms": 1794963665403,
-      "stop": 64979.8489305,
-      "fees": 0.03171404567205,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "risk_at_entry": 0.4725216615992751,
-      "funding_hour": 498601,
-      "risk_cap_at_entry": 0.4733215614067388
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -336,27 +318,37 @@
       "fees": 0.06362816031000001,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000032",
+      "coin": "BTC",
+      "entry_ms": 1794963665403,
+      "exit_ms": 1794964624351,
+      "pnl_net": -0.05237117196839204,
+      "fees": 0.0634231179684,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
     }
   ],
   "next_seq": 33,
   "marks": {
-    "BTC": 64571.5,
-    "ETH": 1814.25,
-    "SOL": 74.6965,
-    "UBTC": 64549.5,
-    "UETH": 1813.95,
+    "BTC": 64633.5,
+    "ETH": 1814.95,
+    "SOL": 74.7865,
+    "UBTC": 64611.5,
+    "UETH": 1814.85,
     "USOL": 82.9645,
-    "HYPE": 69.119
+    "HYPE": 69.2125
   },
   "stats": {
-    "trades_closed": 31,
+    "trades_closed": 32,
     "wins": 3,
-    "losses": 28,
-    "net_pnl": -5.335687718652204,
-    "fees": 2.061720466307147,
+    "losses": 29,
+    "net_pnl": -5.388058890620596,
+    "fees": 2.093429538603497,
     "funding": -0.0006442496878639999
   },
-  "last_tick_myt": "2026-11-18T09:11:04+08:00",
+  "last_tick_myt": "2026-11-18T09:17:04+08:00",
   "id": "g-squeeze-btc-p1-v1",
   "owner": "Prospective fixed grid; correlated trials",
   "kind": "squeeze",
@@ -25964,12 +25956,74 @@
         "prior_lower": 64562.640837015315
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1646,
+      "event": "signal",
+      "ts_ms": 1794964624351,
+      "ts_utc": "2026-11-18T01:17:04.351Z",
+      "ts_myt": "2026-11-18T09:17:04+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-18T01:17:00.000Z",
+      "side": 0,
+      "details": {
+        "squeezed": false,
+        "prior_upper": 64785.05111679791,
+        "prior_lower": 64520.54888320209
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1647,
+      "event": "exit",
+      "ts_ms": 1794964624351,
+      "ts_utc": "2026-11-18T01:17:04.351Z",
+      "ts_myt": "2026-11-18T09:17:04+08:00",
+      "trade_id": "P000032",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.00109,
+      "price": 64646.426699999996,
+      "fee": 0.03170907229635,
+      "pnl_gross": 0.011051946000007957,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-18T01:17:00.000Z",
+      "delay_ms": 4351
+    },
+    {
+      "seq": 1648,
+      "event": "net_pnl",
+      "ts_ms": 1794964624351,
+      "ts_utc": "2026-11-18T01:17:04.351Z",
+      "ts_myt": "2026-11-18T09:17:04+08:00",
+      "id": "P000032",
+      "coin": "BTC",
+      "entry_ms": 1794963665403,
+      "exit_ms": 1794964624351,
+      "pnl_net": -0.05237117196839204,
+      "fees": 0.0634231179684,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit"
+    },
+    {
+      "seq": 1649,
+      "event": "valuation",
+      "ts_ms": 1794964624351,
+      "ts_utc": "2026-11-18T01:17:04.351Z",
+      "ts_myt": "2026-11-18T09:17:04+08:00",
+      "equity": 94.61194110937937,
+      "cash": 94.61194110937937,
+      "unrealized": 0.0,
+      "fees": 2.093429538603497,
+      "funding": -0.0006442496878639999,
+      "positions": 0,
+      "max_drawdown_pct": 5.840450645265656
     }
   ],
   "peak": 100.47757867685543,
   "max_drawdown_pct": 5.840450645265656,
   "decisions": {
-    "BTC": 1794964260000
+    "BTC": 1794964620000
   },
   "stopped_sides": {},
   "lane": "fast",
@@ -26007,7 +26061,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 96.52502270446693,
-    "previous": 94.67957137692572,
+    "previous": 94.61194110937937,
     "skip_partial_day": false,
     "status": "UNPROVEN",
     "flag_ms": null,
@@ -26015,11 +26069,11 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -5.32042862307428,
-    "excess_btc_pct": 7.393961338267541,
-    "excess_random_pct": -5.410623346859877
+    "return_pct": -5.388058890620629,
+    "excess_btc_pct": 7.242398221671886,
+    "excess_random_pct": -5.478253614406226
   },
-  "valuation_bucket": 1994404,
+  "valuation_bucket": 1994405,
   "labels_v1": {
     "label": null,
     "description": null,
