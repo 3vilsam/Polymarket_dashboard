@@ -1,9 +1,27 @@
 {
   "version": 1,
-  "cash": 966.7657917837109,
+  "cash": 966.4416684178516,
   "starting_equity": 1000.0,
   "day_start_equity": 975.0776185191893,
-  "positions": {},
+  "positions": {
+    "P000040": {
+      "id": "P000040",
+      "coin": "BTC",
+      "dir": -1,
+      "side": "short",
+      "size": 0.01114,
+      "size_initial": 0.01114,
+      "entry_px": 64656.566100000004,
+      "entry_ms": 1794963665403,
+      "stop": 64979.8489305,
+      "fees": 0.3241233658593,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 4.829258082766904,
+      "funding_hour": 498601,
+      "risk_cap_at_entry": 4.833828958918555
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -401,22 +419,22 @@
     "wins": 10,
     "losses": 29,
     "net_pnl": -33.2342082162891,
-    "fees": 25.80198953668118,
+    "fees": 26.12611290254048,
     "funding": -0.071640257442645
   },
   "marks": {
-    "BTC": 64722.5,
-    "ETH": 1818.45,
-    "SOL": 75.0425,
-    "UBTC": 64700.5,
-    "UETH": 1817.95,
-    "HYPE": 69.3125
+    "BTC": 64669.5,
+    "ETH": 1816.35,
+    "SOL": 74.7635,
+    "UBTC": 64650.5,
+    "UETH": 1815.95,
+    "HYPE": 69.2525
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 40,
+  "next_seq": 41,
   "peak": 1002.4489568597445,
-  "max_drawdown_pct": 3.58337281705683,
+  "max_drawdown_pct": 3.606305522142507,
   "id": "g-squeeze-btc-p0-v1-k1000",
   "parent_id": "g-squeeze-btc-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -17363,14 +17381,61 @@
         "prior_lower": 64670.96470952331
       },
       "entry_window_open": true
+    },
+    {
+      "seq": 1091,
+      "event": "signal",
+      "ts_ms": 1794963665403,
+      "ts_utc": "2026-11-18T01:01:05.403Z",
+      "ts_myt": "2026-11-18T09:01:05+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-18T01:01:00.000Z",
+      "side": -1,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 64798.91109332292,
+        "prior_lower": 64680.98890667708
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1092,
+      "event": "entry",
+      "ts_ms": 1794963665403,
+      "ts_utc": "2026-11-18T01:01:05.403Z",
+      "ts_myt": "2026-11-18T09:01:05+08:00",
+      "trade_id": "P000040",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.01114,
+      "price": 64656.566100000004,
+      "stop": 64979.8489305,
+      "fee": 0.3241233658593,
+      "cost_inclusive_risk": 4.829258082766904,
+      "risk_budget": 4.833828958918555,
+      "fill_source": "observed_mid_plus_2bps"
+    },
+    {
+      "seq": 1093,
+      "event": "valuation",
+      "ts_ms": 1794963665403,
+      "ts_utc": "2026-11-18T01:01:05.403Z",
+      "ts_myt": "2026-11-18T09:01:05+08:00",
+      "equity": 966.2975847718516,
+      "cash": 966.4416684178516,
+      "unrealized": -0.1440836459999594,
+      "fees": 26.12611290254048,
+      "funding": -0.071640257442645,
+      "positions": 1,
+      "max_drawdown_pct": 3.606305522142507
     }
   ],
   "decisions": {
-    "BTC": 1794963360000
+    "BTC": 1794963660000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T08:56:03+08:00",
+  "last_tick_myt": "2026-11-18T09:01:05+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "dc6e8541853b15f58043b9927e7058a1d6e02a913754d16c97e9e2ac425e266d",
@@ -17392,5 +17457,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "dc6e8541853b15f58043b9927e7058a1d6e02a913754d16c97e9e2ac425e266d"
   },
-  "valuation_bucket": 1994403
+  "valuation_bucket": 1994404
 }
