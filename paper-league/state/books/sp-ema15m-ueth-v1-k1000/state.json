@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "cash": 979.4885285621782,
+  "cash": 979.978010957628,
   "starting_equity": 1000.0,
   "day_start_equity": 980.1741592867854,
-  "positions": {
-    "P000004": {
-      "id": "P000004",
-      "coin": "UETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.5442,
-      "size_initial": 0.5442,
-      "entry_px": 1799.839146866134,
-      "entry_ms": 1794949212770,
-      "stop": 1784.3115826308908,
-      "fees": 0.685630724607185,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498597,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -56,20 +37,31 @@
       "funding": 0.0,
       "reason": "stop",
       "market": "spot"
+    },
+    {
+      "id": "P000004",
+      "coin": "UETH",
+      "entry_ms": 1794949212770,
+      "exit_ms": 1794969908365,
+      "pnl_net": -0.19614832915737024,
+      "fees": 1.3720846046071848,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
     }
   ],
   "stats": {
-    "trades_closed": 3,
+    "trades_closed": 4,
     "wins": 0,
-    "losses": 3,
-    "net_pnl": -19.825840713214607,
-    "fees": 4.851711720522275,
+    "losses": 4,
+    "net_pnl": -20.021989042371978,
+    "fees": 5.538165600522275,
     "funding": 0.0
   },
   "marks": {
-    "UBTC": 64367.5,
-    "UETH": 1805.15,
-    "HYPE": 68.583
+    "UBTC": 64281.0,
+    "UETH": 1803.15,
+    "HYPE": 68.5595
   },
   "halted": false,
   "halt_reason": null,
@@ -8032,14 +8024,78 @@
       "funding": 0.0,
       "positions": 1,
       "max_drawdown_pct": 3.8281756761453267
+    },
+    {
+      "seq": 531,
+      "event": "signal",
+      "ts_ms": 1794969908365,
+      "ts_utc": "2026-11-18T02:45:08.365Z",
+      "ts_myt": "2026-11-18T10:45:08+08:00",
+      "coin": "UETH",
+      "boundary_utc": "2026-11-18T02:45:00.000Z",
+      "side": 0,
+      "details": {
+        "fast": 1808.4673316719716,
+        "slow": 1809.2675473052323,
+        "raw_cross": -1
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 532,
+      "event": "exit",
+      "ts_ms": 1794969908365,
+      "ts_utc": "2026-11-18T02:45:08.365Z",
+      "ts_myt": "2026-11-18T10:45:08+08:00",
+      "trade_id": "P000004",
+      "coin": "UETH",
+      "side": "long",
+      "size": 0.5442,
+      "price": 1801.9999999999998,
+      "fee": 0.68645388,
+      "pnl_gross": 1.1759362754498146,
+      "reason": "signal_or_time_exit",
+      "market": "spot",
+      "signal_boundary_utc": "2026-11-18T02:45:00.000Z",
+      "delay_ms": 8365
+    },
+    {
+      "seq": 533,
+      "event": "net_pnl",
+      "ts_ms": 1794969908365,
+      "ts_utc": "2026-11-18T02:45:08.365Z",
+      "ts_myt": "2026-11-18T10:45:08+08:00",
+      "id": "P000004",
+      "coin": "UETH",
+      "entry_ms": 1794949212770,
+      "exit_ms": 1794969908365,
+      "pnl_net": -0.19614832915737024,
+      "fees": 1.3720846046071848,
+      "funding": 0.0,
+      "reason": "signal_or_time_exit",
+      "market": "spot"
+    },
+    {
+      "seq": 534,
+      "event": "valuation",
+      "ts_ms": 1794969908365,
+      "ts_utc": "2026-11-18T02:45:08.365Z",
+      "ts_myt": "2026-11-18T10:45:08+08:00",
+      "equity": 979.978010957628,
+      "cash": 979.978010957628,
+      "unrealized": 0.0,
+      "fees": 5.538165600522275,
+      "funding": 0.0,
+      "positions": 0,
+      "max_drawdown_pct": 3.8281756761453267
     }
   ],
   "decisions": {
-    "UETH": 1794969000000
+    "UETH": 1794969900000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T10:40:05+08:00",
+  "last_tick_myt": "2026-11-18T10:45:08+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc",
@@ -8074,5 +8130,5 @@
     },
     "sha256": "e08c8ca776f55a06281270a1e61e5216c55e5093c6257708bbbe37ab347e39dc"
   },
-  "valuation_bucket": 1994410
+  "valuation_bucket": 1994411
 }
