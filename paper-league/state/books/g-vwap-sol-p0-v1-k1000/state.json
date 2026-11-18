@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 988.9146813350092,
+  "cash": 984.6569916395057,
   "starting_equity": 1000.0,
   "day_start_equity": 992.9098224867649,
-  "positions": {
-    "P000022": {
-      "id": "P000022",
-      "coin": "SOL",
-      "dir": -1,
-      "side": "short",
-      "size": 9.54,
-      "size_initial": 9.54,
-      "entry_px": 74.9455079,
-      "entry_ms": 1794975906397,
-      "stop": 75.32023543949998,
-      "fees": 0.32174106541469993,
-      "realized_gross": 0.0,
-      "funding": -0.012146471099999997,
-      "risk_at_entry": 4.94257051733729,
-      "funding_hour": 498605,
-      "risk_cap_at_entry": 4.946242844357619
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -232,29 +214,39 @@
       "fees": 0.6049920423455999,
       "funding": -7.4852859035e-05,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000022",
+      "coin": "SOL",
+      "entry_ms": 1794975906397,
+      "exit_ms": 1794979319999,
+      "pnl_net": -4.591577232018153,
+      "fees": 0.6452525110418442,
+      "funding": -0.012146471099999997,
+      "reason": "stop"
     }
   ],
   "stats": {
-    "trades_closed": 21,
+    "trades_closed": 22,
     "wins": 9,
-    "losses": 12,
-    "net_pnl": -10.75143112847649,
-    "fees": 11.661001534902175,
+    "losses": 13,
+    "net_pnl": -15.343008360494643,
+    "fees": 11.984512980529319,
     "funding": -0.014414487978601995
   },
   "marks": {
-    "BTC": 64655.5,
-    "ETH": 1809.75,
-    "SOL": 75.1855,
-    "UBTC": 64619.5,
-    "UETH": 1808.95,
-    "HYPE": 68.7895
+    "BTC": 64758.5,
+    "ETH": 1815.15,
+    "SOL": 75.3715,
+    "UBTC": 64719.5,
+    "UETH": 1814.2,
+    "HYPE": 68.9625
   },
   "halted": false,
   "halt_reason": null,
   "next_seq": 23,
   "peak": 1007.2436808156924,
-  "max_drawdown_pct": 2.197095079756373,
+  "max_drawdown_pct": 2.242425503021814,
   "id": "g-vwap-sol-p0-v1-k1000",
   "parent_id": "g-vwap-sol-p0-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -16889,14 +16881,67 @@
       "funding": -0.014414487978601995,
       "positions": 1,
       "max_drawdown_pct": 2.197095079756373
+    },
+    {
+      "seq": 1129,
+      "event": "exit",
+      "ts_ms": 1794979319999,
+      "ts_utc": "2026-11-18T05:21:59.999Z",
+      "ts_myt": "2026-11-18T13:21:59+08:00",
+      "trade_id": "P000022",
+      "coin": "SOL",
+      "side": "short",
+      "size": 9.54,
+      "price": 75.35789555721973,
+      "fee": 0.3235114456271443,
+      "pnl_gross": -3.9341782498763087,
+      "reason": "stop",
+      "bar_t": 1794979260000,
+      "observed_at_utc": "2026-11-18T05:23:04.420Z",
+      "replayed": true,
+      "gap_through_stop": false,
+      "stop_trigger": 75.32023543949998,
+      "bar_resolution": "1m",
+      "entry_minute_ambiguous": false,
+      "fill_timing": "intraminute_unknown_stop_assumed"
+    },
+    {
+      "seq": 1130,
+      "event": "net_pnl",
+      "ts_ms": 1794979319999,
+      "ts_utc": "2026-11-18T05:21:59.999Z",
+      "ts_myt": "2026-11-18T13:21:59+08:00",
+      "id": "P000022",
+      "coin": "SOL",
+      "entry_ms": 1794975906397,
+      "exit_ms": 1794979319999,
+      "pnl_net": -4.591577232018153,
+      "fees": 0.6452525110418442,
+      "funding": -0.012146471099999997,
+      "reason": "stop"
+    },
+    {
+      "seq": 1131,
+      "event": "signal",
+      "ts_ms": 1794979384420,
+      "ts_utc": "2026-11-18T05:23:04.420Z",
+      "ts_myt": "2026-11-18T13:23:04+08:00",
+      "coin": "SOL",
+      "boundary_utc": "2026-11-18T05:20:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 2.5808941810287296,
+        "vwap": 74.66329067626349
+      },
+      "entry_window_open": false
     }
   ],
   "decisions": {
-    "SOL": 1794978900000
+    "SOL": 1794979200000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T13:18:04+08:00",
+  "last_tick_myt": "2026-11-18T13:23:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "9a551d12b90b6e8103f7447dda4135ea84c9994bb62bd48527bab01efbdc615b",
