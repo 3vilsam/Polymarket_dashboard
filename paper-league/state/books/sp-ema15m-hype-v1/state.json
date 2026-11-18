@@ -2,31 +2,12 @@
   "version": 1,
   "created_myt": "2026-11-11T17:16:05+08:00",
   "starting_equity": 16.24,
-  "cash": 15.932161625603493,
+  "cash": 15.797015811534994,
   "day_date": "2026-11-18",
   "day_start_equity": 16.146610598759793,
-  "halted": false,
-  "halt_reason": null,
-  "positions": {
-    "P000004": {
-      "id": "P000004",
-      "coin": "HYPE",
-      "dir": 1,
-      "side": "long",
-      "size": 0.23,
-      "size_initial": 0.23,
-      "entry_px": 69.0883149,
-      "entry_ms": 1794982507419,
-      "stop": 68.54120946025624,
-      "fees": 0.011123218698900001,
-      "realized_gross": 0.0,
-      "funding": 0.0,
-      "funding_hour": 498606,
-      "market": "spot",
-      "leverage": 1,
-      "spot": true
-    }
-  },
+  "halted": true,
+  "halt_reason": "daily_loss_minus_2_percent",
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -60,24 +41,35 @@
       "funding": 0.0,
       "reason": "signal_or_time_exit",
       "market": "spot"
+    },
+    {
+      "id": "P000004",
+      "coin": "HYPE",
+      "entry_ms": 1794982507419,
+      "exit_ms": 1794987544116,
+      "pnl_net": -0.14626903276739925,
+      "fees": 0.0221595607674,
+      "funding": 0.0,
+      "reason": "daily_halt_first_observation",
+      "market": "spot"
     }
   ],
   "next_seq": 5,
   "marks": {
-    "UBTC": 64609.5,
-    "UETH": 1811.15,
+    "UBTC": 64476.5,
+    "UETH": 1806.55,
     "USOL": 82.9645,
-    "HYPE": 68.8215
+    "HYPE": 68.583
   },
   "stats": {
-    "trades_closed": 3,
+    "trades_closed": 4,
     "wins": 1,
-    "losses": 2,
-    "net_pnl": -0.29671515569760465,
-    "fees": 0.07739741882840233,
+    "losses": 3,
+    "net_pnl": -0.44298418846500387,
+    "fees": 0.08843376089690233,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-18T15:34:05+08:00",
+  "last_tick_myt": "2026-11-18T15:39:04+08:00",
   "id": "sp-ema15m-hype-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
   "kind": "spot_ema",
@@ -11342,10 +11334,51 @@
       "funding": 0.0,
       "positions": 1,
       "max_drawdown_pct": 4.808425668251746
+    },
+    {
+      "seq": 754,
+      "event": "halt",
+      "ts_ms": 1794987539999,
+      "ts_utc": "2026-11-18T07:38:59.999Z",
+      "ts_myt": "2026-11-18T15:38:59+08:00",
+      "equity": 15.815249198603492,
+      "note": "replayed threshold; flatten at next actually observed quote, not unseen historical close"
+    },
+    {
+      "seq": 755,
+      "event": "exit",
+      "ts_ms": 1794987544116,
+      "ts_utc": "2026-11-18T07:39:04.116Z",
+      "ts_myt": "2026-11-18T15:39:04+08:00",
+      "trade_id": "P000004",
+      "coin": "HYPE",
+      "side": "long",
+      "size": 0.23,
+      "price": 68.5487085,
+      "fee": 0.0110363420685,
+      "pnl_gross": -0.12410947199999925,
+      "reason": "daily_halt_first_observation",
+      "market": "spot"
+    },
+    {
+      "seq": 756,
+      "event": "net_pnl",
+      "ts_ms": 1794987544116,
+      "ts_utc": "2026-11-18T07:39:04.116Z",
+      "ts_myt": "2026-11-18T15:39:04+08:00",
+      "id": "P000004",
+      "coin": "HYPE",
+      "entry_ms": 1794982507419,
+      "exit_ms": 1794987544116,
+      "pnl_net": -0.14626903276739925,
+      "fees": 0.0221595607674,
+      "funding": 0.0,
+      "reason": "daily_halt_first_observation",
+      "market": "spot"
     }
   ],
   "peak": 16.622583784,
-  "max_drawdown_pct": 4.808425668251746,
+  "max_drawdown_pct": 4.966544209929944,
   "decisions": {
     "HYPE": 1794987000000
   },
@@ -11399,7 +11432,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 16.146610598759793,
-    "previous": 15.856548148103492,
+    "previous": 15.797015811534994,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -11407,9 +11440,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -2.361156723500657,
-    "excess_btc_pct": 9.992225725408732,
-    "excess_random_pct": -2.3825739880533714
+    "return_pct": -2.727735150646582,
+    "excess_btc_pct": 9.804898176355747,
+    "excess_random_pct": -2.8363290431992927
   },
   "valuation_bucket": 1994430,
   "labels_v1": {
