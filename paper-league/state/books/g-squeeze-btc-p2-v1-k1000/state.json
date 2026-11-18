@@ -1,9 +1,27 @@
 {
   "version": 1,
-  "cash": 974.1771698644258,
+  "cash": 973.8504361747357,
   "starting_equity": 1000.0,
   "day_start_equity": 983.4993315662329,
-  "positions": {},
+  "positions": {
+    "P000027": {
+      "id": "P000027",
+      "coin": "BTC",
+      "dir": -1,
+      "side": "short",
+      "size": 0.01122,
+      "size_initial": 0.01122,
+      "entry_px": 64712.5549,
+      "entry_ms": 1794961443958,
+      "stop": 65036.1176745,
+      "fees": 0.3267336896901,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "risk_at_entry": 4.868150457665936,
+      "funding_hour": 498600,
+      "risk_cap_at_entry": 4.8708858493221285
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -271,22 +289,22 @@
     "wins": 8,
     "losses": 18,
     "net_pnl": -25.822830135574048,
-    "fees": 17.21143650470429,
+    "fees": 17.538170194394393,
     "funding": -0.053571439348540986
   },
   "marks": {
-    "BTC": 64843.5,
-    "ETH": 1820.95,
-    "SOL": 75.0085,
-    "UBTC": 64804.5,
-    "UETH": 1820.35,
-    "HYPE": 69.7805
+    "BTC": 64725.5,
+    "ETH": 1817.85,
+    "SOL": 75.0405,
+    "UBTC": 64711.5,
+    "UETH": 1817.15,
+    "HYPE": 69.6165
   },
   "halted": false,
   "halt_reason": null,
-  "next_seq": 27,
+  "next_seq": 28,
   "peak": 1000.0,
-  "max_drawdown_pct": 2.5994201560392525,
+  "max_drawdown_pct": 2.6294807847264225,
   "id": "g-squeeze-btc-p2-v1-k1000",
   "parent_id": "g-squeeze-btc-p2-v1",
   "owner": "Prospective fixed grid; correlated trials",
@@ -16450,14 +16468,47 @@
       "funding": -0.053571439348540986,
       "positions": 0,
       "max_drawdown_pct": 2.5994201560392525
+    },
+    {
+      "seq": 1042,
+      "event": "signal",
+      "ts_ms": 1794961443958,
+      "ts_utc": "2026-11-18T00:24:03.958Z",
+      "ts_myt": "2026-11-18T08:24:03+08:00",
+      "coin": "BTC",
+      "boundary_utc": "2026-11-18T00:24:00.000Z",
+      "side": -1,
+      "details": {
+        "squeezed": true,
+        "prior_upper": 64976.0227577033,
+        "prior_lower": 64786.9772422967
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1043,
+      "event": "entry",
+      "ts_ms": 1794961443958,
+      "ts_utc": "2026-11-18T00:24:03.958Z",
+      "ts_myt": "2026-11-18T08:24:03+08:00",
+      "trade_id": "P000027",
+      "coin": "BTC",
+      "side": "short",
+      "size": 0.01122,
+      "price": 64712.5549,
+      "stop": 65036.1176745,
+      "fee": 0.3267336896901,
+      "cost_inclusive_risk": 4.868150457665936,
+      "risk_budget": 4.8708858493221285,
+      "fill_source": "observed_mid_plus_2bps"
     }
   ],
   "decisions": {
-    "BTC": 1794961140000
+    "BTC": 1794961440000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T08:19:03+08:00",
+  "last_tick_myt": "2026-11-18T08:24:03+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "c272c8b0a0c73e54a2df05ecd8a9aacafd0e909b63ec26d5f0f82a7167f3b7bf",
