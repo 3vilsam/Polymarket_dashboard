@@ -2,12 +2,31 @@
   "version": 1,
   "created_myt": "2026-11-11T17:16:05+08:00",
   "starting_equity": 16.24,
-  "cash": 15.886481743709837,
+  "cash": 15.875592410278637,
   "day_date": "2026-11-18",
   "day_start_equity": 15.917466628249036,
   "halted": false,
   "halt_reason": null,
-  "positions": {},
+  "positions": {
+    "P000009": {
+      "id": "P000009",
+      "coin": "UBTC",
+      "dir": 1,
+      "side": "long",
+      "size": 0.00024,
+      "size_initial": 0.00024,
+      "entry_px": 64817.4609,
+      "entry_ms": 1794988506042,
+      "stop": 64493.3735955,
+      "fees": 0.0108893334312,
+      "realized_gross": 0.0,
+      "funding": 0.0,
+      "funding_hour": 498607,
+      "market": "spot",
+      "leverage": 1,
+      "spot": true
+    }
+  },
   "closed_trades": [
     {
       "id": "P000001",
@@ -98,22 +117,22 @@
       "market": "spot"
     }
   ],
-  "next_seq": 9,
+  "next_seq": 10,
   "marks": {
-    "UBTC": 64693.5,
-    "UETH": 1814.55,
+    "UBTC": 64804.5,
+    "UETH": 1816.15,
     "USOL": 82.9645,
-    "HYPE": 69.0185
+    "HYPE": 69.0355
   },
   "stats": {
     "trades_closed": 8,
     "wins": 2,
     "losses": 6,
     "net_pnl": -0.35351825629015865,
-    "fees": 0.17569355928809852,
+    "fees": 0.1865828927192985,
     "funding": 0.0
   },
-  "last_tick_myt": "2026-11-18T15:50:05+08:00",
+  "last_tick_myt": "2026-11-18T15:55:06+08:00",
   "id": "sp-donchian5m-ubtc-v1",
   "owner": "Desk-defined spot experiment at owner request; unvalidated",
   "kind": "spot_donchian",
@@ -20701,12 +20720,47 @@
       "funding": 0.0,
       "positions": 0,
       "max_drawdown_pct": 4.2201542231006846
+    },
+    {
+      "seq": 1398,
+      "event": "signal",
+      "ts_ms": 1794988506042,
+      "ts_utc": "2026-11-18T07:55:06.042Z",
+      "ts_myt": "2026-11-18T15:55:06+08:00",
+      "coin": "UBTC",
+      "boundary_utc": "2026-11-18T07:55:00.000Z",
+      "side": 1,
+      "details": {
+        "prior_high": 64751.0,
+        "prior_exit_low": 64438.0
+      },
+      "entry_window_open": true
+    },
+    {
+      "seq": 1399,
+      "event": "entry",
+      "ts_ms": 1794988506042,
+      "ts_utc": "2026-11-18T07:55:06.042Z",
+      "ts_myt": "2026-11-18T15:55:06+08:00",
+      "trade_id": "P000009",
+      "coin": "UBTC",
+      "side": "long",
+      "size": 0.00024,
+      "price": 64817.4609,
+      "stop": 64493.3735955,
+      "fee": 0.0108893334312,
+      "fill_source": "observed_mid_plus_2bps_floor",
+      "market": "spot",
+      "leverage": 1,
+      "fee_rate": 0.0007,
+      "price_source": "spot_pair",
+      "spot_pair": "UBTC/USDC"
     }
   ],
   "peak": 16.548536353520692,
   "max_drawdown_pct": 4.2201542231006846,
   "decisions": {
-    "UBTC": 1794988200000
+    "UBTC": 1794988500000
   },
   "stopped_sides": {},
   "spot_spec": {
@@ -20758,7 +20812,7 @@
     ],
     "day": "2026-11-18",
     "day_start": 15.917466628249036,
-    "previous": 15.886481743709837,
+    "previous": 15.858484022278638,
     "skip_partial_day": false,
     "status": "NOT_SIGNIFICANT",
     "flag_ms": null,
@@ -20766,9 +20820,9 @@
     "trial_count": 434,
     "dsr_probability": null,
     "days": 6,
-    "return_pct": -2.1768365535108525,
-    "excess_btc_pct": 10.062477154793935,
-    "excess_random_pct": -2.142777782063543
+    "return_pct": -2.349236316018233,
+    "excess_btc_pct": 9.739343699344793,
+    "excess_random_pct": -2.2418699255709384
   },
   "valuation_bucket": 1994431,
   "labels_v1": {
