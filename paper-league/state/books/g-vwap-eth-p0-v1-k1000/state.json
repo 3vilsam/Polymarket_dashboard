@@ -1,27 +1,9 @@
 {
   "version": 1,
-  "cash": 984.9528558069806,
+  "cash": 988.4946644133026,
   "starting_equity": 1000.0,
   "day_start_equity": 991.1326474560648,
-  "positions": {
-    "P000029": {
-      "id": "P000029",
-      "coin": "ETH",
-      "dir": 1,
-      "side": "long",
-      "size": 0.4088,
-      "size_initial": 0.4088,
-      "entry_px": 1799.9099099999999,
-      "entry_ms": 1794977165171,
-      "stop": 1790.9103604499999,
-      "fees": 0.33111142704359997,
-      "realized_gross": 0.0,
-      "funding": -0.009216396,
-      "risk_at_entry": 4.926386182030355,
-      "funding_hour": 498605,
-      "risk_cap_at_entry": 4.926465918150122
-    }
-  },
+  "positions": {},
   "closed_trades": [
     {
       "id": "P000001",
@@ -302,23 +284,33 @@
       "fees": 0.66214856745,
       "funding": 0.0,
       "reason": "signal_or_time_exit"
+    },
+    {
+      "id": "P000029",
+      "coin": "ETH",
+      "entry_ms": 1794977165171,
+      "exit_ms": 1794979084770,
+      "pnl_net": 3.2014807832784684,
+      "fees": 0.6639664527215999,
+      "funding": -0.009216396,
+      "reason": "signal_or_time_exit"
     }
   ],
   "stats": {
-    "trades_closed": 28,
-    "wins": 15,
+    "trades_closed": 29,
+    "wins": 16,
     "losses": 13,
-    "net_pnl": -14.706816369976085,
-    "fees": 17.503615917447366,
+    "net_pnl": -11.505335586697617,
+    "fees": 17.836470943125367,
     "funding": 0.018312783870687993
   },
   "marks": {
-    "BTC": 64446.5,
-    "ETH": 1803.65,
-    "SOL": 74.8425,
-    "UBTC": 64412.5,
-    "UETH": 1803.55,
-    "HYPE": 68.4045
+    "BTC": 64655.5,
+    "ETH": 1809.75,
+    "SOL": 75.1855,
+    "UBTC": 64619.5,
+    "UETH": 1808.95,
+    "HYPE": 68.7895
   },
   "halted": false,
   "halt_reason": null,
@@ -17296,14 +17288,75 @@
         "vwap": 1803.9269340523215
       },
       "entry_window_open": false
+    },
+    {
+      "seq": 1147,
+      "event": "signal",
+      "ts_ms": 1794979084770,
+      "ts_utc": "2026-11-18T05:18:04.770Z",
+      "ts_myt": "2026-11-18T13:18:04+08:00",
+      "coin": "ETH",
+      "boundary_utc": "2026-11-18T05:15:00.000Z",
+      "side": 0,
+      "details": {
+        "z": 1.125170748400208,
+        "vwap": 1803.8047204952506
+      },
+      "entry_window_open": false
+    },
+    {
+      "seq": 1148,
+      "event": "exit",
+      "ts_ms": 1794979084770,
+      "ts_utc": "2026-11-18T05:18:04.770Z",
+      "ts_myt": "2026-11-18T13:18:04+08:00",
+      "trade_id": "P000029",
+      "coin": "ETH",
+      "side": "long",
+      "size": 0.4088,
+      "price": 1809.38805,
+      "fee": 0.33285502567799996,
+      "pnl_gross": 3.8746636320000682,
+      "reason": "signal_or_time_exit",
+      "signal_boundary_utc": "2026-11-18T05:15:00.000Z",
+      "delay_ms": 184770
+    },
+    {
+      "seq": 1149,
+      "event": "net_pnl",
+      "ts_ms": 1794979084770,
+      "ts_utc": "2026-11-18T05:18:04.770Z",
+      "ts_myt": "2026-11-18T13:18:04+08:00",
+      "id": "P000029",
+      "coin": "ETH",
+      "entry_ms": 1794977165171,
+      "exit_ms": 1794979084770,
+      "pnl_net": 3.2014807832784684,
+      "fees": 0.6639664527215999,
+      "funding": -0.009216396,
+      "reason": "signal_or_time_exit"
+    },
+    {
+      "seq": 1150,
+      "event": "valuation",
+      "ts_ms": 1794979084770,
+      "ts_utc": "2026-11-18T05:18:04.770Z",
+      "ts_myt": "2026-11-18T13:18:04+08:00",
+      "equity": 988.4946644133026,
+      "cash": 988.4946644133026,
+      "unrealized": 0.0,
+      "fees": 17.836470943125367,
+      "funding": 0.018312783870687993,
+      "positions": 0,
+      "max_drawdown_pct": 3.0977612600314828
     }
   ],
   "decisions": {
-    "ETH": 1794978600000
+    "ETH": 1794978900000
   },
   "stopped_sides": {},
   "day_date": "2026-11-18",
-  "last_tick_myt": "2026-11-18T13:12:05+08:00",
+  "last_tick_myt": "2026-11-18T13:18:04+08:00",
   "activation_ms": 1794710523311,
   "scale_cohort": "k1000",
   "rules_sha256": "00ce537901e5cd391711de91eb158cc1422588a2f87569f75953434136d176f7",
@@ -17325,5 +17378,5 @@
     "owner": "Prospective fixed grid; correlated trials",
     "sha256": "00ce537901e5cd391711de91eb158cc1422588a2f87569f75953434136d176f7"
   },
-  "valuation_bucket": 1994420
+  "valuation_bucket": 1994421
 }
